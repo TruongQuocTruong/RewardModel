@@ -9,6 +9,7 @@
 # TrainingRewardModel
 /TrainingRewardModel/*
 !/TrainingRewardModel/config_training.sh
+!/TrainingRewardModel/config_stage2.sh
 !/TrainingRewardModel/install_env.sh
 # Slurm launchers stay in place on the server; the repo holds copies in script_slurm/
 # (refreshed by .git/hooks/pre-commit).
