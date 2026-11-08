@@ -45,6 +45,14 @@
 /RewardModelEvaluation/OurModel/*
 !/RewardModelEvaluation/OurModel/*.py
 !/RewardModelEvaluation/OurModel/*.slurm
+# Not used by Stage 2 any more (kept on the server only)
+/RewardModelEvaluation/OurModel/recompute_margin_auc.py
+/RewardModelEvaluation/OurModel/recompute_overall_selected_metrics.py
+/RewardModelEvaluation/OurModel/run_evaluate_reward_model.slurm
+/RewardModelEvaluation/OurModel/run_evaluate_inspector_checkpoints.slurm
+/RewardModelEvaluation/OurModel/infer_augmentation_relevance.py
+/RewardModelEvaluation/OurModel/run_infer_augmentation_relevance.slurm
+/RewardModelEvaluation/OurModel/plot_gradient_components.py
 
 /RewardModelEvaluation/OtherModels/*
 !/RewardModelEvaluation/OtherModels/*.py
