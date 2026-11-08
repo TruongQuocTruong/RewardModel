@@ -1,0 +1,14 @@
+======================================================================
+INITIALIZING EMA TEACHER FROM STUDENT WARM-START
+Student checkpoint: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/student_warmstart.pt
+Teacher checkpoint: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/teacher_initialized.pt
+Copy rule: exact independent tensor clone
+======================================================================
+Student checkpoint: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/student_warmstart.pt
+Teacher checkpoint: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/teacher_initialized.pt
+Copied tensors: 754
+LoRA tensors: 736
+Metric-head tensors: 18
+Copied tensor values: 215540510
+Exact tensor equality after reload: passed
+Teacher initialization completed successfully.

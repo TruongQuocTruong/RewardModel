@@ -1,0 +1,43 @@
+======================================================================
+STARTING SIX-METRIC STUDENT WARM-START WITH MAJORITY-VOTE HARD GEMMAGT LABELS
+Train targets: majority vote (no majority -> Tie); validation targets: soft
+GemmaGT Data: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/TrainingDataCreation/editreward_overall_finegrained_gemmaGT_3k.jsonl
+Output directory: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63
+Split: first 1008 pairs of /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/inspector_baseline_overall_humanGT_full_r32_lr5e-5_constant_head_fp32/train_order.jsonl; validation: none (last checkpoint selected)
+LoRA rank/alpha: 64/128 (LLM + ViT + aligner); learning rate: 4e-5; epochs: 2
+Loss: Tie BCE + conditional-winner BCE + relevance BCE
+Microbatch: 1 pairs (3 A/B/source sequences)
+Effective batch: 16 pairs per optimizer step
+Eval / save steps: 50 / 21 (eval strategy: no, kept checkpoints: -1)
+Tie Head: margin_coupled
+Student initialization: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/inspector_baseline_overall_humanGT_full_r32_lr5e-5_constant_head_fp32/checkpoint-63
+======================================================================
+{'loss': 2.69143105, 'grad_norm': 37.7481842, 'learning_rate': 5.71e-06, 'epoch': 0.02, 'global_step/max_steps': '1/126', 'elapsed_time': '1m 8s', 'remaining_time': '2h 21m 45s', 'memory(GiB)': 27.79, 'train_speed(s/it)': 68.038174}
+{'loss': 2.21481252, 'grad_norm': 67.5756073, 'learning_rate': 2.857e-05, 'epoch': 0.08, 'global_step/max_steps': '5/126', 'elapsed_time': '5m 25s', 'remaining_time': '2h 11m 6s', 'memory(GiB)': 28.68, 'train_speed(s/it)': 65.008018}
+{'loss': 1.28182116, 'grad_norm': 13.25463772, 'learning_rate': 3.994e-05, 'epoch': 0.16, 'global_step/max_steps': '10/126', 'elapsed_time': '11m 28s', 'remaining_time': '2h 12m 57s', 'memory(GiB)': 29.13, 'train_speed(s/it)': 68.770684}
+{'loss': 1.13702221, 'grad_norm': 16.85137177, 'learning_rate': 3.956e-05, 'epoch': 0.24, 'global_step/max_steps': '15/126', 'elapsed_time': '17m 29s', 'remaining_time': '2h 9m 20s', 'memory(GiB)': 29.81, 'train_speed(s/it)': 69.910833}
+{'loss': 1.14542255, 'grad_norm': 8.50405407, 'learning_rate': 3.883e-05, 'epoch': 0.32, 'global_step/max_steps': '20/126', 'elapsed_time': '23m 0s', 'remaining_time': '2h 1m 53s', 'memory(GiB)': 29.81, 'train_speed(s/it)': 68.99301}
+{'loss': 1.07128429, 'grad_norm': 9.77034092, 'learning_rate': 3.778e-05, 'epoch': 0.4, 'global_step/max_steps': '25/126', 'elapsed_time': '28m 35s', 'remaining_time': '1h 55m 29s', 'memory(GiB)': 29.81, 'train_speed(s/it)': 68.601405}
+{'loss': 1.05147066, 'grad_norm': 18.55186462, 'learning_rate': 3.642e-05, 'epoch': 0.48, 'global_step/max_steps': '30/126', 'elapsed_time': '34m 16s', 'remaining_time': '1h 49m 40s', 'memory(GiB)': 29.81, 'train_speed(s/it)': 68.546215}
+{'loss': 1.01200018, 'grad_norm': 14.2877512, 'learning_rate': 3.478e-05, 'epoch': 0.56, 'global_step/max_steps': '35/126', 'elapsed_time': '40m 6s', 'remaining_time': '1h 44m 14s', 'memory(GiB)': 29.81, 'train_speed(s/it)': 68.729387}
+{'loss': 0.98931046, 'grad_norm': 7.24317551, 'learning_rate': 3.288e-05, 'epoch': 0.63, 'global_step/max_steps': '40/126', 'elapsed_time': '45m 39s', 'remaining_time': '1h 38m 9s', 'memory(GiB)': 29.82, 'train_speed(s/it)': 68.480813}
+{'loss': 0.98961058, 'grad_norm': 8.75346565, 'learning_rate': 3.075e-05, 'epoch': 0.71, 'global_step/max_steps': '45/126', 'elapsed_time': '51m 41s', 'remaining_time': '1h 33m 3s', 'memory(GiB)': 29.82, 'train_speed(s/it)': 68.921998}
+{'loss': 0.97109251, 'grad_norm': 14.67485809, 'learning_rate': 2.844e-05, 'epoch': 0.79, 'global_step/max_steps': '50/126', 'elapsed_time': '57m 43s', 'remaining_time': '1h 27m 43s', 'memory(GiB)': 29.86, 'train_speed(s/it)': 69.25361}
+{'loss': 0.94994202, 'grad_norm': 17.27498055, 'learning_rate': 2.598e-05, 'epoch': 0.87, 'global_step/max_steps': '55/126', 'elapsed_time': '1h 3m 36s', 'remaining_time': '1h 22m 6s', 'memory(GiB)': 29.86, 'train_speed(s/it)': 69.381926}
+{'loss': 0.98268728, 'grad_norm': 7.41219759, 'learning_rate': 2.342e-05, 'epoch': 0.95, 'global_step/max_steps': '60/126', 'elapsed_time': '1h 9m 28s', 'remaining_time': '1h 16m 25s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.472484}
+{'loss': 0.89525452, 'grad_norm': 19.75971603, 'learning_rate': 2.079e-05, 'epoch': 1.03, 'global_step/max_steps': '65/126', 'elapsed_time': '1h 15m 3s', 'remaining_time': '1h 10m 26s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.281205}
+{'loss': 0.87876616, 'grad_norm': 13.34373951, 'learning_rate': 1.815e-05, 'epoch': 1.11, 'global_step/max_steps': '70/126', 'elapsed_time': '1h 20m 51s', 'remaining_time': '1h 4m 41s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.30386}
+{'loss': 0.86897898, 'grad_norm': 14.43811798, 'learning_rate': 1.555e-05, 'epoch': 1.19, 'global_step/max_steps': '75/126', 'elapsed_time': '1h 27m 10s', 'remaining_time': '59m 17s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.73592}
+{'loss': 0.72963409, 'grad_norm': 9.72082615, 'learning_rate': 1.302e-05, 'epoch': 1.27, 'global_step/max_steps': '80/126', 'elapsed_time': '1h 32m 56s', 'remaining_time': '53m 26s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.697049}
+{'loss': 0.75534959, 'grad_norm': 10.74276352, 'learning_rate': 1.062e-05, 'epoch': 1.35, 'global_step/max_steps': '85/126', 'elapsed_time': '1h 38m 48s', 'remaining_time': '47m 40s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.74502}
+{'loss': 0.81639643, 'grad_norm': 86.82203674, 'learning_rate': 8.37e-06, 'epoch': 1.43, 'global_step/max_steps': '90/126', 'elapsed_time': '1h 44m 40s', 'remaining_time': '41m 52s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.780533}
+{'loss': 0.68707752, 'grad_norm': 21.06731033, 'learning_rate': 6.33e-06, 'epoch': 1.51, 'global_step/max_steps': '95/126', 'elapsed_time': '1h 50m 36s', 'remaining_time': '36m 5s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.848496}
+{'loss': 0.80172901, 'grad_norm': 15.34448338, 'learning_rate': 4.53e-06, 'epoch': 1.59, 'global_step/max_steps': '100/126', 'elapsed_time': '1h 56m 22s', 'remaining_time': '30m 15s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.816767}
+{'loss': 0.7023859, 'grad_norm': 46.99402618, 'learning_rate': 3e-06, 'epoch': 1.67, 'global_step/max_steps': '105/126', 'elapsed_time': '2h 2m 1s', 'remaining_time': '24m 24s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.724784}
+{'loss': 0.66154985, 'grad_norm': 19.70837402, 'learning_rate': 1.76e-06, 'epoch': 1.75, 'global_step/max_steps': '110/126', 'elapsed_time': '2h 7m 17s', 'remaining_time': '18m 31s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.42609}
+{'loss': 0.69002581, 'grad_norm': 35.83406448, 'learning_rate': 8.4e-07, 'epoch': 1.83, 'global_step/max_steps': '115/126', 'elapsed_time': '2h 12m 48s', 'remaining_time': '12m 42s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.287657}
+{'loss': 0.65588927, 'grad_norm': 16.48082733, 'learning_rate': 2.5e-07, 'epoch': 1.9, 'global_step/max_steps': '120/126', 'elapsed_time': '2h 18m 41s', 'remaining_time': '6m 56s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.342257}
+{'loss': 0.78320189, 'grad_norm': 23.97708321, 'learning_rate': 1e-08, 'epoch': 1.98, 'global_step/max_steps': '125/126', 'elapsed_time': '2h 24m 23s', 'remaining_time': '1m 9s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.305456}
+{'train_runtime': 8745.3893, 'train_samples_per_second': 0.231, 'train_steps_per_second': 0.014, 'train_loss': 0.95092932, 'epoch': 2.0, 'global_step/max_steps': '126/126', 'elapsed_time': '2h 25m 45s', 'remaining_time': '0s', 'memory(GiB)': 30.31, 'train_speed(s/it)': 69.407824}
+Student hard-label warm-start completed successfully.
+Consolidated checkpoint: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/student_warmstart.pt
