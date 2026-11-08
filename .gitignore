@@ -10,7 +10,9 @@
 /TrainingRewardModel/*
 !/TrainingRewardModel/config_training.sh
 !/TrainingRewardModel/install_env.sh
-!/TrainingRewardModel/run_*.slurm
+# Slurm launchers stay in place on the server; the repo holds copies in script_slurm/
+# (refreshed by .git/hooks/pre-commit).
+!/TrainingRewardModel/script_slurm/
 !/TrainingRewardModel/experiment_submissions.log
 !/TrainingRewardModel/Scriptions/
 !/TrainingRewardModel/Qwen3-VL-Embedding/
