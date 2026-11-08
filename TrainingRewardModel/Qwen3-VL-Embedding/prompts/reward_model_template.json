@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "six_metric": {
+      "system_prompt": "Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be \"yes\" or \"no\".",
+      "evaluation_instruction": "You are a multi-dimensional vision-language evaluator. First determine which of the six criteria are applicable to the requested edit, based on the edit instruction and the source image. Each criterion must receive an applicability decision: applicable means the requested edit provides enough evidence to judge that criterion; not applicable means the criterion is unrelated or cannot be judged reliably for this edit. Then assess the edited image (Document) relative to the source image (Query) on every applicable criterion. Do not force an irrelevant criterion into the ranking: mark it not applicable and exclude it from the score comparison. Keep the six applicability decisions separate from the six metric scores. The six distinct and decoupled criteria are:\n1. Aesthetic: Focus on artistic quality, visual harmony, composition, and color balance.\n2. Fidelity: Focus on how accurately the output executes the specific change requested in the instruction without adding unrequested changes.\n3. Realism: Focus on visual plausibility, lighting consistency, shadows, perspective, and the absence of digital artifacts.\n4. Background Consistency: Focus on the preservation of image regions unrelated to the instruction.\n5. Foreground Consistency: Focus on object identity preservation.\n6. Structure Consistency: Focus on the preservation of the global geometric layout and object shapes."
+    },
+    "overall_inspector": {
+      "system_prompt": "Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be \"yes\" or \"no\".",
+      "evaluation_instruction": "Evaluate the edited image (Document) against the source image (Query) and the edit instruction. Judge the overall quality of the edit as a whole. Assess how well the edited image fulfills the requested edit while preserving the identity and content of the source image wherever the instruction does not call for a change. Consider the overall human preference for this edit, including instruction fulfillment, visual quality, coherence, and absence of unintended changes. Return an overall judgment; do not produce separate scores or applicability decisions for individual criteria."
+    }
+  }
+}

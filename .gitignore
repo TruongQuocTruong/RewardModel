@@ -1,0 +1,71 @@
+# Whitelist: ignore everything, then re-include project code and configs only.
+# Not tracked: checkpoints (output_training), logs, evaluation_results, datasets, backups.
+/*
+!/.gitignore
+!/TrainingRewardModel/
+!/TrainingDataSampling/
+!/RewardModelEvaluation/
+
+# TrainingRewardModel
+/TrainingRewardModel/*
+!/TrainingRewardModel/config_training.sh
+!/TrainingRewardModel/install_env.sh
+!/TrainingRewardModel/run_*.slurm
+!/TrainingRewardModel/experiment_submissions.log
+!/TrainingRewardModel/Scriptions/
+!/TrainingRewardModel/Qwen3-VL-Embedding/
+!/TrainingRewardModel/TrainingDataCreation/
+
+/TrainingRewardModel/Qwen3-VL-Embedding/*
+!/TrainingRewardModel/Qwen3-VL-Embedding/src/
+!/TrainingRewardModel/Qwen3-VL-Embedding/scripts/
+!/TrainingRewardModel/Qwen3-VL-Embedding/prompts/
+!/TrainingRewardModel/Qwen3-VL-Embedding/pyproject.toml
+!/TrainingRewardModel/Qwen3-VL-Embedding/uv.lock
+!/TrainingRewardModel/Qwen3-VL-Embedding/LICENSE
+!/TrainingRewardModel/Qwen3-VL-Embedding/.gitignore
+/TrainingRewardModel/Qwen3-VL-Embedding/scripts/backups/
+
+/TrainingRewardModel/TrainingDataCreation/*
+!/TrainingRewardModel/TrainingDataCreation/*.py
+!/TrainingRewardModel/TrainingDataCreation/*.slurm
+
+# TrainingDataSampling
+/TrainingDataSampling/*
+!/TrainingDataSampling/*.py
+
+# RewardModelEvaluation
+/RewardModelEvaluation/*
+!/RewardModelEvaluation/OurModel/
+!/RewardModelEvaluation/OtherModels/
+!/RewardModelEvaluation/EvalDatasets/
+
+/RewardModelEvaluation/OurModel/*
+!/RewardModelEvaluation/OurModel/*.py
+!/RewardModelEvaluation/OurModel/*.slurm
+
+/RewardModelEvaluation/OtherModels/*
+!/RewardModelEvaluation/OtherModels/*.py
+!/RewardModelEvaluation/OtherModels/*.slurm
+!/RewardModelEvaluation/OtherModels/EditHF/
+!/RewardModelEvaluation/OtherModels/EditReward/
+!/RewardModelEvaluation/OtherModels/Qwen3VLReranker/
+/RewardModelEvaluation/OtherModels/EditHF/*
+!/RewardModelEvaluation/OtherModels/EditHF/*.py
+!/RewardModelEvaluation/OtherModels/EditHF/*.slurm
+/RewardModelEvaluation/OtherModels/EditReward/*
+!/RewardModelEvaluation/OtherModels/EditReward/*.py
+!/RewardModelEvaluation/OtherModels/EditReward/*.slurm
+/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*
+!/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.py
+!/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.slurm
+
+/RewardModelEvaluation/EvalDatasets/*
+!/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/
+/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/*
+!/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/postprocess_vlm_judge.py
+
+# Everywhere
+__pycache__/
+*.py[oc]
+.ruff_cache/
