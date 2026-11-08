@@ -28,6 +28,8 @@
 !/TrainingRewardModel/Qwen3-VL-Embedding/uv.lock
 !/TrainingRewardModel/Qwen3-VL-Embedding/LICENSE
 !/TrainingRewardModel/Qwen3-VL-Embedding/.gitignore
+!/TrainingRewardModel/Qwen3-VL-Embedding/logs/
+!/TrainingRewardModel/Qwen3-VL-Embedding/logs/**
 # output_training/ is kept as an empty folder (checkpoints are shared on Drive)
 !/TrainingRewardModel/Qwen3-VL-Embedding/output_training/
 /TrainingRewardModel/Qwen3-VL-Embedding/output_training/*

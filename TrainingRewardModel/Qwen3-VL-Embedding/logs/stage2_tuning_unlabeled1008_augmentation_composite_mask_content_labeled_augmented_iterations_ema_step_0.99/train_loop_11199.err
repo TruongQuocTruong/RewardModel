@@ -1,0 +1,864 @@
+realpath: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output/training_loop: No such file or directory
+[INFO:swift] Successfully registered `/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/swift/dataset/data/dataset_info.json`.
+[INFO:swift] rank: -1, local_rank: -1, world_size: 1, local_world_size: 1
+`torch_dtype` is deprecated! Use `dtype` instead!
+[INFO:swift] Setting generative_reranker task (no num_labels needed)
+[WARNING:swift] Please install the package: `pip install "decord" -U`.
+[INFO:swift] Setting args.lazy_tokenize: True
+[INFO:swift] args: SftArguments(
+_n_gpu=-1,
+acc_strategy=token,
+accelerator_config={'dispatch_batches': False},
+adafactor=False,
+adalora_beta1=0.85,
+adalora_beta2=0.85,
+adalora_deltaT=1,
+adalora_init_r=12,
+adalora_orth_reg_weight=0.5,
+adalora_target_r=8,
+adalora_tfinal=0,
+adalora_tinit=0,
+adam_beta1=0.9,
+adam_beta2=0.95,
+adam_epsilon=1e-08,
+adapter_act=gelu,
+adapter_length=128,
+adapters=[],
+add_non_thinking_prefix=True,
+add_version=False,
+agent_template=None,
+aligner_lr=None,
+attn_impl=sdpa,
+auto_find_batch_size=False,
+average_tokens_across_devices=True,
+batch_eval_metrics=False,
+bf16=True,
+bf16_full_eval=False,
+bnb_4bit_compute_dtype=torch.bfloat16,
+bnb_4bit_quant_storage=None,
+bnb_4bit_quant_type=nf4,
+bnb_4bit_use_double_quant=True,
+boft_block_num=0,
+boft_block_size=4,
+boft_dropout=0.0,
+boft_n_butterfly_factor=1,
+cached_dataset=[],
+cached_val_dataset=[],
+callbacks=[],
+check_model=True,
+columns={},
+create_checkpoint_symlink=False,
+custom_dataset_info=[],
+custom_register_path=[],
+data_seed=42,
+dataloader_drop_last=False,
+dataloader_multiprocessing_context=None,
+dataloader_num_workers=0,
+dataloader_persistent_workers=True,
+dataloader_pin_memory=True,
+dataloader_prefetch_factor=None,
+dataset=['/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/TrainingDataCreation/editreward_overall_finegrained_gemmaGT_3k.jsonl'],
+dataset_num_proc=1,
+dataset_shuffle=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=18000000,
+debug=None,
+deepspeed=None,
+deepspeed_autotp_size=None,
+device_groups=None,
+device_map=None,
+disable_auto_column_mapping=False,
+disable_ignore_empty_think=False,
+disable_tqdm=None,
+do_eval=False,
+do_predict=False,
+do_train=False,
+download_mode=reuse_dataset_if_exists,
+ds3_gather_for_generation=True,
+early_stop_interval=None,
+enable_channel_loss=False,
+enable_dft_loss=False,
+enable_npu_model_patch=True,
+enable_thinking=None,
+eval_accumulation_steps=None,
+eval_dataset=[],
+eval_dataset_args=None,
+eval_delay=0,
+eval_do_concat_batches=True,
+eval_generation_config=None,
+eval_limit=None,
+eval_metric=reranker,
+eval_on_start=False,
+eval_steps=None,
+eval_strategy=no,
+eval_use_evalscope=False,
+eval_use_gather_object=False,
+experts_impl=None,
+external_plugins=[],
+extra_eval_args=None,
+fourier_n_frequency=2000,
+fourier_scaling=300.0,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+freeze_aligner=False,
+freeze_llm=False,
+freeze_parameters=[],
+freeze_parameters_ratio=0.0,
+freeze_parameters_regex=None,
+freeze_vit=False,
+fsdp=[],
+fsdp_config=None,
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+galore_cos_threshold=0.4,
+galore_gamma_proj=2,
+galore_optim_per_parameter=False,
+galore_proj_bits=4,
+galore_proj_group_size=256,
+galore_proj_quant=False,
+galore_proj_type=std,
+galore_quantization=False,
+galore_queue_size=5,
+galore_rank=128,
+galore_scale=1.0,
+galore_target_modules=None,
+galore_update_proj_gap=50,
+galore_with_embedding=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=False,
+half_precision_backend=auto,
+hqq_axis=None,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=None,
+hub_revision=None,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_args_error=False,
+ignore_data_skip=False,
+include_for_metrics=[],
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+init_strategy=None,
+init_weights=True,
+interleave_prob=None,
+is_binary_loss_scale=None,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+lazy_tokenize=True,
+learning_rate=1e-05,
+length_column_name=length,
+liger_kernel_config=None,
+lisa_activated_layers=0,
+lisa_step_interval=20,
+llamapro_num_groups=None,
+llamapro_num_new_blocks=4,
+load_args=False,
+load_best_model_at_end=False,
+load_data_args=False,
+load_from_cache_file=False,
+local_rank=-1,
+local_repo_path=None,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_ema_step_0.99/runs,
+logging_first_step=True,
+logging_nan_inf_filter=True,
+logging_steps=5,
+logging_strategy=steps,
+logprobs=False,
+lora_alpha=128.0,
+lora_bias=none,
+lora_dropout=0.05,
+lora_dtype=None,
+lora_ga_batch_size=2,
+lora_ga_direction=ArB2r,
+lora_ga_iters=2,
+lora_ga_max_length=1024,
+lora_ga_scale=stable,
+lora_ga_stable_gamma=16,
+lora_rank=64,
+lorap_lr_ratio=None,
+loss_scale=default,
+loss_type=online_metric_refinement,
+lr_scheduler_kwargs=None,
+lr_scheduler_type=cosine,
+max_epochs=None,
+max_grad_norm=1.0,
+max_length=16384,
+max_memory={},
+max_model_len=None,
+max_new_tokens=64,
+max_pixels=None,
+max_shard_size=5GB,
+max_steps=630,
+metric_for_best_model=loss,
+model=/datastore/truongtq/TrainingRewardModel/Models/Qwen3-VL-Reranker-8B,
+model_author=None,
+model_kwargs={},
+model_name=None,
+model_revision=None,
+model_type=qwen3_vl_reranker,
+modules_to_save=['metric_heads'],
+mp_parameters=,
+mrl_dims=None,
+neftune_noise_alpha=None,
+new_special_tokens=[],
+no_cuda=False,
+norm_bbox=None,
+num_beams=1,
+num_labels=None,
+num_train_epochs=3.0,
+optim=adamw_torch,
+optim_args=None,
+optim_target_modules=None,
+optimizer=None,
+output_dir=/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_ema_step_0.99,
+overwrite_output_dir=False,
+packing=False,
+packing_length=None,
+packing_num_proc=1,
+packing_strategy=binpack,
+padding_free=False,
+padding_side=right,
+parallelism_config=None,
+past_index=-1,
+per_device_eval_batch_size=1,
+per_device_train_batch_size=1,
+predict_with_generate=False,
+prediction_loss_only=False,
+preserve_thinking=None,
+problem_type=None,
+project=huggingface,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+quant_bits=None,
+quant_method=None,
+ray_exp_name=None,
+ray_scope=last,
+reft_args=None,
+reft_intervention_type=LoreftIntervention,
+reft_layer_key=None,
+reft_layers=None,
+reft_rank=4,
+remove_unused_columns=False,
+repetition_penalty=None,
+report_to=['tensorboard'],
+response_prefix=None,
+restore_callback_states_from_checkpoint=False,
+resume_from_checkpoint=None,
+resume_only_model=False,
+rope_scaling=None,
+router_aux_loss_coef=0.0,
+run_name=/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_ema_step_0.99,
+safe_serialization=True,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=no,
+save_total_limit=None,
+seed=42,
+sequence_parallel_size=1,
+shuffle_buffer_size=1000,
+skip_memory_metrics=True,
+sortish_sampler=False,
+split_dataset_ratio=0.0,
+stop_words=[],
+stopping_strategy=first_exhausted,
+stream=False,
+streaming=False,
+strict=True,
+structured_outputs_regex=None,
+swanlab_email_language=zh,
+swanlab_exp_name=None,
+swanlab_mode=cloud,
+swanlab_notification_method=None,
+swanlab_project=ms-swift,
+swanlab_receiver_email=None,
+swanlab_secret=None,
+swanlab_sender_email=None,
+swanlab_smtp_port=None,
+swanlab_smtp_server=None,
+swanlab_token=<SWANLAB_TOKEN>,
+swanlab_webhook_url=None,
+swanlab_workspace=None,
+system=None,
+target_modules=['all-linear'],
+target_parameters=None,
+target_regex=None,
+task_type=generative_reranker,
+temperature=0.0,
+template=qwen3_vl_reranker,
+template_backend=swift,
+tf32=None,
+top_k=None,
+top_logprobs=None,
+top_p=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torch_dtype=torch.bfloat16,
+torch_empty_cache_steps=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+trackio_space_id=trackio,
+train_dataloader_shuffle=False,
+trainable_parameters=[],
+trainable_parameters_regex=None,
+truncation_strategy=delete,
+tuner_backend=peft,
+tuner_type=lora,
+use_chat_template=True,
+use_cpu=False,
+use_dora=False,
+use_flash_ckpt=False,
+use_galore=False,
+use_hf=False,
+use_legacy_prediction_loop=False,
+use_liger_kernel=False,
+use_logits_to_keep=None,
+use_mps_device=False,
+use_ray=False,
+use_rslora=False,
+use_swift_lora=False,
+val_dataset=[],
+val_dataset_shuffle=False,
+vera_d_initial=0.1,
+vera_dropout=0.0,
+vera_projection_prng_key=0,
+vera_rank=256,
+vit_gradient_checkpointing=True,
+vit_lr=None,
+warmup_ratio=0.05,
+warmup_steps=0,
+weight_decay=0.01,
+zero_hpz_partition_size=None,
+)
+[INFO:swift] Global seed set to 42
+[INFO:swift] Setting generative_reranker task (no num_labels needed)
+[WARNING:swift] Please install the package: `pip install "decord" -U`.
+[INFO:swift] attn_impl: sdpa
+[INFO:swift] Setting max_ratio: 200. You can adjust this hyperparameter through the environment variable: `MAX_RATIO`.
+[INFO:swift] Setting frame_factor: 2. You can adjust this hyperparameter through the environment variable: `FRAME_FACTOR`.
+[INFO:swift] Using environment variable `FPS`, Setting fps: 1.0.
+[INFO:swift] Setting fps_min_frames: 4. You can adjust this hyperparameter through the environment variable: `FPS_MIN_FRAMES`.
+[INFO:swift] Using environment variable `FPS_MAX_FRAMES`, Setting fps_max_frames: 64.
+[INFO:swift] Using environment variable `IMAGE_MAX_TOKEN_NUM`, Setting image_max_token_num: 1280.
+[INFO:swift] Setting image_min_token_num: 4. You can adjust this hyperparameter through the environment variable: `IMAGE_MIN_TOKEN_NUM`.
+[INFO:swift] Setting spatial_merge_size: 2. You can adjust this hyperparameter through the environment variable: `SPATIAL_MERGE_SIZE`.
+[INFO:swift] Setting video_max_token_num: 768. You can adjust this hyperparameter through the environment variable: `VIDEO_MAX_TOKEN_NUM`.
+[INFO:swift] Setting video_min_token_num: 128. You can adjust this hyperparameter through the environment variable: `VIDEO_MIN_TOKEN_NUM`.
+[INFO:swift] model_kwargs: {'device_map': 'cuda:0', 'dtype': torch.bfloat16}
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:01<00:03,  1.23s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:02<00:02,  1.19s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:03<00:01,  1.15s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:04<00:00,  1.06it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:04<00:00,  1.03s/it]
+[INFO:swift] model.hf_device_map: {'': device(type='cuda', index=0)}
+[INFO:swift] model_info: ModelInfo(model_type='qwen3_vl_reranker', model_dir='/datastore/truongtq/TrainingRewardModel/Models/Qwen3-VL-Reranker-8B', torch_dtype=torch.bfloat16, max_model_len=262144, quant_method=None, quant_bits=None, rope_scaling={'mrope_interleaved': True, 'mrope_section': [24, 20, 20], 'rope_type': 'default'}, is_moe_model=False, is_multimodal=True, config=Qwen3VLConfig {
+  "architectures": [
+    "Qwen3VLForConditionalGeneration"
+  ],
+  "dtype": "bfloat16",
+  "hidden_size": 4096,
+  "image_token_id": 151655,
+  "model_type": "qwen3_vl",
+  "pad_token_id": 151643,
+  "text_config": {
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "dtype": "bfloat16",
+    "eos_token_id": 151645,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 4096,
+    "initializer_range": 0.02,
+    "intermediate_size": 12288,
+    "max_position_embeddings": 262144,
+    "model_type": "qwen3_vl_text",
+    "num_attention_heads": 32,
+    "num_hidden_layers": 36,
+    "num_key_value_heads": 8,
+    "pad_token_id": 151643,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": {
+      "mrope_interleaved": true,
+      "mrope_section": [
+        24,
+        20,
+        20
+      ],
+      "rope_type": "default"
+    },
+    "rope_theta": 5000000,
+    "use_cache": false,
+    "vocab_size": 151936
+  },
+  "tie_word_embeddings": false,
+  "transformers_version": "4.57.6",
+  "video_token_id": 151656,
+  "vision_config": {
+    "deepstack_visual_indexes": [
+      8,
+      16,
+      24
+    ],
+    "depth": 27,
+    "dtype": "bfloat16",
+    "hidden_act": "gelu_pytorch_tanh",
+    "hidden_size": 1152,
+    "in_channels": 3,
+    "initializer_range": 0.02,
+    "intermediate_size": 4304,
+    "model_type": "qwen3_vl",
+    "num_heads": 16,
+    "num_position_embeddings": 2304,
+    "out_hidden_size": 4096,
+    "pad_token_id": 151643,
+    "patch_size": 16,
+    "spatial_merge_size": 2,
+    "temporal_patch_size": 2
+  },
+  "vision_end_token_id": 151653,
+  "vision_start_token_id": 151652
+}
+, task_type='generative_reranker', num_labels=None)
+[INFO:swift] model.generation_config: GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "temperature": 0.7,
+  "top_k": 20,
+  "top_p": 0.8
+}
+
+[INFO:swift] Student exact LoRA Linear targets: 368
+[INFO:swift] default_system: 'Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be "yes" or "no".'
+[INFO:swift] max_length: 16384
+[INFO:swift] response_prefix: None
+[INFO:swift] agent_template: hermes
+[INFO:swift] norm_bbox: norm1000
+[INFO:swift] Setting ROOT_IMAGE_DIR: None. You can adjust this hyperparameter through the environment variable: `ROOT_IMAGE_DIR`.
+[INFO:swift] Setting QWENVL_BBOX_FORMAT: legacy. You can adjust this hyperparameter through the environment variable: `QWENVL_BBOX_FORMAT`.
+[INFO:swift] Warm-start batch sizes count pairs; each pair becomes A/B/source.
+[INFO:swift] Start time of running main: 2026-11-07 12:53:01.052292
+[INFO:swift] swift.__version__: 4.5.3
+Map: 100%|██████████| 1/1 [00:00<?, ? examples/s]Map: 2 examples [00:00, 48.39 examples/s]        
+[INFO:swift] train_dataset: Dataset({
+    features: ['messages', 'rejected_messages', 'positive_messages', 'label'],
+    num_rows: 1
+})
+[INFO:swift] val_dataset: None
+[INFO:swift] Warm-start candidate_a:
+[INFO:swift] [INPUT_IDS] [151644, 8948, 198, 60256, 3425, 279, 11789, 20027, 279, 8502, 3118, 389, 279, 11361, 323, 279, 758, 1235, 3897, 13, 7036, 429, 279, 4226, 646, 1172, 387, 330, 9693, 1, 476, 330, 2152, 3263, 151645, 198, 151644, 872, 198, 27, 641, 1235, 26818, 1446, 525, 264, 7299, 32420, 11129, 43558, 69810, 13, 5512, 8253, 892, 315, 279, 4743, 12890, 525, 8415, 311, 279, 11223, 4499, 11, 3118, 389, 279, 4499, 7600, 323, 279, 2530, 2168, 13, 8886, 35957, 1969, 5258, 458, 4563, 2897, 5480, 25, 8415, 3363, 279, 11223, 4499, 5707, 3322, 5904, 311, 11651, 429, 35957, 26, 537, 8415, 3363, 279, 35957, 374, 45205, 476, 4157, 387, 44387, 56382, 369, 419, 4499, 13, 5005, 8552, 279, 19138, 2168, 320, 7524, 8, 8674, 311, 279, 2530, 2168, 320, 2859, 8, 389, 1449, 8415, 35957, 13, 3155, 537, 5344, 458, 39715, 35957, 1119, 279, 23001, 25, 1868, 432, 537, 8415, 323, 21687, 432, 504, 279, 5456, 12313, 13, 13655, 279, 4743, 4563, 2897, 11181, 8651, 504, 279, 4743, 18266, 12205, 13, 576, 4743, 12460, 323, 1622, 283, 49085, 12890, 525, 510, 16, 13, 362, 70009, 25, 25806, 389, 31592, 4271, 11, 9124, 25281, 11, 18037, 11, 323, 1894, 8172, 624, 17, 13, 434, 45101, 25, 25806, 389, 1246, 29257, 279, 2550, 51435, 279, 3151, 2297, 11223, 304, 279, 7600, 2041, 7842, 650, 67105, 4344, 624, 18, 13, 8800, 2142, 25, 25806, 389, 9124, 625, 11855, 3147, 11, 17716, 28137, 11, 34512, 11, 13057, 11, 323, 279, 19265, 315, 7377, 35036, 624, 19, 13, 24800, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 2168, 13604, 45205, 311, 279, 7600, 624, 20, 13, 8207, 1951, 7292, 47094, 25, 25806, 389, 1633, 9569, 45543, 624, 21, 13, 28596, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 279, 3644, 52484, 6789, 323, 1633, 20816, 624, 27, 2859, 26818, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 7405, 432, 1401, 1075, 458, 24832, 5004, 8452, 18824, 624, 75692, 26818, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 151645, 198, 151644, 77091, 198]
+[INFO:swift] [INPUT] <|im_start|>system
+Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be "yes" or "no".<|im_end|>
+<|im_start|>user
+<Instruct>: You are a multi-dimensional vision-language evaluator. First determine which of the six criteria are applicable to the requested edit, based on the edit instruction and the source image. Each criterion must receive an applicability decision: applicable means the requested edit provides enough evidence to judge that criterion; not applicable means the criterion is unrelated or cannot be judged reliably for this edit. Then assess the edited image (Document) relative to the source image (Query) on every applicable criterion. Do not force an irrelevant criterion into the ranking: mark it not applicable and exclude it from the score comparison. Keep the six applicability decisions separate from the six metric scores. The six distinct and decoupled criteria are:
+1. Aesthetic: Focus on artistic quality, visual harmony, composition, and color balance.
+2. Fidelity: Focus on how accurately the output executes the specific change requested in the instruction without adding unrequested changes.
+3. Realism: Focus on visual plausibility, lighting consistency, shadows, perspective, and the absence of digital artifacts.
+4. Background Consistency: Focus on the preservation of image regions unrelated to the instruction.
+5. Foreground Consistency: Focus on object identity preservation.
+6. Structure Consistency: Focus on the preservation of the global geometric layout and object shapes.
+<Query>:<|vision_start|>[151655 * 256]<|vision_end|> Make it look like an Andy Warhol painting.
+<Document>:<|vision_start|>[151655 * 256]<|vision_end|><|im_end|>
+<|im_start|>assistant
+
+[INFO:swift] Warm-start candidate_b:
+[INFO:swift] [INPUT_IDS] [151644, 8948, 198, 60256, 3425, 279, 11789, 20027, 279, 8502, 3118, 389, 279, 11361, 323, 279, 758, 1235, 3897, 13, 7036, 429, 279, 4226, 646, 1172, 387, 330, 9693, 1, 476, 330, 2152, 3263, 151645, 198, 151644, 872, 198, 27, 641, 1235, 26818, 1446, 525, 264, 7299, 32420, 11129, 43558, 69810, 13, 5512, 8253, 892, 315, 279, 4743, 12890, 525, 8415, 311, 279, 11223, 4499, 11, 3118, 389, 279, 4499, 7600, 323, 279, 2530, 2168, 13, 8886, 35957, 1969, 5258, 458, 4563, 2897, 5480, 25, 8415, 3363, 279, 11223, 4499, 5707, 3322, 5904, 311, 11651, 429, 35957, 26, 537, 8415, 3363, 279, 35957, 374, 45205, 476, 4157, 387, 44387, 56382, 369, 419, 4499, 13, 5005, 8552, 279, 19138, 2168, 320, 7524, 8, 8674, 311, 279, 2530, 2168, 320, 2859, 8, 389, 1449, 8415, 35957, 13, 3155, 537, 5344, 458, 39715, 35957, 1119, 279, 23001, 25, 1868, 432, 537, 8415, 323, 21687, 432, 504, 279, 5456, 12313, 13, 13655, 279, 4743, 4563, 2897, 11181, 8651, 504, 279, 4743, 18266, 12205, 13, 576, 4743, 12460, 323, 1622, 283, 49085, 12890, 525, 510, 16, 13, 362, 70009, 25, 25806, 389, 31592, 4271, 11, 9124, 25281, 11, 18037, 11, 323, 1894, 8172, 624, 17, 13, 434, 45101, 25, 25806, 389, 1246, 29257, 279, 2550, 51435, 279, 3151, 2297, 11223, 304, 279, 7600, 2041, 7842, 650, 67105, 4344, 624, 18, 13, 8800, 2142, 25, 25806, 389, 9124, 625, 11855, 3147, 11, 17716, 28137, 11, 34512, 11, 13057, 11, 323, 279, 19265, 315, 7377, 35036, 624, 19, 13, 24800, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 2168, 13604, 45205, 311, 279, 7600, 624, 20, 13, 8207, 1951, 7292, 47094, 25, 25806, 389, 1633, 9569, 45543, 624, 21, 13, 28596, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 279, 3644, 52484, 6789, 323, 1633, 20816, 624, 27, 2859, 26818, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 7405, 432, 1401, 1075, 458, 24832, 5004, 8452, 18824, 624, 75692, 26818, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 151645, 198, 151644, 77091, 198]
+[INFO:swift] [INPUT] <|im_start|>system
+Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be "yes" or "no".<|im_end|>
+<|im_start|>user
+<Instruct>: You are a multi-dimensional vision-language evaluator. First determine which of the six criteria are applicable to the requested edit, based on the edit instruction and the source image. Each criterion must receive an applicability decision: applicable means the requested edit provides enough evidence to judge that criterion; not applicable means the criterion is unrelated or cannot be judged reliably for this edit. Then assess the edited image (Document) relative to the source image (Query) on every applicable criterion. Do not force an irrelevant criterion into the ranking: mark it not applicable and exclude it from the score comparison. Keep the six applicability decisions separate from the six metric scores. The six distinct and decoupled criteria are:
+1. Aesthetic: Focus on artistic quality, visual harmony, composition, and color balance.
+2. Fidelity: Focus on how accurately the output executes the specific change requested in the instruction without adding unrequested changes.
+3. Realism: Focus on visual plausibility, lighting consistency, shadows, perspective, and the absence of digital artifacts.
+4. Background Consistency: Focus on the preservation of image regions unrelated to the instruction.
+5. Foreground Consistency: Focus on object identity preservation.
+6. Structure Consistency: Focus on the preservation of the global geometric layout and object shapes.
+<Query>:<|vision_start|>[151655 * 256]<|vision_end|> Make it look like an Andy Warhol painting.
+<Document>:<|vision_start|>[151655 * 1024]<|vision_end|><|im_end|>
+<|im_start|>assistant
+
+[INFO:swift] Warm-start source:
+[INFO:swift] [INPUT_IDS] [151644, 8948, 198, 60256, 3425, 279, 11789, 20027, 279, 8502, 3118, 389, 279, 11361, 323, 279, 758, 1235, 3897, 13, 7036, 429, 279, 4226, 646, 1172, 387, 330, 9693, 1, 476, 330, 2152, 3263, 151645, 198, 151644, 872, 198, 27, 641, 1235, 26818, 1446, 525, 264, 7299, 32420, 11129, 43558, 69810, 13, 5512, 8253, 892, 315, 279, 4743, 12890, 525, 8415, 311, 279, 11223, 4499, 11, 3118, 389, 279, 4499, 7600, 323, 279, 2530, 2168, 13, 8886, 35957, 1969, 5258, 458, 4563, 2897, 5480, 25, 8415, 3363, 279, 11223, 4499, 5707, 3322, 5904, 311, 11651, 429, 35957, 26, 537, 8415, 3363, 279, 35957, 374, 45205, 476, 4157, 387, 44387, 56382, 369, 419, 4499, 13, 5005, 8552, 279, 19138, 2168, 320, 7524, 8, 8674, 311, 279, 2530, 2168, 320, 2859, 8, 389, 1449, 8415, 35957, 13, 3155, 537, 5344, 458, 39715, 35957, 1119, 279, 23001, 25, 1868, 432, 537, 8415, 323, 21687, 432, 504, 279, 5456, 12313, 13, 13655, 279, 4743, 4563, 2897, 11181, 8651, 504, 279, 4743, 18266, 12205, 13, 576, 4743, 12460, 323, 1622, 283, 49085, 12890, 525, 510, 16, 13, 362, 70009, 25, 25806, 389, 31592, 4271, 11, 9124, 25281, 11, 18037, 11, 323, 1894, 8172, 624, 17, 13, 434, 45101, 25, 25806, 389, 1246, 29257, 279, 2550, 51435, 279, 3151, 2297, 11223, 304, 279, 7600, 2041, 7842, 650, 67105, 4344, 624, 18, 13, 8800, 2142, 25, 25806, 389, 9124, 625, 11855, 3147, 11, 17716, 28137, 11, 34512, 11, 13057, 11, 323, 279, 19265, 315, 7377, 35036, 624, 19, 13, 24800, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 2168, 13604, 45205, 311, 279, 7600, 624, 20, 13, 8207, 1951, 7292, 47094, 25, 25806, 389, 1633, 9569, 45543, 624, 21, 13, 28596, 7292, 47094, 25, 25806, 389, 279, 45543, 315, 279, 3644, 52484, 6789, 323, 1633, 20816, 624, 27, 2859, 26818, 151652, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151655, 151653, 7405, 432, 1401, 1075, 458, 24832, 5004, 8452, 18824, 13, 151645, 198, 151644, 77091, 198]
+[INFO:swift] [INPUT] <|im_start|>system
+Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be "yes" or "no".<|im_end|>
+<|im_start|>user
+<Instruct>: You are a multi-dimensional vision-language evaluator. First determine which of the six criteria are applicable to the requested edit, based on the edit instruction and the source image. Each criterion must receive an applicability decision: applicable means the requested edit provides enough evidence to judge that criterion; not applicable means the criterion is unrelated or cannot be judged reliably for this edit. Then assess the edited image (Document) relative to the source image (Query) on every applicable criterion. Do not force an irrelevant criterion into the ranking: mark it not applicable and exclude it from the score comparison. Keep the six applicability decisions separate from the six metric scores. The six distinct and decoupled criteria are:
+1. Aesthetic: Focus on artistic quality, visual harmony, composition, and color balance.
+2. Fidelity: Focus on how accurately the output executes the specific change requested in the instruction without adding unrequested changes.
+3. Realism: Focus on visual plausibility, lighting consistency, shadows, perspective, and the absence of digital artifacts.
+4. Background Consistency: Focus on the preservation of image regions unrelated to the instruction.
+5. Foreground Consistency: Focus on object identity preservation.
+6. Structure Consistency: Focus on the preservation of the global geometric layout and object shapes.
+<Query>:<|vision_start|>[151655 * 256]<|vision_end|> Make it look like an Andy Warhol painting.<|im_end|>
+<|im_start|>assistant
+
+[INFO:swift] The SftArguments will be saved in: /datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_ema_step_0.99/args.json
+[INFO:swift] lora_config: LoraConfig(peft_type=<PeftType.LORA: 'LORA'>, auto_mapping=None, base_model_name_or_path='/datastore/truongtq/TrainingRewardModel/Models/Qwen3-VL-Reranker-8B', revision=None, task_type='CAUSAL_LM', inference_mode=False, r=64, target_modules={'model.language_model.layers.25.self_attn.o_proj', 'model.visual.blocks.12.attn.qkv', 'model.language_model.layers.22.self_attn.o_proj', 'model.visual.blocks.14.mlp.linear_fc1', 'model.language_model.layers.25.mlp.down_proj', 'model.visual.blocks.17.attn.proj', 'model.visual.blocks.19.mlp.linear_fc1', 'model.language_model.layers.27.mlp.down_proj', 'model.language_model.layers.27.mlp.gate_proj', 'model.language_model.layers.30.self_attn.o_proj', 'model.language_model.layers.7.mlp.down_proj', 'model.language_model.layers.31.mlp.up_proj', 'model.language_model.layers.24.mlp.down_proj', 'model.visual.blocks.10.attn.qkv', 'model.language_model.layers.9.mlp.down_proj', 'model.language_model.layers.28.self_attn.o_proj', 'model.language_model.layers.14.mlp.up_proj', 'model.language_model.layers.35.mlp.up_proj', 'model.language_model.layers.16.self_attn.k_proj', 'model.visual.blocks.25.attn.proj', 'model.visual.blocks.18.mlp.linear_fc2', 'model.visual.blocks.6.attn.proj', 'model.visual.blocks.8.mlp.linear_fc1', 'model.language_model.layers.21.self_attn.v_proj', 'model.language_model.layers.4.self_attn.v_proj', 'model.language_model.layers.4.mlp.gate_proj', 'model.language_model.layers.28.self_attn.q_proj', 'model.language_model.layers.23.self_attn.v_proj', 'model.language_model.layers.23.self_attn.o_proj', 'model.language_model.layers.15.self_attn.o_proj', 'model.language_model.layers.20.self_attn.q_proj', 'model.visual.merger.linear_fc2', 'model.language_model.layers.2.self_attn.q_proj', 'model.language_model.layers.29.self_attn.q_proj', 'model.visual.merger.linear_fc1', 'model.language_model.layers.23.self_attn.k_proj', 'model.visual.blocks.15.mlp.linear_fc1', 'model.visual.blocks.15.mlp.linear_fc2', 'model.language_model.layers.4.self_attn.k_proj', 'model.language_model.layers.8.mlp.down_proj', 'model.language_model.layers.11.self_attn.q_proj', 'model.language_model.layers.5.mlp.up_proj', 'model.language_model.layers.2.mlp.down_proj', 'model.language_model.layers.9.self_attn.v_proj', 'model.language_model.layers.1.mlp.down_proj', 'model.language_model.layers.6.self_attn.o_proj', 'model.visual.blocks.1.mlp.linear_fc2', 'model.language_model.layers.32.self_attn.o_proj', 'model.language_model.layers.30.mlp.up_proj', 'model.language_model.layers.18.mlp.down_proj', 'model.language_model.layers.30.mlp.gate_proj', 'model.language_model.layers.17.mlp.up_proj', 'model.language_model.layers.33.mlp.down_proj', 'model.visual.blocks.1.attn.proj', 'model.language_model.layers.6.mlp.down_proj', 'model.language_model.layers.34.self_attn.q_proj', 'model.visual.blocks.0.mlp.linear_fc2', 'model.language_model.layers.14.self_attn.q_proj', 'model.language_model.layers.12.self_attn.v_proj', 'model.visual.blocks.2.attn.proj', 'model.language_model.layers.30.mlp.down_proj', 'model.language_model.layers.33.mlp.gate_proj', 'model.language_model.layers.31.mlp.down_proj', 'model.visual.blocks.13.mlp.linear_fc2', 'model.language_model.layers.16.self_attn.o_proj', 'model.visual.blocks.22.mlp.linear_fc1', 'model.language_model.layers.4.mlp.down_proj', 'model.visual.blocks.3.mlp.linear_fc2', 'model.visual.blocks.14.attn.qkv', 'model.language_model.layers.17.self_attn.q_proj', 'model.language_model.layers.1.mlp.gate_proj', 'model.language_model.layers.22.mlp.gate_proj', 'model.language_model.layers.31.self_attn.o_proj', 'model.visual.blocks.21.attn.qkv', 'model.language_model.layers.35.self_attn.k_proj', 'model.language_model.layers.35.self_attn.v_proj', 'model.visual.blocks.23.mlp.linear_fc1', 'model.language_model.layers.18.self_attn.k_proj', 'model.visual.blocks.20.attn.proj', 'model.visual.blocks.13.attn.qkv', 'model.visual.blocks.25.attn.qkv', 'model.visual.blocks.3.mlp.linear_fc1', 'model.visual.deepstack_merger_list.2.linear_fc1', 'model.language_model.layers.23.mlp.down_proj', 'model.visual.blocks.7.attn.qkv', 'model.language_model.layers.3.self_attn.v_proj', 'model.visual.blocks.16.attn.qkv', 'model.language_model.layers.8.self_attn.k_proj', 'model.language_model.layers.19.self_attn.q_proj', 'model.visual.blocks.0.mlp.linear_fc1', 'model.language_model.layers.21.self_attn.o_proj', 'model.visual.blocks.26.mlp.linear_fc2', 'model.language_model.layers.18.self_attn.o_proj', 'model.language_model.layers.9.self_attn.q_proj', 'model.language_model.layers.14.self_attn.o_proj', 'model.language_model.layers.11.mlp.gate_proj', 'model.language_model.layers.9.mlp.gate_proj', 'model.language_model.layers.22.mlp.up_proj', 'model.language_model.layers.20.self_attn.o_proj', 'model.visual.blocks.12.attn.proj', 'model.visual.blocks.10.mlp.linear_fc1', 'model.language_model.layers.34.self_attn.k_proj', 'model.language_model.layers.4.self_attn.q_proj', 'model.language_model.layers.12.self_attn.q_proj', 'model.language_model.layers.10.self_attn.v_proj', 'model.language_model.layers.7.self_attn.q_proj', 'model.language_model.layers.20.mlp.gate_proj', 'model.visual.blocks.2.mlp.linear_fc2', 'model.language_model.layers.14.mlp.gate_proj', 'model.language_model.layers.29.self_attn.o_proj', 'model.language_model.layers.34.mlp.gate_proj', 'model.visual.blocks.19.attn.proj', 'model.language_model.layers.17.self_attn.o_proj', 'model.visual.blocks.11.attn.proj', 'model.language_model.layers.12.mlp.down_proj', 'model.language_model.layers.26.self_attn.o_proj', 'model.language_model.layers.15.mlp.gate_proj', 'model.visual.blocks.5.attn.qkv', 'model.language_model.layers.10.mlp.up_proj', 'model.language_model.layers.8.self_attn.q_proj', 'model.language_model.layers.0.self_attn.o_proj', 'model.language_model.layers.4.self_attn.o_proj', 'model.language_model.layers.19.self_attn.v_proj', 'model.language_model.layers.25.mlp.gate_proj', 'model.language_model.layers.25.self_attn.k_proj', 'model.language_model.layers.11.mlp.down_proj', 'model.language_model.layers.29.mlp.up_proj', 'model.language_model.layers.33.self_attn.k_proj', 'model.language_model.layers.35.mlp.down_proj', 'model.language_model.layers.27.mlp.up_proj', 'model.language_model.layers.25.self_attn.q_proj', 'model.language_model.layers.2.mlp.up_proj', 'model.language_model.layers.10.self_attn.k_proj', 'model.language_model.layers.19.self_attn.k_proj', 'model.language_model.layers.24.mlp.gate_proj', 'model.language_model.layers.15.self_attn.v_proj', 'model.language_model.layers.24.self_attn.v_proj', 'model.language_model.layers.26.mlp.gate_proj', 'model.language_model.layers.34.self_attn.o_proj', 'model.language_model.layers.30.self_attn.k_proj', 'model.visual.deepstack_merger_list.1.linear_fc2', 'model.language_model.layers.5.self_attn.q_proj', 'model.language_model.layers.33.self_attn.q_proj', 'model.visual.blocks.25.mlp.linear_fc1', 'model.visual.blocks.5.mlp.linear_fc2', 'model.language_model.layers.29.mlp.down_proj', 'model.language_model.layers.31.mlp.gate_proj', 'model.language_model.layers.20.self_attn.k_proj', 'model.visual.blocks.22.attn.qkv', 'model.visual.blocks.20.mlp.linear_fc1', 'model.visual.blocks.5.mlp.linear_fc1', 'model.visual.blocks.14.mlp.linear_fc2', 'model.visual.blocks.7.attn.proj', 'model.language_model.layers.29.mlp.gate_proj', 'model.language_model.layers.31.self_attn.k_proj', 'model.language_model.layers.35.self_attn.o_proj', 'model.language_model.layers.6.self_attn.k_proj', 'model.language_model.layers.25.self_attn.v_proj', 'model.language_model.layers.27.self_attn.q_proj', 'model.visual.deepstack_merger_list.1.linear_fc1', 'model.language_model.layers.20.mlp.down_proj', 'model.language_model.layers.11.mlp.up_proj', 'model.visual.blocks.11.attn.qkv', 'model.language_model.layers.3.mlp.up_proj', 'model.language_model.layers.0.mlp.up_proj', 'model.language_model.layers.8.self_attn.o_proj', 'model.language_model.layers.11.self_attn.o_proj', 'model.language_model.layers.27.self_attn.k_proj', 'model.language_model.layers.21.mlp.up_proj', 'model.language_model.layers.13.mlp.up_proj', 'model.language_model.layers.17.mlp.down_proj', 'model.language_model.layers.33.mlp.up_proj', 'model.visual.blocks.9.mlp.linear_fc2', 'model.language_model.layers.10.mlp.gate_proj', 'model.visual.blocks.5.attn.proj', 'model.visual.blocks.26.attn.qkv', 'model.language_model.layers.6.mlp.gate_proj', 'model.visual.blocks.24.attn.qkv', 'model.language_model.layers.19.mlp.down_proj', 'model.visual.blocks.21.mlp.linear_fc1', 'model.language_model.layers.31.self_attn.v_proj', 'model.visual.blocks.24.attn.proj', 'model.language_model.layers.26.mlp.up_proj', 'model.visual.blocks.21.mlp.linear_fc2', 'model.language_model.layers.8.mlp.up_proj', 'model.language_model.layers.1.self_attn.k_proj', 'model.visual.blocks.15.attn.qkv', 'model.visual.blocks.2.mlp.linear_fc1', 'model.visual.blocks.8.attn.proj', 'model.language_model.layers.12.self_attn.k_proj', 'model.language_model.layers.15.self_attn.q_proj', 'model.language_model.layers.14.self_attn.k_proj', 'model.language_model.layers.7.self_attn.v_proj', 'model.language_model.layers.16.mlp.gate_proj', 'model.visual.blocks.20.attn.qkv', 'model.visual.blocks.18.mlp.linear_fc1', 'model.visual.blocks.8.mlp.linear_fc2', 'model.language_model.layers.13.self_attn.k_proj', 'model.language_model.layers.17.self_attn.v_proj', 'model.language_model.layers.18.self_attn.v_proj', 'model.visual.blocks.26.attn.proj', 'model.language_model.layers.3.self_attn.o_proj', 'model.visual.blocks.10.mlp.linear_fc2', 'model.language_model.layers.26.self_attn.k_proj', 'model.visual.blocks.11.mlp.linear_fc1', 'model.visual.blocks.4.attn.qkv', 'model.language_model.layers.30.self_attn.q_proj', 'model.language_model.layers.5.mlp.gate_proj', 'model.language_model.layers.15.self_attn.k_proj', 'model.language_model.layers.6.self_attn.q_proj', 'model.language_model.layers.16.self_attn.q_proj', 'model.visual.blocks.7.mlp.linear_fc2', 'model.language_model.layers.2.self_attn.v_proj', 'model.language_model.layers.11.self_attn.v_proj', 'model.language_model.layers.16.self_attn.v_proj', 'model.language_model.layers.19.mlp.gate_proj', 'model.visual.blocks.12.mlp.linear_fc1', 'model.visual.blocks.17.mlp.linear_fc1', 'model.language_model.layers.7.mlp.gate_proj', 'model.visual.blocks.22.attn.proj', 'model.language_model.layers.2.mlp.gate_proj', 'model.language_model.layers.23.mlp.gate_proj', 'model.language_model.layers.13.self_attn.o_proj', 'model.language_model.layers.24.self_attn.o_proj', 'model.visual.blocks.18.attn.proj', 'model.visual.blocks.0.attn.proj', 'model.visual.blocks.10.attn.proj', 'model.visual.blocks.13.attn.proj', 'model.visual.blocks.9.attn.proj', 'model.language_model.layers.1.self_attn.q_proj', 'model.language_model.layers.13.mlp.gate_proj', 'model.visual.blocks.15.attn.proj', 'model.language_model.layers.18.mlp.gate_proj', 'model.visual.blocks.14.attn.proj', 'model.language_model.layers.15.mlp.down_proj', 'model.language_model.layers.31.self_attn.q_proj', 'model.language_model.layers.22.self_attn.v_proj', 'model.language_model.layers.14.self_attn.v_proj', 'model.language_model.layers.21.mlp.down_proj', 'model.language_model.layers.27.self_attn.v_proj', 'model.visual.blocks.23.mlp.linear_fc2', 'model.language_model.layers.22.self_attn.q_proj', 'model.language_model.layers.26.mlp.down_proj', 'model.language_model.layers.9.self_attn.k_proj', 'model.language_model.layers.29.self_attn.k_proj', 'model.language_model.layers.5.mlp.down_proj', 'model.language_model.layers.8.self_attn.v_proj', 'model.language_model.layers.2.self_attn.k_proj', 'model.language_model.layers.22.self_attn.k_proj', 'model.visual.deepstack_merger_list.0.linear_fc1', 'model.language_model.layers.6.mlp.up_proj', 'model.language_model.layers.3.self_attn.q_proj', 'model.language_model.layers.34.mlp.up_proj', 'model.visual.blocks.22.mlp.linear_fc2', 'model.language_model.layers.9.self_attn.o_proj', 'model.visual.blocks.18.attn.qkv', 'model.language_model.layers.26.self_attn.q_proj', 'model.visual.blocks.9.mlp.linear_fc1', 'model.language_model.layers.12.mlp.gate_proj', 'model.language_model.layers.1.self_attn.v_proj', 'model.visual.deepstack_merger_list.0.linear_fc2', 'model.visual.blocks.20.mlp.linear_fc2', 'model.language_model.layers.32.self_attn.k_proj', 'model.language_model.layers.32.self_attn.v_proj', 'model.language_model.layers.11.self_attn.k_proj', 'model.visual.blocks.23.attn.qkv', 'model.language_model.layers.28.self_attn.k_proj', 'model.visual.blocks.6.attn.qkv', 'model.visual.blocks.16.attn.proj', 'model.visual.blocks.0.attn.qkv', 'model.language_model.layers.32.self_attn.q_proj', 'model.language_model.layers.22.mlp.down_proj', 'model.language_model.layers.26.self_attn.v_proj', 'model.language_model.layers.16.mlp.down_proj', 'model.language_model.layers.12.self_attn.o_proj', 'model.language_model.layers.13.mlp.down_proj', 'model.visual.blocks.8.attn.qkv', 'model.visual.blocks.6.mlp.linear_fc2', 'model.visual.blocks.24.mlp.linear_fc1', 'model.language_model.layers.29.self_attn.v_proj', 'model.language_model.layers.0.mlp.gate_proj', 'model.visual.blocks.13.mlp.linear_fc1', 'model.visual.blocks.17.mlp.linear_fc2', 'model.language_model.layers.5.self_attn.o_proj', 'model.visual.blocks.3.attn.proj', 'model.language_model.layers.24.self_attn.k_proj', 'model.language_model.layers.10.self_attn.o_proj', 'model.language_model.layers.9.mlp.up_proj', 'model.language_model.layers.0.self_attn.q_proj', 'model.language_model.layers.5.self_attn.v_proj', 'model.visual.blocks.4.attn.proj', 'model.language_model.layers.28.self_attn.v_proj', 'model.language_model.layers.20.mlp.up_proj', 'model.language_model.layers.33.self_attn.o_proj', 'model.language_model.layers.14.mlp.down_proj', 'model.language_model.layers.19.mlp.up_proj', 'model.language_model.layers.32.mlp.up_proj', 'model.visual.blocks.4.mlp.linear_fc2', 'model.visual.blocks.23.attn.proj', 'model.language_model.layers.12.mlp.up_proj', 'model.language_model.layers.0.self_attn.k_proj', 'model.language_model.layers.17.mlp.gate_proj', 'model.language_model.layers.17.self_attn.k_proj', 'model.visual.deepstack_merger_list.2.linear_fc2', 'model.language_model.layers.3.self_attn.k_proj', 'model.language_model.layers.16.mlp.up_proj', 'model.language_model.layers.3.mlp.gate_proj', 'model.language_model.layers.7.self_attn.o_proj', 'model.language_model.layers.18.mlp.up_proj', 'model.language_model.layers.34.self_attn.v_proj', 'model.language_model.layers.1.mlp.up_proj', 'model.visual.blocks.3.attn.qkv', 'model.language_model.layers.23.self_attn.q_proj', 'model.language_model.layers.18.self_attn.q_proj', 'model.language_model.layers.24.self_attn.q_proj', 'model.language_model.layers.32.mlp.down_proj', 'model.language_model.layers.3.mlp.down_proj', 'model.language_model.layers.10.self_attn.q_proj', 'model.language_model.layers.6.self_attn.v_proj', 'model.language_model.layers.8.mlp.gate_proj', 'model.language_model.layers.13.self_attn.q_proj', 'model.language_model.layers.34.mlp.down_proj', 'model.language_model.layers.32.mlp.gate_proj', 'model.visual.blocks.19.mlp.linear_fc2', 'model.language_model.layers.25.mlp.up_proj', 'model.visual.blocks.2.attn.qkv', 'model.language_model.layers.28.mlp.gate_proj', 'model.language_model.layers.20.self_attn.v_proj', 'model.language_model.layers.33.self_attn.v_proj', 'model.language_model.layers.21.self_attn.k_proj', 'model.language_model.layers.13.self_attn.v_proj', 'model.visual.blocks.16.mlp.linear_fc1', 'model.language_model.layers.19.self_attn.o_proj', 'model.language_model.layers.28.mlp.up_proj', 'model.visual.blocks.11.mlp.linear_fc2', 'model.visual.blocks.16.mlp.linear_fc2', 'model.language_model.layers.21.mlp.gate_proj', 'model.visual.blocks.25.mlp.linear_fc2', 'model.visual.blocks.26.mlp.linear_fc1', 'model.language_model.layers.7.self_attn.k_proj', 'model.visual.blocks.24.mlp.linear_fc2', 'model.language_model.layers.0.self_attn.v_proj', 'model.language_model.layers.27.self_attn.o_proj', 'model.visual.blocks.1.mlp.linear_fc1', 'model.language_model.layers.5.self_attn.k_proj', 'model.language_model.layers.23.mlp.up_proj', 'model.language_model.layers.7.mlp.up_proj', 'model.language_model.layers.1.self_attn.o_proj', 'model.visual.blocks.19.attn.qkv', 'model.visual.blocks.17.attn.qkv', 'model.language_model.layers.10.mlp.down_proj', 'model.language_model.layers.35.mlp.gate_proj', 'model.language_model.layers.30.self_attn.v_proj', 'model.visual.blocks.12.mlp.linear_fc2', 'model.language_model.layers.0.mlp.down_proj', 'model.language_model.layers.2.self_attn.o_proj', 'model.language_model.layers.4.mlp.up_proj', 'model.language_model.layers.21.self_attn.q_proj', 'model.language_model.layers.28.mlp.down_proj', 'model.language_model.layers.35.self_attn.q_proj', 'model.visual.blocks.6.mlp.linear_fc1', 'model.visual.blocks.9.attn.qkv', 'model.visual.blocks.4.mlp.linear_fc1', 'model.visual.blocks.1.attn.qkv', 'model.language_model.layers.24.mlp.up_proj', 'model.visual.blocks.21.attn.proj', 'model.visual.blocks.7.mlp.linear_fc1', 'model.language_model.layers.15.mlp.up_proj'}, lora_alpha=128.0, lora_dropout=0.05, fan_in_fan_out=False, bias='none', use_rslora=False, modules_to_save=['metric_heads'], init_lora_weights=True, layers_to_transform=None, layers_pattern=None, rank_pattern={}, alpha_pattern={}, megatron_config=None, megatron_core='megatron.core', loftq_config={}, use_dora=False, layer_replication=None, runtime_config=LoraRuntimeConfig(ephemeral_gpu_offload=False), lora_dtype=None, lorap_lr_ratio=None, lorap_emb_lr=1e-06)
+[INFO:swift] model: PeftModelForCausalLM(
+  (base_model): LoraModel(
+    (model): Qwen3VLForConditionalGeneration(
+      (model): Qwen3VLModel(
+        (visual): Qwen3VLVisionModel(
+          (patch_embed): Qwen3VLVisionPatchEmbed(
+            (proj): Conv3d(3, 1152, kernel_size=(2, 16, 16), stride=(2, 16, 16))
+          )
+          (pos_embed): Embedding(2304, 1152)
+          (rotary_pos_emb): Qwen3VLVisionRotaryEmbedding()
+          (blocks): ModuleList(
+            (0-26): 27 x Qwen3VLVisionBlock(
+              (norm1): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+              (norm2): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+              (attn): Qwen3VLVisionAttention(
+                (qkv): lora.Linear(
+                  (base_layer): Linear(in_features=1152, out_features=3456, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=1152, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=3456, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (proj): lora.Linear(
+                  (base_layer): Linear(in_features=1152, out_features=1152, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=1152, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1152, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+              )
+              (mlp): Qwen3VLVisionMLP(
+                (linear_fc1): lora.Linear(
+                  (base_layer): Linear(in_features=1152, out_features=4304, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=1152, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4304, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (linear_fc2): lora.Linear(
+                  (base_layer): Linear(in_features=4304, out_features=1152, bias=True)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4304, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1152, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (act_fn): GELUTanh()
+              )
+            )
+          )
+          (merger): Qwen3VLVisionPatchMerger(
+            (norm): LayerNorm((1152,), eps=1e-06, elementwise_affine=True)
+            (linear_fc1): lora.Linear(
+              (base_layer): Linear(in_features=4608, out_features=4608, bias=True)
+              (lora_dropout): ModuleDict(
+                (default): Dropout(p=0.05, inplace=False)
+              )
+              (lora_A): ModuleDict(
+                (default): Linear(in_features=4608, out_features=64, bias=False)
+              )
+              (lora_B): ModuleDict(
+                (default): Linear(in_features=64, out_features=4608, bias=False)
+              )
+              (lora_embedding_A): ParameterDict()
+              (lora_embedding_B): ParameterDict()
+              (lora_magnitude_vector): ModuleDict()
+            )
+            (act_fn): GELU(approximate='none')
+            (linear_fc2): lora.Linear(
+              (base_layer): Linear(in_features=4608, out_features=4096, bias=True)
+              (lora_dropout): ModuleDict(
+                (default): Dropout(p=0.05, inplace=False)
+              )
+              (lora_A): ModuleDict(
+                (default): Linear(in_features=4608, out_features=64, bias=False)
+              )
+              (lora_B): ModuleDict(
+                (default): Linear(in_features=64, out_features=4096, bias=False)
+              )
+              (lora_embedding_A): ParameterDict()
+              (lora_embedding_B): ParameterDict()
+              (lora_magnitude_vector): ModuleDict()
+            )
+          )
+          (deepstack_merger_list): ModuleList(
+            (0-2): 3 x Qwen3VLVisionPatchMerger(
+              (norm): LayerNorm((4608,), eps=1e-06, elementwise_affine=True)
+              (linear_fc1): lora.Linear(
+                (base_layer): Linear(in_features=4608, out_features=4608, bias=True)
+                (lora_dropout): ModuleDict(
+                  (default): Dropout(p=0.05, inplace=False)
+                )
+                (lora_A): ModuleDict(
+                  (default): Linear(in_features=4608, out_features=64, bias=False)
+                )
+                (lora_B): ModuleDict(
+                  (default): Linear(in_features=64, out_features=4608, bias=False)
+                )
+                (lora_embedding_A): ParameterDict()
+                (lora_embedding_B): ParameterDict()
+                (lora_magnitude_vector): ModuleDict()
+              )
+              (act_fn): GELU(approximate='none')
+              (linear_fc2): lora.Linear(
+                (base_layer): Linear(in_features=4608, out_features=4096, bias=True)
+                (lora_dropout): ModuleDict(
+                  (default): Dropout(p=0.05, inplace=False)
+                )
+                (lora_A): ModuleDict(
+                  (default): Linear(in_features=4608, out_features=64, bias=False)
+                )
+                (lora_B): ModuleDict(
+                  (default): Linear(in_features=64, out_features=4096, bias=False)
+                )
+                (lora_embedding_A): ParameterDict()
+                (lora_embedding_B): ParameterDict()
+                (lora_magnitude_vector): ModuleDict()
+              )
+            )
+          )
+        )
+        (language_model): Qwen3VLTextModel(
+          (embed_tokens): Embedding(151936, 4096, padding_idx=151643)
+          (layers): ModuleList(
+            (0-35): 36 x Qwen3VLTextDecoderLayer(
+              (self_attn): Qwen3VLTextAttention(
+                (q_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (k_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=1024, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1024, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (v_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=1024, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=1024, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (o_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (q_norm): Qwen3VLTextRMSNorm((128,), eps=1e-06)
+                (k_norm): Qwen3VLTextRMSNorm((128,), eps=1e-06)
+              )
+              (mlp): Qwen3VLTextMLP(
+                (gate_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=12288, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=12288, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (up_proj): lora.Linear(
+                  (base_layer): Linear(in_features=4096, out_features=12288, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=4096, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=12288, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (down_proj): lora.Linear(
+                  (base_layer): Linear(in_features=12288, out_features=4096, bias=False)
+                  (lora_dropout): ModuleDict(
+                    (default): Dropout(p=0.05, inplace=False)
+                  )
+                  (lora_A): ModuleDict(
+                    (default): Linear(in_features=12288, out_features=64, bias=False)
+                  )
+                  (lora_B): ModuleDict(
+                    (default): Linear(in_features=64, out_features=4096, bias=False)
+                  )
+                  (lora_embedding_A): ParameterDict()
+                  (lora_embedding_B): ParameterDict()
+                  (lora_magnitude_vector): ModuleDict()
+                )
+                (act_fn): SiLUActivation()
+              )
+              (input_layernorm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+              (post_attention_layernorm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+            )
+          )
+          (norm): Qwen3VLTextRMSNorm((4096,), eps=1e-06)
+          (rotary_emb): Qwen3VLTextRotaryEmbedding()
+        )
+      )
+      (lm_head): Linear(in_features=4096, out_features=151936, bias=False)
+      (metric_heads): ModulesToSaveWrapper(
+        (original_module): MultiMetricRewardHeads(
+          (score_head): _SharedScoreHead(
+            (pretrained_projection): Linear(in_features=4096, out_features=6, bias=False)
+            (hidden): Linear(in_features=4096, out_features=512, bias=True)
+            (activation): GELU(approximate='none')
+            (dropout): Dropout(p=0.05, inplace=False)
+            (residual_output): Linear(in_features=512, out_features=6, bias=True)
+          )
+          (tie_head): _SymmetricTieHead(
+            (projection): Linear(in_features=4096, out_features=256, bias=True)
+            (mlp): Sequential(
+              (0): Linear(in_features=512, out_features=512, bias=True)
+              (1): GELU(approximate='none')
+              (2): Dropout(p=0.05, inplace=False)
+              (3): Linear(in_features=512, out_features=6, bias=True)
+            )
+          )
+          (relevance_head): _RelevanceHead(
+            (pretrained_projection): Linear(in_features=4096, out_features=6, bias=False)
+            (hidden): Linear(in_features=4096, out_features=512, bias=True)
+            (activation): GELU(approximate='none')
+            (dropout): Dropout(p=0.05, inplace=False)
+            (residual_output): Linear(in_features=512, out_features=6, bias=True)
+          )
+          (tie_coupling): _MarginCoupledTie()
+        )
+        (modules_to_save): ModuleDict(
+          (default): MultiMetricRewardHeads(
+            (score_head): _SharedScoreHead(
+              (pretrained_projection): Linear(in_features=4096, out_features=6, bias=False)
+              (hidden): Linear(in_features=4096, out_features=512, bias=True)
+              (activation): GELU(approximate='none')
+              (dropout): Dropout(p=0.05, inplace=False)
+              (residual_output): Linear(in_features=512, out_features=6, bias=True)
+            )
+            (tie_head): _SymmetricTieHead(
+              (projection): Linear(in_features=4096, out_features=256, bias=True)
+              (mlp): Sequential(
+                (0): Linear(in_features=512, out_features=512, bias=True)
+                (1): GELU(approximate='none')
+                (2): Dropout(p=0.05, inplace=False)
+                (3): Linear(in_features=512, out_features=6, bias=True)
+              )
+            )
+            (relevance_head): _RelevanceHead(
+              (pretrained_projection): Linear(in_features=4096, out_features=6, bias=False)
+              (hidden): Linear(in_features=4096, out_features=512, bias=True)
+              (activation): GELU(approximate='none')
+              (dropout): Dropout(p=0.05, inplace=False)
+              (residual_output): Linear(in_features=512, out_features=6, bias=True)
+            )
+            (tie_coupling): _MarginCoupledTie()
+          )
+        )
+      )
+    )
+  )
+)
+[INFO:swift] model_parameter_info: PeftModelForCausalLM: 8988.2294M Params (215.5405M Trainable [2.3980%]), 0.0001M Buffers.
+The model is already on multiple devices. Skipping the move to device specified in `args`.
+[INFO:swift] use_reentrant: True
+/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/torch/utils/checkpoint.py:295: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cpu', args...)` instead.
+  with torch.enable_grad(), device_autocast_ctx, torch.cpu.amp.autocast(**ctx.cpu_autocast_kwargs):  # type: ignore[attr-defined]
+/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/PIL/Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+[INFO:swift] End time of running main: 2026-11-08 07:18:07.195718
