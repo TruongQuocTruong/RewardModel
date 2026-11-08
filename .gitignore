@@ -10,6 +10,7 @@
 /TrainingRewardModel/*
 !/TrainingRewardModel/config_training.sh
 !/TrainingRewardModel/config_stage2.sh
+!/TrainingRewardModel/README.md
 !/TrainingRewardModel/install_env.sh
 # Slurm launchers stay in place on the server; the repo holds copies in script_slurm/
 # (refreshed by .git/hooks/pre-commit).
@@ -27,6 +28,10 @@
 !/TrainingRewardModel/Qwen3-VL-Embedding/uv.lock
 !/TrainingRewardModel/Qwen3-VL-Embedding/LICENSE
 !/TrainingRewardModel/Qwen3-VL-Embedding/.gitignore
+# output_training/ is kept as an empty folder (checkpoints are shared on Drive)
+!/TrainingRewardModel/Qwen3-VL-Embedding/output_training/
+/TrainingRewardModel/Qwen3-VL-Embedding/output_training/*
+!/TrainingRewardModel/Qwen3-VL-Embedding/output_training/.gitkeep
 /TrainingRewardModel/Qwen3-VL-Embedding/scripts/backups/
 
 /TrainingRewardModel/TrainingDataCreation/*
