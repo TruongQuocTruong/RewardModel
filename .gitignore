@@ -33,6 +33,8 @@
 # TrainingDataSampling
 /TrainingDataSampling/*
 !/TrainingDataSampling/*.py
+!/TrainingDataSampling/*.csv
+!/TrainingDataSampling/*.jsonl
 
 # RewardModelEvaluation
 /RewardModelEvaluation/*
