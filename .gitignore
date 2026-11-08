@@ -31,6 +31,10 @@
 /TrainingRewardModel/TrainingDataCreation/*
 !/TrainingRewardModel/TrainingDataCreation/*.py
 !/TrainingRewardModel/TrainingDataCreation/*.slurm
+!/TrainingRewardModel/TrainingDataCreation/*.jsonl
+!/TrainingRewardModel/TrainingDataCreation/*.json
+# 698 MB, over the GitHub 100 MB file limit (shared separately)
+/TrainingRewardModel/TrainingDataCreation/editreward_overall_finegrained_gemmaGT_full.jsonl
 
 # TrainingDataSampling
 /TrainingDataSampling/*
