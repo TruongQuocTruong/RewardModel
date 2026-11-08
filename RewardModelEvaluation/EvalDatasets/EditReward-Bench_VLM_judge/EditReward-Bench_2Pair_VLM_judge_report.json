@@ -1,0 +1,47 @@
+{
+  "benchmark_pairs": 133,
+  "original_ties_removed": 18,
+  "written_pairs": 115,
+  "changed_vs_original": 31,
+  "ranking_counts_original": {
+    "B>A": 74,
+    "A>B": 41
+  },
+  "ranking_counts_vlm_judge": {
+    "A>B": 52,
+    "B>A": 63
+  },
+  "changed_sample_ids": [
+    "68cbb25ec2fc0a80f0d7d3b2",
+    "68cbb25ec2fc0a80f0d7d467",
+    "68cbb25ec2fc0a80f0d7d4d5",
+    "68cbb25ec2fc0a80f0d7d5b1",
+    "68cbb25ec2fc0a80f0d7d3c5",
+    "68cbb25ec2fc0a80f0d7d452",
+    "68cbb25ec2fc0a80f0d7d55a",
+    "68cbb25ec2fc0a80f0d7d48f",
+    "68cbb25ec2fc0a80f0d7d519",
+    "68cbb25ec2fc0a80f0d7d568",
+    "68cbb25ec2fc0a80f0d7d481",
+    "68cbb25ec2fc0a80f0d7d4e6",
+    "68cbb25ec2fc0a80f0d7d4aa",
+    "68cbb25ec2fc0a80f0d7d52f",
+    "68cbb25ec2fc0a80f0d7d3cc",
+    "68cbb25ec2fc0a80f0d7d4c3",
+    "68cbb25ec2fc0a80f0d7d59a",
+    "68cbb25ec2fc0a80f0d7d589",
+    "68cbb25ec2fc0a80f0d7d557",
+    "68cbb25ec2fc0a80f0d7d4b5",
+    "68cbb25ec2fc0a80f0d7d47d",
+    "68cbb25ec2fc0a80f0d7d39f",
+    "68cbb25ec2fc0a80f0d7d566",
+    "68cbb25ec2fc0a80f0d7d579",
+    "68cbb25ec2fc0a80f0d7d375",
+    "68cbb25ec2fc0a80f0d7d457",
+    "68cbb25ec2fc0a80f0d7d363",
+    "68cbb25ec2fc0a80f0d7d43c",
+    "68cbb25ec2fc0a80f0d7d460",
+    "68cbb25ec2fc0a80f0d7d361",
+    "68cbb25ec2fc0a80f0d7d373"
+  ]
+}

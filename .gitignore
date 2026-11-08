@@ -62,10 +62,7 @@
 !/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.py
 !/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.slurm
 
-/RewardModelEvaluation/EvalDatasets/*
-!/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/
-/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/*
-!/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/postprocess_vlm_judge.py
+/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/__MACOSX/
 
 # Everywhere
 __pycache__/
