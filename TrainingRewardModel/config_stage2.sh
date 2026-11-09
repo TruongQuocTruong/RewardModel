@@ -4,7 +4,7 @@
 #
 # Usage:
 #   bash config_stage2.sh <run> [--dry-run]
-#   <run> = ema_step_0.99 | ema_step_0.99_teacher_kl_relevance_0.5 | ema_iteration_0.99
+#   <run> = ema_step_0.99 | ema_step_0.99_teacher_kl_relevance_0.5 | ema_iteration_0.99 | ema_iteration_0.99_r0
 #   --dry-run prints the python command (one argument per line) without training.
 #
 # The three runs share every argument below and differ only in:
@@ -12,6 +12,20 @@
 #   ema_step_0.99                            optimizer_step     (not set = 0)
 #   ema_step_0.99_teacher_kl_relevance_0.5   optimizer_step     0.5
 #   ema_iteration_0.99                       after_round        (not set = 0)
+#   ema_iteration_0.99_r0                    after_round        (not set = 0)
+#
+# ema_iteration_0.99_r0 is ema_iteration_0.99 plus three changes:
+#   --restart-lr-each-round       cosine (with 5% warmup) restarts over each round's steps; the original
+#                                 single cosine spans all five rounds, so rounds 4-5 get ~12% of the LR.
+#   --replay-round-selections     trains the per-round Unlabeled IDs of the finished ema_iteration_0.99 run
+#                                 (1008, 993, 992, 990, 990 -> 126+125+124+124+124 = 623 steps) instead of
+#                                 re-running the agreement filter. Build the file once:
+#                                   python scripts/build_round_schedule.py \
+#                                     <output_training>/stage2_tuning_..._iterations_ema_iteration_0.99 \
+#                                     "$ROUND_SCHEDULE"
+#   Teacher export (code, always on with --teacher-update after_round): the round-end checkpoint and
+#                                 best.pt are re-saved after the round's EMA update, so the exported
+#                                 Teacher contains every update (the original files lag by one update).
 # Output folder name = stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_<run>.
 #
 # Source: rendered from script_slurm/run_train_loop.slurm (md5 aeede9fa0ed7a73bd2f79829d3cd2006) and the
@@ -39,6 +53,7 @@ CHECKPOINT_DIR="${CHECKPOINT_DIR:-$PROJECT_DIR/output_training}"
 OUTPUT_ROOT="${OUTPUT_ROOT:-$PROJECT_DIR/output_training}"
 BASE_MODEL_PATH="${BASE_MODEL_PATH:-$SCRIPT_DIR/../Models/Qwen3-VL-Reranker-8B}"
 PYTHON="${PYTHON:-python}"
+ROUND_SCHEDULE="${ROUND_SCHEDULE:-$CHECKPOINT_DIR/round_schedule_ema_iteration_0.99.json}"
 
 # ---------------------------------------------------------------- run selection
 RUN="${1:-}"
@@ -48,7 +63,9 @@ case "$RUN" in
     ema_step_0.99)                          RUN_ARGS=(--teacher-update optimizer_step) ;;
     ema_step_0.99_teacher_kl_relevance_0.5) RUN_ARGS=(--teacher-update optimizer_step --teacher-kl-relevance-weight 0.5) ;;
     ema_iteration_0.99)                     RUN_ARGS=(--teacher-update after_round) ;;
-    *) echo "usage: bash $0 <ema_step_0.99|ema_step_0.99_teacher_kl_relevance_0.5|ema_iteration_0.99> [--dry-run]" >&2; exit 1 ;;
+    ema_iteration_0.99_r0)                  RUN_ARGS=(--teacher-update after_round --restart-lr-each-round
+                                                      --replay-round-selections "$ROUND_SCHEDULE") ;;
+    *) echo "usage: bash $0 <ema_step_0.99|ema_step_0.99_teacher_kl_relevance_0.5|ema_iteration_0.99|ema_iteration_0.99_r0> [--dry-run]" >&2; exit 1 ;;
 esac
 OUTPUT_DIR="$OUTPUT_ROOT/stage2_tuning_unlabeled1008_augmentation_composite_mask_content_labeled_augmented_iterations_$RUN"
 

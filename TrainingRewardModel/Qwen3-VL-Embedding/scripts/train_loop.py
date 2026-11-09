@@ -232,6 +232,25 @@ def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--output", required=True)
     parser.add_argument("--resume-checkpoint", default=None)
     parser.add_argument("--max-rounds", type=int, default=5)
+    parser.add_argument(
+        "--restart-lr-each-round",
+        action="store_true",
+        help=(
+            "Restart the cosine schedule, including its warmup, over each round's actual "
+            "optimizer-step count. Without it one cosine spans all --max-rounds rounds and the "
+            "last rounds train with a nearly zero learning rate."
+        ),
+    )
+    parser.add_argument(
+        "--replay-round-selections",
+        default=None,
+        help=(
+            "JSON list with one list of Unlabeled sample IDs per round. Every round trains "
+            "exactly those IDs (new shuffle and augmentation draws) instead of re-running the "
+            "agreement filter, so arms compare on identical data and step budgets. Build it "
+            "from a finished run with scripts/build_round_schedule.py."
+        ),
+    )
     parser.add_argument("--unlabeled-per-round", type=int, default=0)
     parser.add_argument(
         "--unlabeled-subset-size",
@@ -720,6 +739,8 @@ def uses_metrics_weights_aggregator(args: argparse.Namespace) -> bool:
 
 
 def validate_args(args: argparse.Namespace) -> None:
+    if args.replay_round_selections and args.resume_checkpoint:
+        raise ValueError("--replay-round-selections does not support --resume-checkpoint.")
     if args.human_split == "student_train_order" and args.checkpoint_selection != "last":
         raise ValueError("--human-split student_train_order has no HumanGT validation; use --checkpoint-selection last.")
     if args.overall_loss == "three_way" and args.unlabeled_objective != "inspector_soft_ema_consistency":
@@ -3438,9 +3459,9 @@ def recursive_to_cpu(value: Any) -> Any:
     return value
 
 
-def save_checkpoint_atomically(checkpoint: Mapping[str, Any], path: Path) -> None:
+def save_checkpoint_atomically(checkpoint: Mapping[str, Any], path: Path, *, overwrite: bool = False) -> None:
     """Keep a complete round checkpoint recoverable if writing is interrupted."""
-    if path.exists():
+    if path.exists() and not overwrite:
         raise FileExistsError(f"Refusing to overwrite checkpoint: {path}")
     writing_path = path.with_name(path.name + ".writing")
     if writing_path.exists():
@@ -3589,6 +3610,8 @@ def save_step_checkpoint(
     step: int,
     validation: Mapping[str, Any],
     is_best: bool,
+    *,
+    overwrite: bool = False,
 ) -> None:
     """Model-only snapshot (Student and Teacher adapters) for offline evaluation."""
     save_checkpoint_atomically(
@@ -3611,6 +3634,7 @@ def save_step_checkpoint(
             "is_best_so_far": is_best,
         },
         path,
+        overwrite=overwrite,
     )
 
 
@@ -4483,10 +4507,39 @@ def main(
     next_iteration_indices: Optional[List[int]] = None
     previous_iteration_losses: Optional[Dict[str, float]] = None
     last_training_rows: Dict[str, Dict[str, Any]] = {}
+    replay_selections = None
+    if args.replay_round_selections:
+        replay_selections = json.loads(Path(args.replay_round_selections).read_text())
+        if len(replay_selections) != args.max_rounds:
+            raise ValueError("Replay schedule must contain exactly --max-rounds selections.")
+        excluded = set(probe_excluded_indices)
+        available = {
+            sample_id: index for index, sample_id in enumerate(unlabeled_pool.sample_ids)
+            if index not in excluded
+        }
+        for sample_ids in replay_selections:
+            if not sample_ids or len(set(sample_ids)) != len(sample_ids) or set(sample_ids) - available.keys():
+                raise ValueError("Replay schedule contains empty, duplicate, or unavailable sample IDs.")
     for round_index in range(start_round, args.max_rounds):
         round_improved_by_step = False
         stop_after_round = False
-        if args.unlabeled_sampling == ITERATIVE_SAMPLING and round_index > 0:
+        if replay_selections is not None:
+            # Fixed per-round IDs from a previous run; new order and augmentation draws.
+            selected = [available[sample_id] for sample_id in replay_selections[round_index]]
+            random.Random(args.seed + 80_000 + round_index).shuffle(selected)
+            requested_unlabeled = len(selected)
+            screening_status = {"replayed_selection": len(selected)}
+            screening_cache = {
+                unlabeled_pool.sample_ids[index]: {"classification": "replayed_selection"}
+                for index in selected
+            }
+            selection = RoundSelection(
+                indices=selected, fresh_high_agreement=len(selected), fresh_low_agreement=0,
+                fresh_box_only=0, hard_replay=0, screened=len(selected),
+                screening_status=screening_status,
+            )
+            high_candidates = low_candidates = box_candidates = replay_candidates = []
+        elif args.unlabeled_sampling == ITERATIVE_SAMPLING and round_index > 0:
             # Samples of the previous iteration on which the Teacher (after EMA) and the
             # Inspector agree, in a new random order; fresh augmentation draws (round index).
             previous_count = len(history[-1]["selected_sample_ids"])
@@ -4643,6 +4696,11 @@ def main(
         # --checkpoints-per-iteration K: K evenly spaced save steps in this iteration (global
         # step numbers), the last one at the iteration end.
         round_planned_steps = math.ceil(len(microbatches) / args.gradient_accumulation_steps)
+        if args.restart_lr_each_round:
+            scheduler = cosine_schedule_with_warmup(optimizer, round_planned_steps, args.warmup_ratio)
+            if swift_trainer is not None:
+                swift_trainer.lr_scheduler = scheduler
+            print(f"Round {round_index + 1}: cosine restart over {round_planned_steps} steps", flush=True)
         round_save_steps = (
             {
                 global_optimizer_step + math.ceil(part * round_planned_steps / args.checkpoints_per_iteration)
@@ -5710,6 +5768,27 @@ def main(
                 f"{args.ema_decay}",
                 flush=True,
             )
+            # The round-end step checkpoint and the best-state snapshot were taken before this
+            # update; refresh both so exported Teachers include every completed EMA update.
+            validation, teacher_probabilities = evaluate_on_validation(
+                model, processor, human_validation, prompt, teacher_state,
+                aggregator_weights, aggregator_beta, args.eval_batch_size, device,
+                gemma_validation, args.overall_aggregation, args.overall_probability,
+            )
+            report["validation"] = validation
+            report["validation_predictions"]["teacher_probability_A"] = teacher_probabilities
+            if best_round == round_index + 1 and best_optimizer_step == global_optimizer_step:
+                best_teacher_state = {
+                    name: tensor.detach().cpu().clone() for name, tensor in teacher_state.items()
+                }
+                best_teacher_metrics = validation
+            if global_optimizer_step in round_save_steps:
+                save_step_checkpoint(
+                    output_path.parent / f"checkpoint-{global_optimizer_step}.pt",
+                    model, teacher_state, base_model_path, peft_config, prompt,
+                    aggregator_record, global_optimizer_step, selected_validation, improved,
+                    overwrite=True,
+                )
         if args.unlabeled_sampling == ITERATIVE_SAMPLING:
             # The Teacher after this iteration's EMA updates scores every sample of the
             # iteration on the original input (one pass, eval mode, no dropout); only the
@@ -5934,7 +6013,7 @@ def main(
             flush=True,
         )
         del round_checkpoint
-        if stop_after_round:
+        if stop_after_round and replay_selections is None:
             break
         if rounds_without_improvement >= args.patience_rounds:
             stop_reason = "validation_plateau"
