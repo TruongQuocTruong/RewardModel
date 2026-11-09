@@ -75,6 +75,14 @@ bash config_stage2.sh ema_iteration_0.99 --dry-run   # in lệnh
 bash config_stage2.sh ema_iteration_0.99             # train (sửa các biến đường dẫn ở đầu file trước)
 ```
 
+### R0 fixes for iteration EMA (`ema_iteration_0.99_r0`)
+
+`ema_iteration_0.99_r0` in `config_stage2.sh` is `ema_iteration_0.99` with three changes in `scripts/train_loop.py`:
+
+- **Learning-rate schedule (`--restart-lr-each-round`).** The original cosine spans all five iterations (630 planned steps, one 32-step warmup), so iterations 4 and 5 receive about 12% of the summed learning rate and iteration 5 trains at ≤1.4e-6. The flag restarts the cosine, with 5% warmup, over each iteration's actual step count.
+- **Teacher export (always on with `--teacher-update after_round`).** The iteration-end `checkpoint-N.pt` and the `best.pt` snapshot were written before that iteration's EMA update, so every exported Teacher lagged one update (`checkpoint-126` held the Stage 1 Teacher; `best.pt` held four of five updates). Both are now re-saved after the update. The Student and the in-memory Teacher used for training are unchanged.
+- **Per-iteration Unlabeled selection (`--replay-round-selections`).** Instead of re-running the Teacher–Inspector agreement filter, each iteration trains a fixed list of Unlabeled IDs (new shuffle and augmentation draws). `scripts/build_round_schedule.py` builds the list from a finished run's `round_XX_summary.json`; from `ema_iteration_0.99` it gives 1008, 993, 992, 990, 990 IDs, i.e. 126 + 125 + 124 + 124 + 124 = 623 steps. This holds data and budget fixed when comparing recipes; the loss-plateau stop is disabled while replaying.
+
 Output của một run gồm:
 - `checkpoint-N.pt`: Student và Teacher, 2 checkpoint mỗi iteration.
 - `best.pt`.
