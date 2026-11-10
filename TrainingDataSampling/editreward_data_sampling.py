@@ -8,7 +8,10 @@ import re
 # ================= CẤU HÌNH =================
 INPUT_METADATA = "/datastore/shared/datasets/EditReward-Data/extracted_data/metadata.jsonl"
 
-OUTPUT_HUMANGT_CSV = "/datastore/truongtq/TrainingRewardModel/TrainingDataSampling/editreward_overall_humanGT_3k.csv"
+OUTPUT_HUMANGT_CSV = "/datastore/truongtq/TrainingRewardModel/TrainingDataSampling/editreward_overall_humanGT_GemmaGT_3k.csv"
+# Tập Gemma 3k riêng (thiết kế cũ) không còn dùng: GemmaGT hiện được tạo trên đúng
+# 3k cặp HumanGT. Bước lấy mẫu này được giữ lại chỉ để Unlabeled 10k lấy ra đúng như cũ
+# (loại các source của tập này và dùng tiếp chuỗi random); file output không được giữ.
 OUTPUT_FORGEMMA_CSV = "/datastore/truongtq/TrainingRewardModel/TrainingDataSampling/editreward_for_gemma_3k.csv"
 OUTPUT_UNLABELED_CSV = "/datastore/truongtq/TrainingRewardModel/TrainingDataSampling/editreward_unlabeled_10k.csv"
 

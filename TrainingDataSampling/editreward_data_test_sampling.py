@@ -18,7 +18,7 @@ SAMPLING_DIR = "/datastore/truongtq/TrainingRewardModel/TrainingDataSampling"
 CREATION_DIR = "/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/TrainingDataCreation"
 EDITREWARD_ROOT = "/datastore/shared/datasets/EditReward-Data/extracted_data"
 
-OUTPUT_TEST_JSONL = os.path.join(SAMPLING_DIR, "editreward_overall_humanGT_test_1k.jsonl")
+OUTPUT_TEST_JSONL = "/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets/EditReward/EditReward-Test_pairwise_1k.jsonl"
 
 # Cùng các trường như editreward_overall_humanGT_3k.jsonl (HUMANGT_FIELDS bỏ
 # các cột định danh), giá trị ghi dạng chuỗi như file HumanGT của pipeline.
