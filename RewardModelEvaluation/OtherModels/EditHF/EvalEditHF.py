@@ -24,10 +24,10 @@ from transformers import AutoConfig, AutoModel, AutoTokenizer
 
 from evaluation_metrics import evaluate_pairwise, parse_ranking
 
-DEFAULT_BENCHMARK_DIR = Path("/datastore/truongtq/TrainingRewardModel/ModelEvaluation/evaluation_dataset")
+DEFAULT_BENCHMARK_DIR = Path("/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets")
 DEFAULT_MODEL_PATH = Path("/datastore/raccoon/.cache/huggingface/models--OpenGVLab--InternVL3_5-8B/snapshots/9bb6a56ad9cc69db95e2d4eeb15a52bbcac4ef79")
 DEFAULT_CHECKPOINT_ROOT = Path("/datastore/raccoon/truongtq/ImageEditingBenchmark/TRAINING_REWARD_MODEL/ModelEvaluation/EditHF/pretrained")
-DEFAULT_OUTPUT_DIR = Path("/datastore/truongtq/TrainingRewardModel/ModelEvaluation/Baselines/evaluation_results/edithf")
+DEFAULT_OUTPUT_DIR = Path("/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/OtherModels/EditHF/evaluation_results")
 
 IMG_START_TOKEN = "<img>"
 IMG_END_TOKEN = "</img>"
@@ -39,8 +39,8 @@ HEADS = {
 }
 
 BENCHMARK_FILES = {
-    "editreward_bench": "EditReward-Bench_pairwise.json",
-    "edithf_test": "EditHF-Test_pairwise_200.json",
+    "editreward_bench": "EditReward/EditReward-Bench_pairwise.json",
+    "edithf_test": "EditHF/EditHF-Test_pairwise_200.json",
 }
 
 

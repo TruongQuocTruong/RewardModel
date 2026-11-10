@@ -55,7 +55,7 @@ Z95 = 1.96
 # Drawn from the Inspector training data (EditReward-Data), so never reported.
 EXCLUDED_DATASETS = ("EditReward-Data-Test",)
 DEFAULT_VLM_PAIRS_CSV = (
-    Path(__file__).resolve().parents[1] / "EvalDatasets" / "EditReward-Bench_VLM_judge" / "pairs.csv"
+    Path(__file__).resolve().parents[1] / "EvalDatasets" / "EditReward" / "EditReward-Bench_VLM_judge" / "pairs.csv"
 )
 
 plt.rcParams.update(

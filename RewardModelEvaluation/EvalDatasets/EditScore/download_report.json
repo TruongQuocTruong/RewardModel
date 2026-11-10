@@ -1,0 +1,48 @@
+{
+  "repository": "EditScore/EditReward-Bench",
+  "commit": "7dc4a0ff83c143ea0476065b2bb5d35247af0fcf",
+  "output_dir": "/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets/EditScore/Raw",
+  "file_sizes": {
+    ".gitattributes": 2461,
+    "README.md": 10266,
+    "data-00000-of-00002.arrow": 2594464984,
+    "data-00001-of-00002.arrow": 2866372088,
+    "dataset_info.json": 1221,
+    "state.json": 308
+  },
+  "file_problems": [],
+  "dataset": {
+    "rows": 3072,
+    "columns": [
+      "dimension",
+      "input_image",
+      "instruction",
+      "key",
+      "output_images",
+      "task_type"
+    ],
+    "missing_columns": [],
+    "task_type_counts": {
+      "background_change": 302,
+      "color_alter": 212,
+      "compose": 212,
+      "extract": 142,
+      "material_alter": 203,
+      "motion_change": 240,
+      "ps_human": 255,
+      "style_change": 246,
+      "subject-add": 281,
+      "subject-remove": 287,
+      "subject-replace": 206,
+      "text_change": 256,
+      "tone_transfer": 230
+    },
+    "dimension_counts": {
+      "consistency": 890,
+      "overall": 1238,
+      "prompt_following": 944
+    },
+    "unique_pairs": 1496,
+    "unique_candidate_images": 776
+  }
+}

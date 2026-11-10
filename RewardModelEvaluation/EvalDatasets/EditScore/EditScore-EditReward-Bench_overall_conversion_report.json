@@ -1,0 +1,36 @@
+{
+  "raw_dir": "/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets/EditScore/Raw",
+  "extracted_dir": "/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets/EditScore/Extracted",
+  "dimensions": {
+    "overall": {
+      "output": "/datastore/truongtq/TrainingRewardModel/RewardModelEvaluation/EvalDatasets/EditScore/EditScore-EditReward-Bench_overall_pairwise.json",
+      "pairs": 1238,
+      "ranking_counts": {
+        "B>A": 639,
+        "A>B": 599
+      },
+      "task_type_counts": {
+        "background_change": 124,
+        "color_alter": 80,
+        "compose": 77,
+        "extract": 43,
+        "material_alter": 86,
+        "motion_change": 90,
+        "ps_human": 109,
+        "style_change": 111,
+        "subject-add": 113,
+        "subject-remove": 116,
+        "subject-replace": 85,
+        "text_change": 106,
+        "tone_transfer": 98
+      },
+      "unique_instructions": 148,
+      "unique_source_images": 138
+    }
+  },
+  "images_written": 909,
+  "image_reuses": 2805,
+  "candidate_size_differs_from_source": 144,
+  "candidate_size_equals_source": 2332,
+  "swap_rule": "swapped = int(sha256(sample_id), 16) % 2 == 1; swapped rows have metadata_ranking B>A"
+}

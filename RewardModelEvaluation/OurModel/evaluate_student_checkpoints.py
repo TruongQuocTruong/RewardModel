@@ -87,9 +87,26 @@ VOTE_TO_LABEL = {"A": 1, "B": -1, "Tie": 0}
 AGGREGATIONS = ("equal_weight", "fitted")
 SELECTED_AGGREGATIONS = ("selected_equal", "selected_fitted")
 RELEVANCE_THRESHOLD = 0.5
+# --datasets mode -> output file name of the Student role (the Teacher role adds "teacher_").
+DATASET_MODES = ("all", "bench", "test")
+EVALUATION_FILE_NAMES = {
+    "all": "evaluation.json",
+    "bench": "bench_evaluation.json",
+    "test": "test_evaluation.json",
+}
 
 
-def parse_args() -> argparse.Namespace:
+def evaluation_file_name(datasets: str, role: str) -> str:
+    """Output file of one evaluation: <mode file> for the Student, teacher_<mode file> for the Teacher."""
+    if datasets not in EVALUATION_FILE_NAMES:
+        raise ValueError(f"Unsupported --datasets mode: {datasets}")
+    if role not in ("student", "teacher"):
+        raise ValueError(f"Unsupported --role: {role}")
+    file_name = EVALUATION_FILE_NAMES[datasets]
+    return file_name if role == "student" else f"{role}_{file_name}"
+
+
+def parse_args(argv: Sequence[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     # The refinement checkpoint holds both adapters; teacher scores the EMA Teacher Model.
     parser.add_argument("--role", choices=("student", "teacher"), default="student")
@@ -110,10 +127,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--skip-gemma-validation", action="store_true")
     parser.add_argument(
         "--datasets",
-        choices=("all", "bench"),
+        choices=DATASET_MODES,
         default="all",
-        help="all: EditReward-Data test set and EditReward-Bench; bench: "
-        "EditReward-Bench only, written to bench_evaluation.json.",
+        help="all: EditReward-Data test set and EditReward-Bench (evaluation.json); bench: "
+        "EditReward-Bench only (bench_evaluation.json); test: EditReward-Data test set only "
+        "(test_evaluation.json).",
     )
     parser.add_argument("--base-model-path", required=True)
     parser.add_argument("--human-dataset", required=True)
@@ -128,7 +146,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-pixels", type=int, default=None)
     parser.add_argument("--max-pixels", type=int, default=None)
     parser.add_argument("--device", default="cuda")
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def _to_benchmark(records) -> List[BenchmarkRecord]:
@@ -149,6 +167,8 @@ def load_datasets(args: argparse.Namespace) -> Dict[str, List[BenchmarkRecord]]:
     if args.datasets == "bench":
         # Ties are kept: pairwise metrics skip them, three-way metrics use them.
         return {BENCH_DATASET: load_benchmark(Path(args.editreward_bench))}
+    if args.datasets not in DATASET_MODES:
+        raise ValueError(f"Unsupported --datasets mode: {args.datasets}")
     test_records, _ = load_inspector_records(args.test_dataset, args.editreward_root)
     if any(record.vote == "Tie" for record in test_records):
         raise ValueError("The EditReward-Data test set must not contain ties.")
@@ -160,6 +180,8 @@ def load_datasets(args: argparse.Namespace) -> Dict[str, List[BenchmarkRecord]]:
     human_images = {img for r in human_records for img in (r.image_a, r.image_b)}
     if {img for r in test_records for img in (r.image_a, r.image_b)} & human_images:
         raise AssertionError("EditReward-Data test set shares an edited image with HumanGT Data.")
+    if args.datasets == "test":
+        return {TEST_DATASET: _to_benchmark(test_records)}
     return {
         TEST_DATASET: _to_benchmark(test_records),
         # Ties are kept: pairwise metrics skip them, three-way metrics use them.
@@ -422,10 +444,7 @@ def main() -> None:
         if args.preference_aggregator else None
     )
     output_dir = Path(args.output_dir).expanduser().resolve()
-    file_name = "bench_evaluation.json" if args.datasets == "bench" else "evaluation.json"
-    output_path = output_dir / (
-        file_name if args.role == "student" else f"{args.role}_{file_name}"
-    )
+    output_path = output_dir / evaluation_file_name(args.datasets, args.role)
     if output_path.exists():
         raise FileExistsError(f"Refusing to overwrite existing evaluation: {output_path}")
     output_dir.mkdir(parents=True, exist_ok=True)

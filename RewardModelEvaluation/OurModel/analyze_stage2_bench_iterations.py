@@ -5,7 +5,7 @@ Reads only saved predictions (no images, no GPU):
   Student-Stage1 (start point): evaluation_results/student/<STAGE1>/checkpoint-126/bench_evaluation.json
   Student and Teacher of the run: evaluation_results/train_loop/<PREFIX><run>/checkpoint-N/
       bench_evaluation.json (Student) and teacher_bench_evaluation.json (Teacher)
-  VLM labels: EvalDatasets/EditReward-Bench_VLM_judge/pairs.csv (load_vlm_labels).
+  VLM labels: EvalDatasets/EditReward/EditReward-Bench_VLM_judge/pairs.csv (load_vlm_labels).
 Each prediction is reduced with selected_equal_row (analyze_student_checkpoints.py) and the sets and
 metrics are those of analyze_inspector_training.py (evaluation_sets, set_metrics), the definitions of
 all earlier Student results. The checkpoint at position i (sorted by step) is the end of iteration i.

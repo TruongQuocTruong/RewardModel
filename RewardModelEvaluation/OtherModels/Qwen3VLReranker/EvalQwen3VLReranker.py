@@ -61,11 +61,11 @@ VLM_VOTE_TO_LABEL = {"0": 1, "1": -1, "2": 0}  # 0 = candidate_1 (A), 1 = candid
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-path", default=str(MODEL_DIR))
-    parser.add_argument("--test-dataset", default=str(DATA_DIR / "EditReward-Test_pairwise_1k.jsonl"))
+    parser.add_argument("--test-dataset", default=str(DATA_DIR / "EditReward" / "EditReward-Test_pairwise_1k.jsonl"))
     parser.add_argument("--editreward-root", default="/datastore/shared/datasets/EditReward-Data")
-    parser.add_argument("--bench", default=str(DATA_DIR / "EditReward-Bench_pairwise.json"))
-    parser.add_argument("--vlm-bench", default=str(DATA_DIR / "EditReward-Bench_pairwise_VLM_judge.json"))
-    parser.add_argument("--vlm-votes", default=str(DATA_DIR / "EditReward-Bench_VLM_judge/pairs.csv"))
+    parser.add_argument("--bench", default=str(DATA_DIR / "EditReward" / "EditReward-Bench_pairwise.json"))
+    parser.add_argument("--vlm-bench", default=str(DATA_DIR / "EditReward" / "EditReward-Bench_pairwise_VLM_judge.json"))
+    parser.add_argument("--vlm-votes", default=str(DATA_DIR / "EditReward" / "EditReward-Bench_VLM_judge" / "pairs.csv"))
     parser.add_argument("--base-zero-shot", default=str(BASE_ZERO_SHOT))
     parser.add_argument(
         "--output-dir",

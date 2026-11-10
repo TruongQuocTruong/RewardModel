@@ -30,9 +30,9 @@ MODEL_NAME = 'EditReward-Qwen2.5-VL-7B'
 SCORE_DEFINITION = ('overall = mean of head_0 (instruction-following prompt) and head_1 '
                     '(visual-quality prompt), reward()[i][0]')
 FILES = {
-    'editreward_data_test': 'EditReward-Test_pairwise_1k.jsonl',
-    'editreward_bench': 'EditReward-Bench_pairwise.json',
-    'editreward_bench_reannotation': 'EditReward-Bench_pairwise_Reannotation.json',
+    'editreward_data_test': 'EditReward/EditReward-Test_pairwise_1k.jsonl',
+    'editreward_bench': 'EditReward/EditReward-Bench_pairwise.json',
+    'editreward_bench_reannotation': 'EditReward/EditReward-Bench_pairwise_Reannotation.json',
 }
 # Dataset names used by OurModel evaluation files and recompute_margin_auc.py.
 REPORT_NAMES = {

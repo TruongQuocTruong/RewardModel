@@ -37,12 +37,14 @@ esac
 OUTPUT_DIR="${STUDENT_EVAL_OUTPUT_DIR:-$BASE_DIR/RewardModelEvaluation/OurModel/evaluation_results/$RESULT_GROUP/$RUN_NAME${ADAPTER_DIR:+/$(basename "$ADAPTER_DIR")}}"
 BATCH_SIZE="${STUDENT_EVAL_BATCH_SIZE:-1}"
 ROLE="${STUDENT_EVAL_ROLE:-student}"
-# all: EditReward-Data test set + EditReward-Bench; bench: EditReward-Bench only.
+# all: EditReward-Data test set + EditReward-Bench; bench: EditReward-Bench only;
+# test: EditReward-Data test set only (EditReward-Test 1k, Stage 2 ablation).
 DATASETS="${STUDENT_EVAL_DATASETS:-all}"
 case "$DATASETS" in
     all) FILE_NAME="evaluation.json" ;;
     bench) FILE_NAME="bench_evaluation.json" ;;
-    *) echo "ERROR: STUDENT_EVAL_DATASETS must be all or bench" >&2; exit 1 ;;
+    test) FILE_NAME="test_evaluation.json" ;;
+    *) echo "ERROR: STUDENT_EVAL_DATASETS must be all, bench or test" >&2; exit 1 ;;
 esac
 case "$ROLE" in
     student) OUTPUT_FILE="$FILE_NAME" ;;
@@ -51,8 +53,8 @@ case "$ROLE" in
 esac
 BASE_MODEL_PATH="${STUDENT_EVAL_BASE_MODEL_PATH:-$BASE_DIR/Models/Qwen3-VL-Reranker-8B}"
 HUMAN_GT_DATA="$CREATION_DIR/editreward_overall_humanGT_3k.jsonl"
-TEST_DATA="${STUDENT_EVAL_TEST_DATA:-$EVAL_DATA_DIR/EditReward-Test_pairwise_1k.jsonl}"
-EDITREWARD_BENCH="$EVAL_DATA_DIR/EditReward-Bench_pairwise.json"
+TEST_DATA="${STUDENT_EVAL_TEST_DATA:-$EVAL_DATA_DIR/EditReward/EditReward-Test_pairwise_1k.jsonl}"
+EDITREWARD_BENCH="${STUDENT_EVAL_BENCH:-$EVAL_DATA_DIR/EditReward/EditReward-Bench_pairwise.json}"
 
 for required_file in "$CHECKPOINT" ${ADAPTER_DIR:+"$ADAPTER_DIR/adapter_model.safetensors"} ${PREFERENCE_AGGREGATOR:+"$PREFERENCE_AGGREGATOR"} "$HUMAN_GT_DATA" "$TEST_DATA" "$EDITREWARD_BENCH"; do
     if [ ! -f "$required_file" ]; then

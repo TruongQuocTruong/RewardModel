@@ -56,7 +56,17 @@
 /RewardModelEvaluation/*
 !/RewardModelEvaluation/OurModel/
 !/RewardModelEvaluation/OtherModels/
+# EvalDatasets/: only the folders the user confirmed; no raw data (EditScore/Raw, Extracted).
 !/RewardModelEvaluation/EvalDatasets/
+/RewardModelEvaluation/EvalDatasets/*
+!/RewardModelEvaluation/EvalDatasets/EditHF/
+!/RewardModelEvaluation/EvalDatasets/EditReward/
+/RewardModelEvaluation/EvalDatasets/EditReward/EditReward-Bench_VLM_judge/__MACOSX/
+!/RewardModelEvaluation/EvalDatasets/EditScore/
+/RewardModelEvaluation/EvalDatasets/EditScore/*
+!/RewardModelEvaluation/EvalDatasets/EditScore/*.py
+!/RewardModelEvaluation/EvalDatasets/EditScore/*.slurm
+!/RewardModelEvaluation/EvalDatasets/EditScore/*.json
 
 /RewardModelEvaluation/OurModel/*
 !/RewardModelEvaluation/OurModel/*.py
@@ -85,8 +95,6 @@
 /RewardModelEvaluation/OtherModels/Qwen3VLReranker/*
 !/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.py
 !/RewardModelEvaluation/OtherModels/Qwen3VLReranker/*.slurm
-
-/RewardModelEvaluation/EvalDatasets/EditReward-Bench_VLM_judge/__MACOSX/
 
 # Everywhere
 __pycache__/
