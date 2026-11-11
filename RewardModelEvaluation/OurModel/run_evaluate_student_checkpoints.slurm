@@ -32,6 +32,8 @@ fi
 RUN_NAME="$(basename "$RUN_DIR")"
 case "$RUN_NAME" in
     train_loop_*) RESULT_GROUP="train_loop" ;;
+    # Pipeline ablation (2026-11-10): grouped like output_training/PipelineAblation/.
+    stage2_ablation_*) RESULT_GROUP="train_loop/PipelineAblation" ;;
     *) RESULT_GROUP="student" ;;
 esac
 OUTPUT_DIR="${STUDENT_EVAL_OUTPUT_DIR:-$BASE_DIR/RewardModelEvaluation/OurModel/evaluation_results/$RESULT_GROUP/$RUN_NAME${ADAPTER_DIR:+/$(basename "$ADAPTER_DIR")}}"
