@@ -1,0 +1,68 @@
+{
+  "description": "Prompts for using base VLMs (Qwen2.5-VL-7B, Qwen3-VL-8B, Qwen3.5-9B) as judges on the six AURA-Test metrics. Built from AURA/AURA-TEST/metrics_definition.txt and the questions shown to human raters (UserStudy/UserStudyHTML/index.html). Each image of a pair is scored independently; pair margin = score(edited_images[0]) - score(edited_images[1]). The score is the expected value over the probabilities of the digit tokens 1..9 at the first generated position (single-digit scale so every score is one token).",
+  "score_scale": {
+    "min": 1,
+    "max": 9
+  },
+  "system_prompt": "You are an expert evaluator of instruction-guided image editing. You judge exactly one quality metric at a time, as defined in the request, and ignore every other aspect of the image. All images are AI-generated. Rate on an integer scale from 1 (very poor) to 9 (excellent) and use the full range. Reply with a single digit only, without any other text.",
+  "image_order_note": "All six metrics receive the source image first, then the edited image, plus the editing instruction (user decision 2026-11-11). Human raters saw only the edited image for Aesthetic and Realism; this is recorded in human_raters_saw and does not change the model input.",
+  "metrics": {
+    "Aesthetic": {
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "human_raters_saw": "edited image only, no instruction",
+      "user_prompt": "Metric: Aesthetic.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: visual harmony, composition, color balance, and overall appeal of the intended result.\nJudge only the edited image. Consider composition, color balance, lighting mood, and overall artistic quality. The source image and the instruction are context only: do not judge whether the instruction was followed, and do not judge realism.\nQuestion: How visually appealing and artistically harmonious is the edited image?\nScore (1-9):"
+    },
+    "Realism": {
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "human_raters_saw": "edited image only, no instruction",
+      "user_prompt": "Metric: Realism.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: physical plausibility, coherent lighting and shadows, and absence of unintended artifacts. Exclude deliberately nonphysical styles.\nJudge only the edited image. Check perspective, lighting, shadows, reflections, object proportions, and artifacts such as distortions, seams, blur, or malformed parts. If the instruction deliberately asks for a non-photographic or nonphysical style (for example a painting or a cartoon), do not penalize that style; judge only whether the result is coherent and free of unintended artifacts. Do not judge beauty or whether the instruction was followed.\nQuestion: How natural and realistic does the edited image look?\nScore (1-9):"
+    },
+    "Fidelity": {
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "user_prompt": "Metric: Fidelity.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: instruction adherence and semantic correctness without unrequested changes.\nCheck whether the requested edit was performed accurately and completely, on the right object, at the right place and to the right extent, and that nothing that was not requested was changed. Ignore realism and beauty.\nQuestion: To what extent does the edited image correctly execute the editing instruction compared to the source image?\nScore (1-9):",
+      "human_raters_saw": "source image, edited image and instruction"
+    },
+    "BC": {
+      "bench_metric": "Background Consistency",
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "user_prompt": "Metric: Background Consistency.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: preservation of non-target background content that should remain unchanged. Literal pixel equality is not required.\nFocus solely on the regions OUTSIDE the target of the edit and compare them with the source image. If the instruction asks to change the background or the whole image, judge only the content the instruction did not ask to change. Ignore whether the edit itself succeeded and ignore image quality.\nQuestion: How strictly are the unedited regions preserved compared to the source image?\nScore (1-9):",
+      "human_raters_saw": "source image, edited image and instruction"
+    },
+    "FC": {
+      "bench_metric": "Foreground Consistency",
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "user_prompt": "Metric: Foreground Consistency.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: preservation of the identity of a recognizable subject that should remain the same instance.\nFind the main subject affected by the edit and check whether it is still the EXACT same instance (same face, fur pattern, clothing details, logos, and other intrinsic details), even if the instruction changes its position, pose, action, size, or a requested attribute. Do not penalize the requested change itself. Ignore the background and image quality.\nQuestion: Does the edited subject retain its specific identity and intrinsic details compared to the source image?\nScore (1-9):",
+      "human_raters_saw": "source image, edited image and instruction"
+    },
+    "SC": {
+      "bench_metric": "Structure Consistency",
+      "images": [
+        "source",
+        "edited"
+      ],
+      "uses_instruction": true,
+      "user_prompt": "Metric: Structure Consistency.\nThe first image is the source image and the second image is the edited image.\nEditing instruction: {instruction}\nDefinition: preservation of scene layout, object geometry, shapes, and spatial relationships that should survive the edit.\nFocus ONLY on whether objects stay in the same place and keep their original shapes, sizes, and depth arrangement, apart from what the instruction asks to change. Ignore changes in color, lighting, texture, or artistic style.\nQuestion: Does the overall geometric structure (layout, object shapes, and depth) of the edited image remain consistent with the source image?\nScore (1-9):",
+      "human_raters_saw": "source image, edited image and instruction"
+    }
+  }
+}

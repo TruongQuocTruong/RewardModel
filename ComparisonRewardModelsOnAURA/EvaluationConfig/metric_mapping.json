@@ -1,0 +1,277 @@
+{
+  "description": "Which score of each reward model is evaluated on which AURA-Test metric. Columns follow the table order Aesthetic; Realism; Fidelity; BC; FC; SC. null = the model has no dimension for that metric, reported as '-'. Each column is evaluated only on the AURA-Test rows whose 'metric' field equals the column's bench_metric. Decided by the user on 2026-11-11.",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-TEST/AURA-Bench.jsonl",
+  "columns": [
+    {
+      "column": "Aesthetic",
+      "bench_metric": "Aesthetic"
+    },
+    {
+      "column": "Realism",
+      "bench_metric": "Realism"
+    },
+    {
+      "column": "Fidelity",
+      "bench_metric": "Fidelity"
+    },
+    {
+      "column": "BC",
+      "bench_metric": "Background Consistency"
+    },
+    {
+      "column": "FC",
+      "bench_metric": "Foreground Consistency"
+    },
+    {
+      "column": "SC",
+      "bench_metric": "Structure Consistency"
+    }
+  ],
+  "reward_model_dimensions": {
+    "EditHF": {
+      "Visual Quality": "inference.py --mode visual, LoRA lora_checkpoints_visual",
+      "Instruction Alignment": "inference.py --mode alignment, LoRA lora_checkpoints_editing",
+      "Attribute Preservation": "inference.py --mode preservation, LoRA lora_checkpoints_preservation"
+    },
+    "LMM4Edit": {
+      "Perceptual Quality": "inference.py --mode visual, weights/visual",
+      "Editing Alignment": "inference.py --mode alignment, weights/alignment",
+      "Attribute Preservation": "inference.py --mode preservation, weights/preservation"
+    },
+    "EditReward": {
+      "Visual Quality": "rm_heads.head_1 with the dim2 prompt INSTRUCTION_EDIT_QUALITY",
+      "Instruction Following": "rm_heads.head_0 with the dim1 prompt INSTRUCTION_EDIT_FOLLOWING"
+    },
+    "EditScore": {
+      "Semantic Consistency": "SC prompt, score = min(editing success, overediting) as in editscore/__init__.py",
+      "Perceptual Quality": "PQ prompt on the edited image only, score = min(naturalness, artifacts)"
+    },
+    "SpatialReward": {
+      "Semantic Consistency": "SC prompt, score = min(editing success, overediting), same rule as EditScore",
+      "Perceptual Quality": "PQ prompt on the edited image only, score = min(naturalness, artifacts)"
+    }
+  },
+  "models": [
+    {
+      "model": "Qwen2.5-VL-7B",
+      "pretrained": "-",
+      "family": "BaseVLM",
+      "scores": {
+        "Aesthetic": "Aesthetic",
+        "Realism": "Realism",
+        "Fidelity": "Fidelity",
+        "BC": "BC",
+        "FC": "FC",
+        "SC": "SC"
+      }
+    },
+    {
+      "model": "Qwen3-VL-8B",
+      "pretrained": "-",
+      "family": "BaseVLM",
+      "scores": {
+        "Aesthetic": "Aesthetic",
+        "Realism": "Realism",
+        "Fidelity": "Fidelity",
+        "BC": "BC",
+        "FC": "FC",
+        "SC": "SC"
+      }
+    },
+    {
+      "model": "Qwen3.5-9B",
+      "pretrained": "-",
+      "family": "BaseVLM",
+      "scores": {
+        "Aesthetic": "Aesthetic",
+        "Realism": "Realism",
+        "Fidelity": "Fidelity",
+        "BC": "BC",
+        "FC": "FC",
+        "SC": "SC"
+      }
+    },
+    {
+      "model": "EditHF",
+      "pretrained": "InternVL3.5-8B",
+      "family": "EditHF",
+      "scores": {
+        "Aesthetic": "Visual Quality",
+        "Realism": "Visual Quality",
+        "Fidelity": "Instruction Alignment",
+        "BC": "Attribute Preservation",
+        "FC": "Attribute Preservation",
+        "SC": "Attribute Preservation"
+      }
+    },
+    {
+      "model": "EditReward",
+      "pretrained": "Qwen2.5-VL-7B",
+      "family": "EditReward",
+      "scores": {
+        "Aesthetic": "Visual Quality",
+        "Realism": "Visual Quality",
+        "Fidelity": "Instruction Following",
+        "BC": null,
+        "FC": null,
+        "SC": null
+      }
+    },
+    {
+      "model": "EditReward",
+      "pretrained": "MiMo-VL-7B",
+      "family": "EditReward",
+      "scores": {
+        "Aesthetic": "Visual Quality",
+        "Realism": "Visual Quality",
+        "Fidelity": "Instruction Following",
+        "BC": null,
+        "FC": null,
+        "SC": null
+      }
+    },
+    {
+      "model": "LMM4Edit",
+      "pretrained": "Qwen3-VL-8B",
+      "family": "LMM4Edit",
+      "scores": {
+        "Aesthetic": "Perceptual Quality",
+        "Realism": "Perceptual Quality",
+        "Fidelity": "Editing Alignment",
+        "BC": "Attribute Preservation",
+        "FC": "Attribute Preservation",
+        "SC": "Attribute Preservation"
+      }
+    },
+    {
+      "model": "EditScore",
+      "pretrained": "Qwen2.5-VL-7B",
+      "family": "EditScore",
+      "scores": {
+        "Aesthetic": "Perceptual Quality",
+        "Realism": "Perceptual Quality",
+        "Fidelity": "Semantic Consistency",
+        "BC": "Semantic Consistency",
+        "FC": "Semantic Consistency",
+        "SC": "Semantic Consistency"
+      }
+    },
+    {
+      "model": "EditScore",
+      "pretrained": "Qwen2.5-VL-72B",
+      "family": "EditScore",
+      "not_run": "user decision 2026-11-11: 72B is not downloaded or evaluated",
+      "scores": {
+        "Aesthetic": null,
+        "Realism": null,
+        "Fidelity": null,
+        "BC": null,
+        "FC": null,
+        "SC": null
+      }
+    },
+    {
+      "model": "EditScore",
+      "pretrained": "Qwen3-VL-4B",
+      "family": "EditScore",
+      "scores": {
+        "Aesthetic": "Perceptual Quality",
+        "Realism": "Perceptual Quality",
+        "Fidelity": "Semantic Consistency",
+        "BC": "Semantic Consistency",
+        "FC": "Semantic Consistency",
+        "SC": "Semantic Consistency"
+      }
+    },
+    {
+      "model": "EditScore",
+      "pretrained": "Qwen3-VL-8B",
+      "family": "EditScore",
+      "scores": {
+        "Aesthetic": "Perceptual Quality",
+        "Realism": "Perceptual Quality",
+        "Fidelity": "Semantic Consistency",
+        "BC": "Semantic Consistency",
+        "FC": "Semantic Consistency",
+        "SC": "Semantic Consistency"
+      }
+    },
+    {
+      "model": "SpatialReward",
+      "pretrained": "Qwen3-VL-8B",
+      "family": "SpatialReward",
+      "scores": {
+        "Aesthetic": "Perceptual Quality",
+        "Realism": "Perceptual Quality",
+        "Fidelity": "Semantic Consistency",
+        "BC": "Semantic Consistency",
+        "FC": "Semantic Consistency",
+        "SC": "Semantic Consistency"
+      }
+    },
+    {
+      "model": "Student-Stage1",
+      "pretrained": "Qwen3-VL-Reranker-8B",
+      "family": "OurModel",
+      "checkpoint": "student_pipeline_overall_finegrained_gemmaGT_1008_r64_lr4e-5_batch16_head_fp32_initialized_from_inspector_checkpoint63/student_warmstart.pt (= checkpoint-126, 1008 pairs); represents Stage 1: Teacher-Stage1 is a copy of it, same scores",
+      "scores": {
+        "Aesthetic": "aesthetic",
+        "Realism": "realism",
+        "Fidelity": "fidelity",
+        "BC": "background_consistency",
+        "FC": "foreground_consistency",
+        "SC": "structure_consistency"
+      }
+    },
+    {
+      "model": "Student-Stage2",
+      "pretrained": "Qwen3-VL-Reranker-8B",
+      "family": "OurModel",
+      "scores": {
+        "Aesthetic": "aesthetic",
+        "Realism": "realism",
+        "Fidelity": "fidelity",
+        "BC": "background_consistency",
+        "FC": "foreground_consistency",
+        "SC": "structure_consistency"
+      },
+      "paired_reference": true,
+      "checkpoint": "version Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5: Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5/checkpoint-927.pt (Student Model, student_adapter_state_dict)"
+    },
+    {
+      "model": "Teacher-Stage2",
+      "pretrained": "Qwen3-VL-Reranker-8B",
+      "family": "OurModel",
+      "scores": {
+        "Aesthetic": "aesthetic",
+        "Realism": "realism",
+        "Fidelity": "fidelity",
+        "BC": "background_consistency",
+        "FC": "foreground_consistency",
+        "SC": "structure_consistency"
+      },
+      "checkpoint": "version Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5: Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5/checkpoint-927.pt (Teacher Model, teacher_adapter_state_dict)"
+    }
+  ],
+  "model_input": "Every bench row is given to every model with the source image, the edited image and the instruction, for all six metrics. Each reward model then builds its own native prompt from them (for example the EditScore / SpatialReward Perceptual Quality prompt itself shows only the edited image); the native protocol is not changed.",
+  "evaluation_metrics": {
+    "decided": "2026-11-11 by the user",
+    "pair_margin": "margin = score(edited_images[0]) - score(edited_images[1]) on the dimension chosen for the column; computed only on bench rows of that column's metric",
+    "main_table": {
+      "Accuracy": "non-tie pairs: share with sign(margin) equal to the human label (A -> +, B -> -); margin == 0 counts as wrong",
+      "Margin AUC": "non-tie pairs: symmetric within-pair margin AUC (each pair contributes +margin with label A-better and -margin with the opposite orientation), as in RewardModelEvaluation",
+      "Three-class Accuracy": "all pairs, ties included: predicted A / B / Tie equals the human label. Student-Stage1 / Student-Stage2 / Teacher-Stage2: argmax of P(A), P(B), P(Tie) from the Tie Head. Score-only models: native behaviour, Tie only when score_A == score_B exactly; no threshold is tuned on the bench (user decision 2026-11-11, option 2). Reported with per-class recall and precision."
+    },
+    "secondary_table": {
+      "PLCC": "all pairs of the metric (ties included): Pearson correlation between margin and human vote margin (votes A - votes B) / number of raters",
+      "SRCC": "same pairs and targets as PLCC, Spearman rank correlation",
+      "Tie AUC": "all pairs of the metric: AUC of -|margin| for separating Tie-labelled pairs from non-tie pairs",
+      "Accuracy on full-agreement pairs": "non-tie pairs with observed_agreement == 1",
+      "Tie Head AUC": "all pairs: AUC of P(Tie) from the Tie Head separating tie pairs from the rest; only Student-Stage1 / Student-Stage2 / Teacher-Stage2 (models with a Tie Head), '-' for the others; reported next to Tie AUC from -|margin|, which every model has (user decision 2026-11-13)"
+    },
+    "uncertainty": {
+      "confidence_interval": "95% percentile bootstrap over pairs for every cell, 2000 resamples, fixed seed",
+      "paired_comparison": "paired bootstrap (same resampled pairs) of the difference Student-Stage2 (row with paired_reference) minus each other model, per cell"
+    }
+  }
+}

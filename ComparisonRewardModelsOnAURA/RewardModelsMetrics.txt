@@ -1,0 +1,21 @@
+LMM4Edit:
+1. Perceptual Quality: focuses on assessing the overall quality of the edited images, considering factors such as the authenticity, distortion, color accuracy, and detail richness. 
+2. Editing Alignment: evaluates how accurately the edited images align with the editing instructions, i.e., assesses the precision of the modifications. 
+3. Attribute Preservation: assesses how well the edited image preserves the context of the source image in regions where the change is not expected.
+
+EditHF:
+1. Perceptual Quality: measures the overall visual quality of the edited image, such as realism, absence of artifacts, structural integrity, color consistency, and the richness of visual details. 
+2. Editing Alignment: evaluates the degree to which the edited image correctly follows the given editing instruction, assessing whether the intended modifications are accurately and completely applied.
+3. Attribute Preservation: assesses how well the edited image maintains essential attributes of the source image beyond the intended edits, including preservation of subject identity, key visual characteristics, and contextual consistency.
+
+EditReward:
+1. Instruction Following (semantic accuracy, completeness, and no unprompted changes) and 
+2. Visual Quality (plausibility, artifact-free rendering, and aesthetics)
+
+EditScore:
+1. Semantic Consistency: Semantic Consistency (SC), which evaluates the degree of instruction following and consistency, ensuring specified objects are correctly modified while unmentioned regions remain preserved. 
+2. Perceptual Quality: which assesses overall image quality, focusing on photorealism and the absence of artifacts
+
+SpatialReward:
+1. Semantic Consistency: comprising Instruction Following and Source Consistency 
+2.  Perceptual Quality: comprising Naturalness and Artifacts
