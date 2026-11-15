@@ -1,0 +1,503 @@
+{
+  "num_samples": 1561,
+  "num_unique_images": 197,
+  "num_edit_types": 17,
+  "edit_type": {
+    "change_object_color": 155,
+    "change_object_texture": 152,
+    "change_object_style": 117,
+    "scale_object": 115,
+    "replace_background_scene": 114,
+    "rotate_object": 111,
+    "change_lighting_direction": 103,
+    "translate_object": 99,
+    "adjust_global_contrast": 95,
+    "change_object_action": 94,
+    "blur_background": 81,
+    "change_weather": 72,
+    "add_object": 59,
+    "replace_object": 58,
+    "remove_object": 57,
+    "global_style_transfer": 46,
+    "apply_global_blur": 33
+  },
+  "metric": {
+    "Fidelity": 279,
+    "Realism": 253,
+    "Aesthetic": 262,
+    "Background Consistency": 254,
+    "Foreground Consistency": 266,
+    "Structure Consistency": 247
+  },
+  "human_label_by_metric": {
+    "Fidelity": {
+      "A": 120,
+      "B": 119,
+      "Tie": 40
+    },
+    "Realism": {
+      "Tie": 68,
+      "B": 85,
+      "A": 100
+    },
+    "Aesthetic": {
+      "B": 99,
+      "A": 110,
+      "Tie": 53
+    },
+    "Background Consistency": {
+      "A": 120,
+      "B": 97,
+      "Tie": 37
+    },
+    "Foreground Consistency": {
+      "A": 138,
+      "B": 97,
+      "Tie": 31
+    },
+    "Structure Consistency": {
+      "B": 78,
+      "A": 102,
+      "Tie": 67
+    }
+  },
+  "edit_type_by_metric": {
+    "change_object_color": {
+      "Fidelity": 20,
+      "Realism": 25,
+      "Aesthetic": 19,
+      "Background Consistency": 26,
+      "Foreground Consistency": 29,
+      "Structure Consistency": 36
+    },
+    "change_object_texture": {
+      "Fidelity": 16,
+      "Realism": 23,
+      "Aesthetic": 26,
+      "Background Consistency": 32,
+      "Foreground Consistency": 25,
+      "Structure Consistency": 30
+    },
+    "change_object_style": {
+      "Fidelity": 21,
+      "Realism": 7,
+      "Aesthetic": 23,
+      "Background Consistency": 27,
+      "Foreground Consistency": 15,
+      "Structure Consistency": 24
+    },
+    "scale_object": {
+      "Fidelity": 19,
+      "Realism": 21,
+      "Aesthetic": 26,
+      "Background Consistency": 24,
+      "Foreground Consistency": 25,
+      "Structure Consistency": 0
+    },
+    "replace_background_scene": {
+      "Fidelity": 17,
+      "Realism": 26,
+      "Aesthetic": 17,
+      "Background Consistency": 0,
+      "Foreground Consistency": 25,
+      "Structure Consistency": 29
+    },
+    "rotate_object": {
+      "Fidelity": 16,
+      "Realism": 21,
+      "Aesthetic": 21,
+      "Background Consistency": 24,
+      "Foreground Consistency": 29,
+      "Structure Consistency": 0
+    },
+    "change_lighting_direction": {
+      "Fidelity": 23,
+      "Realism": 20,
+      "Aesthetic": 18,
+      "Background Consistency": 0,
+      "Foreground Consistency": 21,
+      "Structure Consistency": 21
+    },
+    "translate_object": {
+      "Fidelity": 21,
+      "Realism": 14,
+      "Aesthetic": 21,
+      "Background Consistency": 22,
+      "Foreground Consistency": 21,
+      "Structure Consistency": 0
+    },
+    "adjust_global_contrast": {
+      "Fidelity": 15,
+      "Realism": 22,
+      "Aesthetic": 21,
+      "Background Consistency": 0,
+      "Foreground Consistency": 17,
+      "Structure Consistency": 20
+    },
+    "change_object_action": {
+      "Fidelity": 16,
+      "Realism": 14,
+      "Aesthetic": 18,
+      "Background Consistency": 25,
+      "Foreground Consistency": 21,
+      "Structure Consistency": 0
+    },
+    "blur_background": {
+      "Fidelity": 21,
+      "Realism": 0,
+      "Aesthetic": 0,
+      "Background Consistency": 6,
+      "Foreground Consistency": 25,
+      "Structure Consistency": 29
+    },
+    "change_weather": {
+      "Fidelity": 12,
+      "Realism": 14,
+      "Aesthetic": 20,
+      "Background Consistency": 0,
+      "Foreground Consistency": 9,
+      "Structure Consistency": 17
+    },
+    "add_object": {
+      "Fidelity": 7,
+      "Realism": 13,
+      "Aesthetic": 13,
+      "Background Consistency": 23,
+      "Foreground Consistency": 3,
+      "Structure Consistency": 0
+    },
+    "replace_object": {
+      "Fidelity": 10,
+      "Realism": 15,
+      "Aesthetic": 10,
+      "Background Consistency": 21,
+      "Foreground Consistency": 0,
+      "Structure Consistency": 2
+    },
+    "remove_object": {
+      "Fidelity": 18,
+      "Realism": 15,
+      "Aesthetic": 0,
+      "Background Consistency": 24,
+      "Foreground Consistency": 0,
+      "Structure Consistency": 0
+    },
+    "global_style_transfer": {
+      "Fidelity": 15,
+      "Realism": 3,
+      "Aesthetic": 9,
+      "Background Consistency": 0,
+      "Foreground Consistency": 0,
+      "Structure Consistency": 19
+    },
+    "apply_global_blur": {
+      "Fidelity": 12,
+      "Realism": 0,
+      "Aesthetic": 0,
+      "Background Consistency": 0,
+      "Foreground Consistency": 1,
+      "Structure Consistency": 20
+    }
+  },
+  "source_type": {
+    "samples": {
+      "GenericConcepts": 1206,
+      "fisheye": 95,
+      "lighting": 95,
+      "occlusion": 79,
+      "topview": 86
+    },
+    "unique_images": {
+      "GenericConcepts": 147,
+      "fisheye": 14,
+      "lighting": 12,
+      "occlusion": 11,
+      "topview": 13
+    },
+    "special_case_edit_types": {
+      "topview": {
+        "scale_object": 13,
+        "rotate_object": 11,
+        "change_weather": 8,
+        "change_object_color": 7,
+        "change_object_style": 7,
+        "replace_object": 6,
+        "apply_global_blur": 6,
+        "translate_object": 6,
+        "global_style_transfer": 5,
+        "adjust_global_contrast": 5,
+        "add_object": 4,
+        "change_object_action": 4,
+        "replace_background_scene": 4
+      },
+      "lighting": {
+        "change_object_color": 31,
+        "blur_background": 13,
+        "change_object_action": 9,
+        "global_style_transfer": 6,
+        "add_object": 6,
+        "change_object_style": 6,
+        "replace_background_scene": 5,
+        "translate_object": 4,
+        "change_weather": 4,
+        "remove_object": 3,
+        "replace_object": 3,
+        "change_lighting_direction": 3,
+        "scale_object": 2
+      },
+      "fisheye": {
+        "change_object_color": 15,
+        "add_object": 11,
+        "blur_background": 10,
+        "rotate_object": 10,
+        "replace_background_scene": 8,
+        "replace_object": 8,
+        "scale_object": 7,
+        "translate_object": 5,
+        "change_object_texture": 5,
+        "change_object_style": 4,
+        "change_lighting_direction": 4,
+        "global_style_transfer": 3,
+        "change_object_action": 3,
+        "apply_global_blur": 2
+      },
+      "occlusion": {
+        "replace_background_scene": 25,
+        "change_object_color": 10,
+        "scale_object": 10,
+        "translate_object": 9,
+        "change_object_action": 9,
+        "change_object_texture": 4,
+        "apply_global_blur": 4,
+        "replace_object": 3,
+        "global_style_transfer": 3,
+        "add_object": 2
+      }
+    }
+  },
+  "image_category": {
+    "Living Things": {
+      "samples": 661,
+      "unique_images": 82
+    },
+    "Indoor & Household": {
+      "samples": 408,
+      "unique_images": 54
+    },
+    "Vehicles & Transport": {
+      "samples": 364,
+      "unique_images": 45
+    },
+    "Clothing & Accessories": {
+      "samples": 254,
+      "unique_images": 29
+    },
+    "Outdoor & Infrastructure": {
+      "samples": 251,
+      "unique_images": 34
+    },
+    "Food & Drink": {
+      "samples": 172,
+      "unique_images": 22
+    }
+  },
+  "edited_objects": {
+    "num_object_types": 77,
+    "samples_with_match": 1102,
+    "samples_without_match": 459,
+    "top_objects": {
+      "person": 100,
+      "chair": 45,
+      "cat": 44,
+      "truck": 42,
+      "flower": 42,
+      "dog": 42,
+      "monkey": 40,
+      "bird": 40,
+      "car": 39,
+      "boat": 33,
+      "helicopter": 33,
+      "tree": 29,
+      "suit": 28,
+      "shoe": 27,
+      "helmet": 25,
+      "house": 25,
+      "building": 25,
+      "plane": 25,
+      "table": 23,
+      "cup": 23,
+      "bowl": 22,
+      "road": 21,
+      "window": 20,
+      "bread": 20,
+      "couch": 19,
+      "wall": 18,
+      "mountain": 18,
+      "dress": 18,
+      "bench": 17,
+      "boot": 17,
+      "plate": 15,
+      "cheese": 13,
+      "horse": 13,
+      "bridge": 13,
+      "box": 12,
+      "vase": 12,
+      "pillow": 12,
+      "shelf": 10,
+      "onion": 9,
+      "jacket": 9,
+      "water": 8,
+      "bear": 8,
+      "motorcycle": 8,
+      "cake": 7,
+      "bus": 7,
+      "bee": 7,
+      "city": 6,
+      "umbrella": 6,
+      "shirt": 6,
+      "necklace": 6
+    },
+    "match_rate_by_edit_type": {
+      "change_object_texture": 1.0,
+      "change_object_style": 1.0,
+      "scale_object": 1.0,
+      "change_object_action": 1.0,
+      "remove_object": 1.0,
+      "rotate_object": 1.0,
+      "add_object": 1.0,
+      "replace_object": 1.0,
+      "change_object_color": 0.9806,
+      "translate_object": 0.9596,
+      "blur_background": 0.7901,
+      "change_weather": 0.125,
+      "adjust_global_contrast": 0.0737,
+      "replace_background_scene": 0.0702,
+      "change_lighting_direction": 0.0388,
+      "global_style_transfer": 0.0,
+      "apply_global_blur": 0.0
+    }
+  },
+  "resolution": {
+    "num_unique_images": 197,
+    "width": {
+      "min": 683,
+      "median": 1024.0,
+      "max": 2048
+    },
+    "height": {
+      "min": 533,
+      "median": 768.0,
+      "max": 2048
+    },
+    "megapixels": {
+      "min": 0.426,
+      "median": 0.786,
+      "max": 4.194
+    },
+    "aspect_ratio_images": {
+      "2:3": 7,
+      "3:4": 12,
+      "4:5": 2,
+      "1:1": 27,
+      "5:4": 12,
+      "4:3": 63,
+      "3:2": 67,
+      "16:9": 7
+    },
+    "aspect_ratio_samples": {
+      "2:3": 58,
+      "3:4": 108,
+      "4:5": 14,
+      "1:1": 214,
+      "5:4": 105,
+      "4:3": 491,
+      "3:2": 518,
+      "16:9": 53
+    },
+    "top_resolutions": {
+      "1024x768": 46,
+      "1024x683": 14,
+      "768x1024": 10,
+      "1024x1024": 9,
+      "2048x1365": 9,
+      "1024x680": 6,
+      "1024x685": 6,
+      "683x1024": 5,
+      "2048x1536": 5,
+      "1024x678": 4
+    }
+  },
+  "instruction_word_count": {
+    "per_sample": {
+      "min": 6,
+      "mean": 11.69,
+      "median": 11.0,
+      "max": 28
+    },
+    "per_unique_instruction": {
+      "count": 366,
+      "mean": 11.54,
+      "median": 10.0
+    },
+    "median_by_edit_type": {
+      "remove_object": 6.0,
+      "replace_object": 8.0,
+      "blur_background": 9.0,
+      "apply_global_blur": 9.0,
+      "replace_background_scene": 9.0,
+      "adjust_global_contrast": 9.0,
+      "change_weather": 9.5,
+      "global_style_transfer": 10.0,
+      "change_object_action": 10.0,
+      "change_object_color": 10.0,
+      "add_object": 10.0,
+      "change_object_texture": 11.0,
+      "change_object_style": 11.0,
+      "change_lighting_direction": 11.0,
+      "rotate_object": 16.0,
+      "translate_object": 19.0,
+      "scale_object": 20.0
+    }
+  },
+  "agreement": {
+    "raters_per_sample": {
+      "2": 414,
+      "3": 1128,
+      "4": 19
+    },
+    "observed_agreement": {
+      "0.1667": 8,
+      "0.3333": 639,
+      "0.5000": 8,
+      "1.0000": 906
+    },
+    "mean_observed_agreement": 0.7203
+  },
+  "models": {
+    "banana": {
+      "appearances": 621,
+      "preferred": 267,
+      "tie_or_no_majority": 140
+    },
+    "flux": {
+      "appearances": 615,
+      "preferred": 264,
+      "tie_or_no_majority": 118
+    },
+    "qwen_image_edit": {
+      "appearances": 628,
+      "preferred": 263,
+      "tie_or_no_majority": 151
+    },
+    "gpt_image": {
+      "appearances": 653,
+      "preferred": 252,
+      "tie_or_no_majority": 54
+    },
+    "longcat": {
+      "appearances": 605,
+      "preferred": 219,
+      "tie_or_no_majority": 129
+    }
+  }
+}

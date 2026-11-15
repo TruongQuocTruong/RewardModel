@@ -1,0 +1,42 @@
+======================================================================
+                     BẢNG MÃ MÀU (COLOR PALETTE)
+                   Trích xuất từ biểu đồ Editing Types
+======================================================================
+
+1. DANH SÁCH MÃ MÀU CÁC CỘT (TỪ TRÁI SANG PHẢI)
+----------------------------------------------------------------------
+STT | Giá trị | Mã HEX   | Mã RGB         | Tên gọi / Mô tả
+----------------------------------------------------------------------
+01  | 676     | #E88574  | (232, 133, 116)| Đỏ san hô (Coral)
+02  | 675     | #EFA87C  | (239, 168, 124)| Cam đào (Peach / Light orange)
+03  | 674     | #E8BA8A  | (232, 186, 138)| Vàng cát (Sandy peach)
+04  | 673     | #F7B57E  | (247, 181, 126)| Cam mơ (Apricot)
+05  | 672     | #F7CB8E  | (247, 203, 142)| Vàng kem pastel (Pale orange-yellow)
+06  | 670     | #B8BA7C  | (184, 186, 124)| Vàng xanh ô-liu (Olive green)
+07  | 669     | #83C3BE  | (131, 195, 190)| Xanh bạc hà dịu (Soft seafoam)
+08  | 666     | #8DCAC6  | (141, 202, 198)| Xanh ngọc pastel (Soft aqua)
+09  | 666     | #93CDCA  | (147, 205, 202)| Xanh lam phấn (Light pastel teal)
+10  | 664     | #75A6A3  | (117, 166, 163)| Xanh xám đá (Slate teal)
+11  | 663     | #56D1D9  | (86,  209, 217)| Xanh ngọc lam sáng (Bright cyan)
+12  | 662     | #41B7C6  | (65,  183, 198)| Xanh ngọc biển (Ocean blue-teal)
+13  | 654     | #3E909B  | (62,  144, 155)| Xanh mòng két trầm (Deep teal)
+14  | 649     | #3B9E9B  | (59,  158, 155)| Xanh mòng két trung tính (Teal)
+15  | 626     | #40CCC2  | (64,  204, 194)| Xanh ngọc bích sáng (Turquoise)
+16  | 346     | #47D5CA  | (71,  213, 202)| Xanh ngọc lục bảo nhạt (Bright mint)
+17  | 331     | #3B8F80  | (59,  143, 128)| Xanh lá đại dương (Sea green)
+
+
+2. MÀU GIAO DIỆN PHỤ TRỢ (UI COLORS)
+----------------------------------------------------------------------
+- Đường lưới ngang (Gridlines) : #DBEAF8  -  RGB(219, 234, 248)
+- Màu chữ / Số liệu (Text)     : #1F1F1F  -  RGB(31,  31,  31)
+- Màu nền (Background)         : #FFFFFF  -  RGB(255, 255, 255)
+
+
+3. PHÂN NHÓM BẢNG MÀU
+----------------------------------------------------------------------
+- Nhóm gam ấm (Cột 01 - 05)     : Chuyển dần từ đỏ san hô sang cam và vàng kem.
+- Điểm chuyển tiếp (Cột 06)     : Tông màu ô-liu trung gian giữa vàng và xanh.
+- Nhóm gam lạnh (Cột 07 - 17)   : Dải màu đa dạng gồm pastel aqua, cyan sáng,
+                                  teal trầm và xanh ngọc bích.
+======================================================================

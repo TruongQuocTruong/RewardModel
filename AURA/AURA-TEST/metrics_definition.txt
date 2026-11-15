@@ -1,0 +1,7 @@
+Metric definitions
+1. aesthetic: Visual harmony, composition, color balance, and overall appeal of the intended result.
+2. fidelity: Instruction adherence and semantic correctness without unrequested changes. This metric is always applicable.
+3. realism: Physical plausibility, coherent lighting and shadows, and absence of unintended artifacts. Exclude for deliberately nonphysical styles.
+4. background_consistency: Preservation of non-target background content that should remain unchanged. Do not require literal pixel equality.
+5. foreground_consistency: Preservation of the identity of a recognizable subject that should remain the same instance.
+6. structure_consistency: Preservation of scene layout, object geometry, shapes, and spatial relationships that should survive the edit.
