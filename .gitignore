@@ -100,3 +100,17 @@
 __pycache__/
 *.py[oc]
 .ruff_cache/
+
+# ComparisonRewardModelsOnAURA: code, configs, launchers, tests, comparison table.
+# Not tracked: cloned reward model repositories (with their LoRA / heads), per-model results, logs.
+!/ComparisonRewardModelsOnAURA/
+/ComparisonRewardModelsOnAURA/EditHF/
+/ComparisonRewardModelsOnAURA/EditReward/
+/ComparisonRewardModelsOnAURA/EditScore/
+/ComparisonRewardModelsOnAURA/LMM4Edit/
+/ComparisonRewardModelsOnAURA/SpatialReward/
+/ComparisonRewardModelsOnAURA/logs/
+/ComparisonRewardModelsOnAURA/.pytest_cache/
+/ComparisonRewardModelsOnAURA/results/*
+!/ComparisonRewardModelsOnAURA/results/comparison_table.md
+!/ComparisonRewardModelsOnAURA/results/comparison_table.json
