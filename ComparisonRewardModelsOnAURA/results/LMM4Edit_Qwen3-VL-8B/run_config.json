@@ -1,0 +1,70 @@
+{
+  "model": "LMM4Edit",
+  "pretrained": "Qwen3-VL-8B",
+  "backbone_path": "/datastore/tuanld/Truongtq/RewardModels/Qwen3-VL-8B",
+  "modes": {
+    "Perceptual Quality": {
+      "mode": "visual",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/visual"
+    },
+    "Editing Alignment": {
+      "mode": "alignment",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/alignment"
+    },
+    "Attribute Preservation": {
+      "mode": "preservation",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/preservation"
+    }
+  },
+  "max_pixels_per_image": 1048576,
+  "merge_lora": false,
+  "score": "ScoreRegressor(last token of the last hidden state) * score_output_scale, as LMM4Edit infer_single",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-BENCH/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "dimension_of_metric": {
+    "Aesthetic": "Perceptual Quality",
+    "Realism": "Perceptual Quality",
+    "Fidelity": "Editing Alignment",
+    "Background Consistency": "Attribute Preservation",
+    "Foreground Consistency": "Attribute Preservation",
+    "Structure Consistency": "Attribute Preservation"
+  },
+  "host": "h200node02",
+  "user": "nghiatg",
+  "slurm_job_id": "13258",
+  "started": "2026-11-12 21:18:32",
+  "script_md5": "03e95833ce8a3ef1a7421fe2f67eb899",
+  "lmm4edit_inference_md5": "393ecdebef53cbd5e3f1cc6e7f3d19ad",
+  "torch": "2.7.1+cu126",
+  "transformers": "4.57.1",
+  "peft": "0.17.1",
+  "scored": 1561,
+  "skipped_done": 0,
+  "not_applicable": 0,
+  "modes_loaded": [
+    {
+      "dimension": "Perceptual Quality",
+      "mode": "visual",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/visual",
+      "rows": 515,
+      "load_seconds": 8.7
+    },
+    {
+      "dimension": "Editing Alignment",
+      "mode": "alignment",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/alignment",
+      "rows": 279,
+      "load_seconds": 7.8
+    },
+    {
+      "dimension": "Attribute Preservation",
+      "mode": "preservation",
+      "peft_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/LMM4Edit/weights/preservation",
+      "rows": 767,
+      "load_seconds": 8.1
+    }
+  ],
+  "finished": "2026-11-12 21:50:13",
+  "max_memory_allocated_gib": 16.89
+}

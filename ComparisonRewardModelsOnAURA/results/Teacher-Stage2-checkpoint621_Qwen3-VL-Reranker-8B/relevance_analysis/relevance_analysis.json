@@ -1,0 +1,247 @@
+{
+  "threshold": 0.5,
+  "pairs": 1561,
+  "columns": {
+    "Aesthetic": {
+      "metric": "Aesthetic",
+      "head": "aesthetic",
+      "pairs": 262,
+      "mean_own_relevance": 0.9997286318822671,
+      "share_own_relevance_at_least_threshold": 1.0,
+      "share_own_metric_most_relevant": 0.6106870229007634,
+      "all_pairs": {
+        "pairs": 262,
+        "non_tie_pairs": 209,
+        "tie_pairs": 53,
+        "accuracy": 0.5454545454545454,
+        "margin_auc": 0.5946292438359928,
+        "tie_head_auc": 0.7236616412386025
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 262,
+        "non_tie_pairs": 209,
+        "tie_pairs": 53,
+        "accuracy": 0.5454545454545454,
+        "margin_auc": 0.5946292438359928,
+        "tie_head_auc": 0.7236616412386025
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 0,
+        "non_tie_pairs": 0,
+        "tie_pairs": 0,
+        "accuracy": null,
+        "margin_auc": null,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9997286318822671,
+        "fidelity": 0.9998045288424455,
+        "realism": 0.8105735814070884,
+        "background_consistency": 0.7083071071284873,
+        "foreground_consistency": 0.6910671323310328,
+        "structure_consistency": 0.2637758094689432
+      }
+    },
+    "Realism": {
+      "metric": "Realism",
+      "head": "realism",
+      "pairs": 253,
+      "mean_own_relevance": 0.8681924365490321,
+      "share_own_relevance_at_least_threshold": 0.9446640316205533,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 253,
+        "non_tie_pairs": 185,
+        "tie_pairs": 68,
+        "accuracy": 0.6324324324324324,
+        "margin_auc": 0.6734550766983199,
+        "tie_head_auc": 0.5629570747217806
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 239,
+        "non_tie_pairs": 174,
+        "tie_pairs": 65,
+        "accuracy": 0.632183908045977,
+        "margin_auc": 0.678359096313912,
+        "tie_head_auc": 0.560212201591512
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 14,
+        "non_tie_pairs": 11,
+        "tie_pairs": 3,
+        "accuracy": 0.6363636363636364,
+        "margin_auc": 0.5702479338842975,
+        "tie_head_auc": 0.5151515151515151
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9998560472439401,
+        "fidelity": 0.9998734711187159,
+        "realism": 0.8681924365490321,
+        "background_consistency": 0.7636811808929613,
+        "foreground_consistency": 0.6836088231429752,
+        "structure_consistency": 0.21491881653210038
+      }
+    },
+    "Fidelity": {
+      "metric": "Fidelity",
+      "head": "fidelity",
+      "pairs": 279,
+      "mean_own_relevance": 0.9997961478421338,
+      "share_own_relevance_at_least_threshold": 1.0,
+      "share_own_metric_most_relevant": 0.32616487455197135,
+      "all_pairs": {
+        "pairs": 279,
+        "non_tie_pairs": 239,
+        "tie_pairs": 40,
+        "accuracy": 0.602510460251046,
+        "margin_auc": 0.6570963393498013,
+        "tie_head_auc": 0.7661087866108787
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 279,
+        "non_tie_pairs": 239,
+        "tie_pairs": 40,
+        "accuracy": 0.602510460251046,
+        "margin_auc": 0.6570963393498013,
+        "tie_head_auc": 0.7661087866108787
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 0,
+        "non_tie_pairs": 0,
+        "tie_pairs": 0,
+        "accuracy": null,
+        "margin_auc": null,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9997224628284413,
+        "fidelity": 0.9997961478421338,
+        "realism": 0.8094743337468862,
+        "background_consistency": 0.7057375421941173,
+        "foreground_consistency": 0.6913983456550106,
+        "structure_consistency": 0.2646692302912527
+      }
+    },
+    "BC": {
+      "metric": "Background Consistency",
+      "head": "background_consistency",
+      "pairs": 254,
+      "mean_own_relevance": 0.796991828029726,
+      "share_own_relevance_at_least_threshold": 0.8661417322834646,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 254,
+        "non_tie_pairs": 217,
+        "tie_pairs": 37,
+        "accuracy": 0.5898617511520737,
+        "margin_auc": 0.6452887086156003,
+        "tie_head_auc": 0.7053182214472538
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 220,
+        "non_tie_pairs": 186,
+        "tie_pairs": 34,
+        "accuracy": 0.5806451612903226,
+        "margin_auc": 0.6386865533587698,
+        "tie_head_auc": 0.7082542694497154
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 34,
+        "non_tie_pairs": 31,
+        "tie_pairs": 3,
+        "accuracy": 0.6451612903225806,
+        "margin_auc": 0.663891779396462,
+        "tie_head_auc": 0.6344086021505376
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9998185050299787,
+        "fidelity": 0.9998768805049536,
+        "realism": 0.8591832637962863,
+        "background_consistency": 0.796991828029726,
+        "foreground_consistency": 0.6452958486446245,
+        "structure_consistency": 0.16131852204200087
+      }
+    },
+    "FC": {
+      "metric": "Foreground Consistency",
+      "head": "foreground_consistency",
+      "pairs": 266,
+      "mean_own_relevance": 0.6933789844799759,
+      "share_own_relevance_at_least_threshold": 1.0,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 266,
+        "non_tie_pairs": 235,
+        "tie_pairs": 31,
+        "accuracy": 0.6297872340425532,
+        "margin_auc": 0.7103304662743323,
+        "tie_head_auc": 0.6326698695950583
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 266,
+        "non_tie_pairs": 235,
+        "tie_pairs": 31,
+        "accuracy": 0.6297872340425532,
+        "margin_auc": 0.7103304662743323,
+        "tie_head_auc": 0.6326698695950583
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 0,
+        "non_tie_pairs": 0,
+        "tie_pairs": 0,
+        "accuracy": null,
+        "margin_auc": null,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9998162294688978,
+        "fidelity": 0.999860653079542,
+        "realism": 0.863289582326,
+        "background_consistency": 0.7720785888149998,
+        "foreground_consistency": 0.6933789844799759,
+        "structure_consistency": 0.2112731659273736
+      }
+    },
+    "SC": {
+      "metric": "Structure Consistency",
+      "head": "structure_consistency",
+      "pairs": 247,
+      "mean_own_relevance": 0.34872215472704726,
+      "share_own_relevance_at_least_threshold": 0.32388663967611336,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 247,
+        "non_tie_pairs": 180,
+        "tie_pairs": 67,
+        "accuracy": 0.6611111111111111,
+        "margin_auc": 0.7275,
+        "tie_head_auc": 0.5545605306799337
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 80,
+        "non_tie_pairs": 64,
+        "tie_pairs": 16,
+        "accuracy": 0.6875,
+        "margin_auc": 0.79052734375,
+        "tie_head_auc": 0.642578125
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 167,
+        "non_tie_pairs": 116,
+        "tie_pairs": 51,
+        "accuracy": 0.646551724137931,
+        "margin_auc": 0.6931480380499405,
+        "tie_head_auc": 0.530764029749831
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9996244518863044,
+        "fidelity": 0.9997325551654646,
+        "realism": 0.7457081055049954,
+        "background_consistency": 0.6262238641318522,
+        "foreground_consistency": 0.7320703048455087,
+        "structure_consistency": 0.34872215472704726
+      }
+    }
+  },
+  "scores": "../results/Teacher-Stage2_Qwen3-VL-Reranker-8B/scores.jsonl"
+}

@@ -1,0 +1,71 @@
+{
+  "model": "EditHF",
+  "pretrained": "InternVL3.5-8B",
+  "backbone_path": "/datastore/tuanld/Truongtq/RewardModels/InternVL3.5-8B",
+  "modes": {
+    "Visual Quality": {
+      "mode": "visual",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_visual"
+    },
+    "Instruction Alignment": {
+      "mode": "alignment",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_editing"
+    },
+    "Attribute Preservation": {
+      "mode": "preservation",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_preservation"
+    }
+  },
+  "input_size": 448,
+  "feature_position": -6,
+  "query_suffix": " The quality score is 00.00",
+  "score": "abs(MLP(last hidden state at -6)) * 100, as EditHF/inference.py",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-BENCH/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "dimension_of_metric": {
+    "Aesthetic": "Visual Quality",
+    "Realism": "Visual Quality",
+    "Fidelity": "Instruction Alignment",
+    "Background Consistency": "Attribute Preservation",
+    "Foreground Consistency": "Attribute Preservation",
+    "Structure Consistency": "Attribute Preservation"
+  },
+  "host": "h200node01",
+  "user": "nghiatg",
+  "slurm_job_id": "13002",
+  "started": "2026-11-12 06:36:23",
+  "script_md5": "4cee5a3f397a8c61df6ad19fa6998a97",
+  "edithf_inference_md5": "f3a2b836a72951aa01cc7eda8354346f",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.57.0",
+  "peft": "0.21.2",
+  "scored": 1561,
+  "skipped_done": 0,
+  "not_applicable": 0,
+  "modes_loaded": [
+    {
+      "dimension": "Visual Quality",
+      "mode": "visual",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_visual",
+      "rows": 515,
+      "load_seconds": 54.5
+    },
+    {
+      "dimension": "Instruction Alignment",
+      "mode": "alignment",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_editing",
+      "rows": 279,
+      "load_seconds": 4.0
+    },
+    {
+      "dimension": "Attribute Preservation",
+      "mode": "preservation",
+      "lora_dir": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditHF/lora_checkpoints_preservation",
+      "rows": 767,
+      "load_seconds": 4.1
+    }
+  ],
+  "finished": "2026-11-12 06:55:17",
+  "max_memory_allocated_gib": 16.41
+}

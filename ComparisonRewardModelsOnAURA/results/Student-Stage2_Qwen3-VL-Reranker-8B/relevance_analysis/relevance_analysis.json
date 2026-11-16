@@ -1,0 +1,247 @@
+{
+  "threshold": 0.5,
+  "pairs": 1561,
+  "columns": {
+    "Aesthetic": {
+      "metric": "Aesthetic",
+      "head": "aesthetic",
+      "pairs": 262,
+      "mean_own_relevance": 0.9999131125803212,
+      "share_own_relevance_at_least_threshold": 1.0,
+      "share_own_metric_most_relevant": 0.3549618320610687,
+      "all_pairs": {
+        "pairs": 262,
+        "non_tie_pairs": 209,
+        "tie_pairs": 53,
+        "accuracy": 0.583732057416268,
+        "margin_auc": 0.6020924429385774,
+        "tie_head_auc": 0.6811411031867834
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 262,
+        "non_tie_pairs": 209,
+        "tie_pairs": 53,
+        "accuracy": 0.583732057416268,
+        "margin_auc": 0.6020924429385774,
+        "tie_head_auc": 0.6811411031867834
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 0,
+        "non_tie_pairs": 0,
+        "tie_pairs": 0,
+        "accuracy": null,
+        "margin_auc": null,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9999131125803212,
+        "fidelity": 0.9999400743546377,
+        "realism": 0.8089076455270174,
+        "background_consistency": 0.7247421147038747,
+        "foreground_consistency": 0.7656406116394596,
+        "structure_consistency": 0.3075256664963539
+      }
+    },
+    "Realism": {
+      "metric": "Realism",
+      "head": "realism",
+      "pairs": 253,
+      "mean_own_relevance": 0.8784152983794571,
+      "share_own_relevance_at_least_threshold": 0.9604743083003953,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 253,
+        "non_tie_pairs": 185,
+        "tie_pairs": 68,
+        "accuracy": 0.5891891891891892,
+        "margin_auc": 0.6613002191380569,
+        "tie_head_auc": 0.5347376788553259
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 243,
+        "non_tie_pairs": 177,
+        "tie_pairs": 66,
+        "accuracy": 0.5932203389830508,
+        "margin_auc": 0.6705289029333844,
+        "tie_head_auc": 0.5386064030131826
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 10,
+        "non_tie_pairs": 8,
+        "tie_pairs": 2,
+        "accuracy": 0.5,
+        "margin_auc": 0.46875,
+        "tie_head_auc": 0.375
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9999406801853256,
+        "fidelity": 0.9999511526978534,
+        "realism": 0.8784152983794571,
+        "background_consistency": 0.7846130373420216,
+        "foreground_consistency": 0.7339588846024788,
+        "structure_consistency": 0.2363782544356215
+      }
+    },
+    "Fidelity": {
+      "metric": "Fidelity",
+      "head": "fidelity",
+      "pairs": 279,
+      "mean_own_relevance": 0.9999397238950148,
+      "share_own_relevance_at_least_threshold": 1.0,
+      "share_own_metric_most_relevant": 0.5483870967741935,
+      "all_pairs": {
+        "pairs": 279,
+        "non_tie_pairs": 239,
+        "tie_pairs": 40,
+        "accuracy": 0.606694560669456,
+        "margin_auc": 0.6784370021533237,
+        "tie_head_auc": 0.7658995815899582
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 279,
+        "non_tie_pairs": 239,
+        "tie_pairs": 40,
+        "accuracy": 0.606694560669456,
+        "margin_auc": 0.6784370021533237,
+        "tie_head_auc": 0.7658995815899582
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 0,
+        "non_tie_pairs": 0,
+        "tie_pairs": 0,
+        "accuracy": null,
+        "margin_auc": null,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9999183907731032,
+        "fidelity": 0.9999397238950148,
+        "realism": 0.7967626274660177,
+        "background_consistency": 0.7280622517079195,
+        "foreground_consistency": 0.7543498805346882,
+        "structure_consistency": 0.31244080218337944
+      }
+    },
+    "BC": {
+      "metric": "Background Consistency",
+      "head": "background_consistency",
+      "pairs": 254,
+      "mean_own_relevance": 0.8384507012986174,
+      "share_own_relevance_at_least_threshold": 0.8937007874015748,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 254,
+        "non_tie_pairs": 217,
+        "tie_pairs": 37,
+        "accuracy": 0.5990783410138248,
+        "margin_auc": 0.6503429675720445,
+        "tie_head_auc": 0.6510150703699091
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 227,
+        "non_tie_pairs": 191,
+        "tie_pairs": 36,
+        "accuracy": 0.5863874345549738,
+        "margin_auc": 0.6397850936103725,
+        "tie_head_auc": 0.6319080860965678
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 27,
+        "non_tie_pairs": 26,
+        "tie_pairs": 1,
+        "accuracy": 0.6923076923076923,
+        "margin_auc": 0.7071005917159763,
+        "tie_head_auc": 0.9615384615384616
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9999430102156842,
+        "fidelity": 0.9999641902803436,
+        "realism": 0.8401765246824251,
+        "background_consistency": 0.8384507012986174,
+        "foreground_consistency": 0.660005297658481,
+        "structure_consistency": 0.1389302564124892
+      }
+    },
+    "FC": {
+      "metric": "Foreground Consistency",
+      "head": "foreground_consistency",
+      "pairs": 266,
+      "mean_own_relevance": 0.7847678337554286,
+      "share_own_relevance_at_least_threshold": 0.9962406015037594,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 266,
+        "non_tie_pairs": 235,
+        "tie_pairs": 31,
+        "accuracy": 0.6127659574468085,
+        "margin_auc": 0.6760344047080127,
+        "tie_head_auc": 0.6387096774193548
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 265,
+        "non_tie_pairs": 234,
+        "tie_pairs": 31,
+        "accuracy": 0.6111111111111112,
+        "margin_auc": 0.6754145664402075,
+        "tie_head_auc": 0.6390956713537359
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 1,
+        "non_tie_pairs": 1,
+        "tie_pairs": 0,
+        "accuracy": 1.0,
+        "margin_auc": 1.0,
+        "tie_head_auc": null
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9999328110002934,
+        "fidelity": 0.9999499856529379,
+        "realism": 0.8577715246483011,
+        "background_consistency": 0.7880882958100787,
+        "foreground_consistency": 0.7847678337554286,
+        "structure_consistency": 0.2522590812256287
+      }
+    },
+    "SC": {
+      "metric": "Structure Consistency",
+      "head": "structure_consistency",
+      "pairs": 247,
+      "mean_own_relevance": 0.4335236350670155,
+      "share_own_relevance_at_least_threshold": 0.3967611336032389,
+      "share_own_metric_most_relevant": 0.0,
+      "all_pairs": {
+        "pairs": 247,
+        "non_tie_pairs": 180,
+        "tie_pairs": 67,
+        "accuracy": 0.5777777777777777,
+        "margin_auc": 0.6485185185185185,
+        "tie_head_auc": 0.5590381426202322
+      },
+      "own_relevance_at_least_threshold": {
+        "pairs": 98,
+        "non_tie_pairs": 77,
+        "tie_pairs": 21,
+        "accuracy": 0.6363636363636364,
+        "margin_auc": 0.7611738910440209,
+        "tie_head_auc": 0.5479282622139765
+      },
+      "own_relevance_below_threshold": {
+        "pairs": 149,
+        "non_tie_pairs": 103,
+        "tie_pairs": 46,
+        "accuracy": 0.5339805825242718,
+        "margin_auc": 0.5601847487981902,
+        "tie_head_auc": 0.5498100464330942
+      },
+      "mean_relevance_per_head": {
+        "aesthetic": 0.9998831191526251,
+        "fidelity": 0.999918291684587,
+        "realism": 0.7263376789529495,
+        "background_consistency": 0.6383897805084976,
+        "foreground_consistency": 0.8398164762900426,
+        "structure_consistency": 0.4335236350670155
+      }
+    }
+  },
+  "scores": "../results/Student-Stage2_Qwen3-VL-Reranker-8B/scores.jsonl"
+}
