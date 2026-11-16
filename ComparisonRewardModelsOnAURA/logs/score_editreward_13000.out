@@ -1,0 +1,37 @@
+job 13000 on h200node01 as nghiatg, env edit_reward, started 2026-11-12 06:34:55
+NVIDIA H200, 143771 MiB
+Flash Attention is not installed. Falling to SDPA.
+Flash Attention is not installed. Falling to SDPA.
+{
+  "model": "EditReward",
+  "pretrained": "Qwen2.5-VL-7B",
+  "inferencer": "EditReward.inference_vl_edit.EditRewardVLInferencer",
+  "repo_config": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditReward/EditReward/config/EditReward-Qwen2.5-7B-VL.yaml",
+  "local_config": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/results/EditReward_Qwen2.5-VL-7B/editreward_config.yaml",
+  "backbone_path": "/datastore/tuanld/Truongtq/RewardModels/Qwen2.5-VL-7B",
+  "checkpoint_path": "/datastore/tuanld/Truongtq/RewardModels/EditReward-Qwen2.5-VL-7B",
+  "rm_head_type": "ranknet_multi_head",
+  "score": "mu of the head of the dimension",
+  "image_preprocessing": "EditReward prepare_batch (min_pixels = max_pixels = 256*28*28)",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-BENCH/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "dimension_of_metric": {
+    "Aesthetic": "Visual Quality",
+    "Realism": "Visual Quality",
+    "Fidelity": "Instruction Following",
+    "Background Consistency": null,
+    "Foreground Consistency": null,
+    "Structure Consistency": null
+  },
+  "host": "h200node01",
+  "user": "nghiatg",
+  "slurm_job_id": "13000",
+  "started": "2026-11-12 06:35:20",
+  "script_md5": "6defbd7106a85648497921e7b0bbc247",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.57.0"
+}
+config_path: /datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/results/EditReward_Qwen2.5-VL-7B/editreward_config.yaml
+
+finished 2026-11-12 06:35:21 with status 1

@@ -1,0 +1,83 @@
+job 42116 on h200node02 as truongtq, env qwen_vl, variant student_stage2, started 2026-11-16 01:23:38
+NVIDIA H200, 143771 MiB
+{
+  "model": "Student-Stage2",
+  "variant": "student_stage2",
+  "kind": "student",
+  "role": "student",
+  "checkpoint": "/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5/checkpoint-927.pt",
+  "pairs_trained": 1008,
+  "base_model_path": "/datastore/truongtq/TrainingRewardModel/Models/Qwen3-VL-Reranker-8B",
+  "head_of_metric": {
+    "Aesthetic": "aesthetic",
+    "Realism": "realism",
+    "Fidelity": "fidelity",
+    "Background Consistency": "background_consistency",
+    "Foreground Consistency": "foreground_consistency",
+    "Structure Consistency": "structure_consistency"
+  },
+  "score": "Score Head output per image; margin = score_a - score_b",
+  "probabilities": "[P(A), P(B), P(Tie)] of the head; three-class prediction = argmax",
+  "image_preprocessing": "processor defaults (as in training, no min/max pixels)",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-TEST/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "host": "h200node02",
+  "user": "truongtq",
+  "slurm_job_id": "42116",
+  "started": "2026-11-16 01:23:43",
+  "script_md5": "1971d5d8a16e928bdf0c5323f593c7a9",
+  "torch": "2.4.0+cu121",
+  "transformers": "4.57.6"
+}
+[1] Fidelity_000565_global_style_transfer_flux_banana fidelity: 8.0748 vs 5.6053, P(Tie)=0.037 (6.01s)
+[2] Fidelity_000140_change_object_texture_qwen_image_edit_banana fidelity: 9.0673 vs 7.9118, P(Tie)=0.139 (2.73s)
+[3] Fidelity_000284_change_object_style_flux_longcat fidelity: 9.5112 vs 7.2147, P(Tie)=0.047 (2.69s)
+[4] Fidelity_000608_global_style_transfer_flux_gpt_image fidelity: 6.4761 vs 9.0886, P(Tie)=0.034 (3.15s)
+[5] Fidelity_000180_scale_object_qwen_image_edit_flux fidelity: 3.4062 vs 3.7751, P(Tie)=0.218 (4.1s)
+[6] Fidelity_000502_change_object_action_gpt_image_longcat fidelity: 9.8387 vs 10.8068, P(Tie)=0.185 (4.07s)
+[7] Fidelity_000465_global_style_transfer_longcat_qwen_image_edit fidelity: 9.9408 vs 10.6185, P(Tie)=0.225 (2.58s)
+[8] Fidelity_000125_change_object_color_gpt_image_qwen_image_edit fidelity: 11.1499 vs 11.2825, P(Tie)=0.345 (2.86s)
+[9] Fidelity_000622_global_style_transfer_banana_flux fidelity: 4.2888 vs 5.8167, P(Tie)=0.084 (2.51s)
+[10] Fidelity_000534_translate_object_banana_longcat fidelity: 4.7076 vs 6.8207, P(Tie)=0.050 (2.81s)
+[11] Fidelity_000256_remove_object_flux_longcat fidelity: 6.4810 vs 3.3250, P(Tie)=0.017 (2.34s)
+[12] Fidelity_000238_global_style_transfer_gpt_image_flux fidelity: 9.6220 vs 8.1645, P(Tie)=0.106 (2.75s)
+[13] Fidelity_000435_change_object_style_qwen_image_edit_flux fidelity: 8.9039 vs 7.4605, P(Tie)=0.102 (2.47s)
+[14] Fidelity_000252_blur_background_longcat_qwen_image_edit fidelity: 7.3169 vs 8.2875, P(Tie)=0.160 (2.59s)
+[15] Fidelity_000004_remove_object_flux_banana fidelity: 5.2585 vs 5.2510, P(Tie)=0.293 (2.35s)
+[16] Fidelity_000439_change_object_action_longcat_banana fidelity: 8.9913 vs 9.3302, P(Tie)=0.279 (2.6s)
+[17] Fidelity_000549_apply_global_blur_longcat_flux fidelity: 7.8694 vs 6.6018, P(Tie)=0.118 (2.75s)
+[18] Fidelity_000028_change_lighting_direction_flux_gpt_image fidelity: 5.7092 vs 6.0173, P(Tie)=0.236 (2.76s)
+[19] Fidelity_000151_change_object_style_longcat_gpt_image fidelity: 8.8522 vs 9.9509, P(Tie)=0.146 (2.84s)
+[20] Fidelity_000111_change_lighting_direction_qwen_image_edit_longcat fidelity: 7.7848 vs 5.7277, P(Tie)=0.055 (2.79s)
+[21] Fidelity_000258_rotate_object_flux_banana fidelity: 4.4106 vs 7.6949, P(Tie)=0.017 (2.49s)
+[22] Fidelity_000462_scale_object_banana_gpt_image fidelity: 4.0514 vs 5.1993, P(Tie)=0.115 (2.86s)
+[23] Fidelity_000513_translate_object_banana_qwen_image_edit fidelity: 4.5203 vs 6.5510, P(Tie)=0.053 (4.62s)
+[24] Fidelity_000164_replace_background_scene_flux_longcat fidelity: 9.8636 vs 9.9178, P(Tie)=0.351 (3.65s)
+[25] Fidelity_000140_rotate_object_gpt_image_flux fidelity: 6.6304 vs 4.9769, P(Tie)=0.076 (2.69s)
+[26] Fidelity_000398_change_weather_qwen_image_edit_flux fidelity: 10.2414 vs 6.0247, P(Tie)=0.007 (3.07s)
+[27] Fidelity_000201_change_object_color_qwen_image_edit_longcat fidelity: 12.2243 vs 12.9367, P(Tie)=0.253 (2.78s)
+[28] Fidelity_000246_change_lighting_direction_gpt_image_qwen_image_edit fidelity: 9.9743 vs 8.0726, P(Tie)=0.074 (2.77s)
+[29] Fidelity_000676_scale_object_longcat_banana fidelity: 4.0779 vs 4.2626, P(Tie)=0.251 (4.28s)
+[30] Fidelity_000344_change_object_style_gpt_image_banana fidelity: 9.6152 vs 3.4434, P(Tie)=0.001 (2.84s)
+[31] Fidelity_000322_change_object_color_qwen_image_edit_banana fidelity: 11.6886 vs 10.8239, P(Tie)=0.210 (5.07s)
+[32] Fidelity_000167_change_object_color_longcat_flux fidelity: 6.1842 vs 5.1029, P(Tie)=0.126 (5.95s)
+[33] Fidelity_000624_replace_background_scene_flux_gpt_image fidelity: 9.3344 vs 10.0327, P(Tie)=0.209 (2.85s)
+[34] Fidelity_000318_remove_object_longcat_gpt_image fidelity: 8.1731 vs 7.5225, P(Tie)=0.204 (4.28s)
+[35] Fidelity_000198_scale_object_qwen_image_edit_longcat fidelity: 6.1064 vs 6.9698, P(Tie)=0.160 (2.66s)
+[36] Fidelity_000426_translate_object_qwen_image_edit_gpt_image fidelity: 8.0453 vs 8.7022, P(Tie)=0.212 (2.81s)
+[37] Fidelity_000409_scale_object_flux_banana fidelity: 5.7384 vs 7.2633, P(Tie)=0.089 (2.75s)
+[38] Fidelity_000013_change_object_style_longcat_banana fidelity: 11.0307 vs 9.8764, P(Tie)=0.154 (2.76s)
+[39] Fidelity_000025_translate_object_banana_gpt_image fidelity: 5.5987 vs 9.6524, P(Tie)=0.008 (2.87s)
+[40] Fidelity_000040_change_weather_qwen_image_edit_banana fidelity: 7.8507 vs 8.7610, P(Tie)=0.170 (2.57s)
+[41] Fidelity_000183_blur_background_flux_longcat fidelity: 8.9418 vs 6.6553, P(Tie)=0.048 (2.73s)
+[42] Fidelity_000456_change_weather_gpt_image_flux fidelity: 10.7440 vs 9.2914, P(Tie)=0.117 (2.79s)
+[43] Fidelity_000210_remove_object_qwen_image_edit_flux fidelity: 4.5869 vs 4.0336, P(Tie)=0.188 (2.91s)
+[44] Fidelity_000219_rotate_object_longcat_gpt_image fidelity: 4.8723 vs 7.3828, P(Tie)=0.035 (2.82s)
+[45] Fidelity_000498_change_object_style_qwen_image_edit_longcat fidelity: 11.0891 vs 8.2204, P(Tie)=0.031 (4.25s)
+[46] Fidelity_000100_adjust_global_contrast_gpt_image_qwen_image_edit fidelity: 6.4237 vs 6.1704, P(Tie)=0.258 (2.78s)
+[47] Fidelity_000182_blur_background_longcat_banana fidelity: 7.3181 vs 7.9878, P(Tie)=0.195 (2.76s)
+[48] Fidelity_000414_change_object_style_banana_gpt_image fidelity: 4.0676 vs 9.6223, P(Tie)=0.002 (2.78s)
+[49] Fidelity_000363_add_object_banana_qwen_image_edit fidelity: 9.4929 vs 9.2536, P(Tie)=0.309 (2.55s)
+[50] Fidelity_000292_replace_object_flux_longcat fidelity: 8.1851 vs 6.9918, P(Tie)=0.128 (2.5s)
+[51] Fidelity_000002_change_object_texture_qwen_image_edit_flux fidelity: 7.8773 vs 6.6948, P(Tie)=0.128 (2.49s)

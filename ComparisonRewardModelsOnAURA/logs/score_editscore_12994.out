@@ -1,0 +1,31 @@
+job 12994 on h200node01 as truongtq, started 2026-11-12 06:31:53
+NVIDIA H200, 143771 MiB
+{
+  "model": "EditScore",
+  "pretrained": "Qwen3-VL-8B",
+  "backbone": "qwen3vl",
+  "model_path": "/datastore/tuanld/Truongtq/RewardModels/Qwen3-VL-8B",
+  "lora_path": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditScore/weights/EditScore-Qwen3-VL-8B-Instruct",
+  "score_range": 25,
+  "temperature": 0.7,
+  "seed": 42,
+  "num_pass": 1,
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-BENCH/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "dimension_of_metric": {
+    "Aesthetic": "Perceptual Quality",
+    "Realism": "Perceptual Quality",
+    "Fidelity": "Semantic Consistency",
+    "Background Consistency": "Semantic Consistency",
+    "Foreground Consistency": "Semantic Consistency",
+    "Structure Consistency": "Semantic Consistency"
+  },
+  "host": "h200node01",
+  "user": "truongtq",
+  "slurm_job_id": "12994",
+  "started": "2026-11-12 06:32:01",
+  "script_md5": "f1b2c6617d556b198b7e8b26995e7745",
+  "torch": "2.4.0+cu121"
+}
+finished 2026-11-12 06:33:31 with status 1

@@ -1,0 +1,25 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:22<00:22, 22.92s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:39<00:00, 19.15s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:39<00:00, 19.71s/it]
+Traceback (most recent call last):
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editscore.py", line 202, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editscore.py", line 186, in main
+    scorer = EditScore(backbone=variant["backbone"], model_name_or_path=str(variant["model_path"]),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditScore/editscore/__init__.py", line 64, in __init__
+    self.model = Qwen3VL(
+                 ^^^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditScore/editscore/mllm_tools/qwen3vl.py", line 44, in __init__
+    self.model = PeftModel.from_pretrained(self.model, lora_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/peft_model.py", line 452, in from_pretrained
+    config = PEFT_TYPE_TO_CONFIG_MAPPING[
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/config.py", line 152, in from_pretrained
+    return cls.from_peft_type(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/config.py", line 119, in from_peft_type
+    return config_cls(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+TypeError: LoraConfig.__init__() got an unexpected keyword argument 'corda_config'

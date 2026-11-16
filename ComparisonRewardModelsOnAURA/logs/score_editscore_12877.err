@@ -1,0 +1,25 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:11<00:47, 11.86s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:23<00:35, 11.69s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:35<00:23, 11.74s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:46<00:11, 11.50s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:49<00:00,  8.56s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:49<00:00,  9.94s/it]
+Traceback (most recent call last):
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editscore.py", line 202, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editscore.py", line 186, in main
+    scorer = EditScore(backbone=variant["backbone"], model_name_or_path=str(variant["model_path"]),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditScore/editscore/__init__.py", line 43, in __init__
+    self.model = Qwen25VL(
+                 ^^^^^^^^^
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditScore/editscore/mllm_tools/qwen25vl.py", line 45, in __init__
+    self.model = PeftModel.from_pretrained(self.model, lora_path)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/peft_model.py", line 452, in from_pretrained
+    config = PEFT_TYPE_TO_CONFIG_MAPPING[
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/config.py", line 152, in from_pretrained
+    return cls.from_peft_type(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/datastore/truongtq/miniconda3/envs/qwen_vl/lib/python3.11/site-packages/peft/config.py", line 119, in from_peft_type
+    return config_cls(**kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+TypeError: LoraConfig.__init__() got an unexpected keyword argument 'corda_config'

@@ -102,14 +102,13 @@ __pycache__/
 .ruff_cache/
 
 # ComparisonRewardModelsOnAURA: code, configs, launchers, tests, comparison table.
-# Not tracked: cloned reward model repositories (with their LoRA / heads), logs. results/ is tracked in full (user, 2026-11-16).
+# Not tracked: only the cloned reward model repositories (with their LoRA / heads) and caches; results/ and logs/ are tracked (user, 2026-11-16).
 !/ComparisonRewardModelsOnAURA/
 /ComparisonRewardModelsOnAURA/EditHF/
 /ComparisonRewardModelsOnAURA/EditReward/
 /ComparisonRewardModelsOnAURA/EditScore/
 /ComparisonRewardModelsOnAURA/LMM4Edit/
 /ComparisonRewardModelsOnAURA/SpatialReward/
-/ComparisonRewardModelsOnAURA/logs/
 /ComparisonRewardModelsOnAURA/.pytest_cache/
 
 # ComparisonRewardGuidedBenchs: Best-of-N code, launchers, tests, selections (results/selections) for the judges.

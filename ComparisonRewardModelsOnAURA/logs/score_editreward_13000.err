@@ -1,0 +1,16 @@
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editreward.py", line 198, in <module>
+    sys.exit(main())
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/scripts/score_editreward.py", line 183, in main
+    inferencer = inferencer_cls(config_path=str(config_path), checkpoint_path=str(variant["checkpoint_path"]),
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditReward/EditReward/inference_vl_edit.py", line 81, in __init__
+    model, processor, _ = create_model_and_processor(
+  File "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModels/EditReward/EditReward/train_qwen_vl_edit.py", line 112, in create_model_and_processor
+    model = reward_model_cls.from_pretrained(
+  File "/datastore/truongtq/miniconda3/envs/edit_reward/lib/python3.10/site-packages/transformers/modeling_utils.py", line 277, in _wrapper
+    return func(*args, **kwargs)
+  File "/datastore/truongtq/miniconda3/envs/edit_reward/lib/python3.10/site-packages/transformers/modeling_utils.py", line 4974, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+TypeError: Qwen2_5_VLRewardModelBT_MultiHead.__init__() got an unexpected keyword argument 'aggregation_threshold'
