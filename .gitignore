@@ -114,3 +114,17 @@ __pycache__/
 /ComparisonRewardModelsOnAURA/results/*
 !/ComparisonRewardModelsOnAURA/results/comparison_table.md
 !/ComparisonRewardModelsOnAURA/results/comparison_table.json
+
+# ComparisonRewardGuidedBenchs: Best-of-N code, launchers, tests, selections (results/selections) for the judges.
+# Not tracked: cloned benchmark repositories, raw selector / judge scores, logs, backups.
+!/ComparisonRewardGuidedBenchs/
+/ComparisonRewardGuidedBenchs/Kris_Bench/
+/ComparisonRewardGuidedBenchs/Step1X-Edit/
+/ComparisonRewardGuidedBenchs/imgedit/
+/ComparisonRewardGuidedBenchs/SelectorScores/
+/ComparisonRewardGuidedBenchs/JudgeScores/
+/ComparisonRewardGuidedBenchs/logs/
+/ComparisonRewardGuidedBenchs/.pytest_cache/
+/ComparisonRewardGuidedBenchs/scripts/backups/
+/ComparisonRewardGuidedBenchs/results/*
+!/ComparisonRewardGuidedBenchs/results/selections/
