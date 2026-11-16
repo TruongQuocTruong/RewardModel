@@ -1,0 +1,47 @@
+{
+  "model": "Gemma-4-31B",
+  "model_path": "/datastore/shared/models/gemma-4-31B-it",
+  "chat_template_kwargs": {
+    "enable_thinking": false
+  },
+  "scoring": "expected digit 1..9, next-token probabilities",
+  "image_resizing": "none (processor defaults)",
+  "bench": "/datastore/truongtq/TrainingRewardModel/AURA/AURA-TEST/AURA-Bench.jsonl",
+  "rows_selected": 1561,
+  "per_metric_limit": null,
+  "prompt_key_of_metric": {
+    "Aesthetic": "Aesthetic",
+    "Realism": "Realism",
+    "Fidelity": "Fidelity",
+    "Background Consistency": "BC",
+    "Foreground Consistency": "FC",
+    "Structure Consistency": "SC"
+  },
+  "prompts_file": "/datastore/truongtq/TrainingRewardModel/ComparisonRewardModelsOnAURA/EvaluationConfig/base_vlm_metric_prompts.json",
+  "prompts_md5": "23d0f1dd95e9b37e884bfee53b2fa871",
+  "host": "h200node02",
+  "user": "truongtq",
+  "slurm_job_id": "42156",
+  "started": "2026-11-16 07:33:43",
+  "script_md5": "30c57b370e1a661e279db26467d71228",
+  "torch": "2.6.0+cu124",
+  "transformers": "5.15.1",
+  "load_seconds": 23.5,
+  "digit_token_ids": [
+    236770,
+    236778,
+    236800,
+    236812,
+    236810,
+    236825,
+    236832,
+    236828,
+    236819
+  ],
+  "rendered_prompt_tail": "realism and beauty.\nQuestion: To what extent does the edited image correctly execute the editing instruction compared to the source image?\nScore (1-9):<turn|>\n<|turn>model\n<|channel>thought\n<channel|>",
+  "scored": 1561,
+  "skipped_done": 0,
+  "not_applicable": 0,
+  "finished": "2026-11-16 07:48:14",
+  "max_memory_allocated_gib": 59.19
+}

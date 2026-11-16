@@ -132,9 +132,10 @@ def test_check_thinking_disabled_requires_closed_think_block_only_when_disabled(
         sb.check_thinking_disabled("<|im_start|>assistant\n<think>\n", {"enable_thinking": False})
 
 
-def test_variants_use_local_weights_and_only_qwen35_disables_thinking_in_gemma4_env():
-    for name, variant in sb.VARIANTS.items():
-        assert str(variant["model_path"]).startswith(str(bi.MODELS_DIR))
+def test_original_base_vlms_use_reward_models_dir_and_qwen35_disables_thinking_in_gemma4_env():
+    # 2026-11-16 (user): Qwen3-VL-Reranker-8B and Gemma-4-31B live elsewhere; their paths have their own test.
+    for name in ("Qwen2.5-VL-7B", "Qwen3-VL-8B", "Qwen3.5-9B"):
+        assert str(sb.VARIANTS[name]["model_path"]).startswith(str(bi.MODELS_DIR))
     assert sb.VARIANTS["Qwen3.5-9B"] == dict(sb.VARIANTS["Qwen3.5-9B"], conda_env="gemma4",
                                              chat_template_kwargs={"enable_thinking": False})
     assert {sb.VARIANTS[m]["conda_env"] for m in ("Qwen2.5-VL-7B", "Qwen3-VL-8B")} == {"qwen_vl"}
@@ -170,3 +171,32 @@ def test_launcher_picks_gemma4_only_for_qwen35_and_has_no_shard_options():
     launcher = (bi.COMPARISON_ROOT / "script_slurm" / "run_score_base_vlm.slurm").read_text()
     assert "Qwen3.5-9B) CONDA_ENV=gemma4" in launcher and "Qwen2.5-VL-7B|Qwen3-VL-8B) CONDA_ENV=qwen_vl" in launcher
     assert "SHARD" not in launcher.upper()
+
+
+def test_check_thinking_disabled_accepts_closed_gemma_thought_channel_and_rejects_open_one():
+    sb.check_thinking_disabled("<|turn>model\n<|channel>thought\n<channel|>", {"enable_thinking": False})
+    with pytest.raises(RuntimeError):
+        sb.check_thinking_disabled("<|turn>model\n<|channel>thought\n", {"enable_thinking": False})
+
+
+def test_pipeline_backbone_and_gemma_variants_use_their_local_weights_and_envs():
+    reranker, gemma = sb.VARIANTS["Qwen3-VL-Reranker-8B"], sb.VARIANTS["Gemma-4-31B"]
+    assert reranker["model_path"] == bi.COMPARISON_ROOT.parent / "Models" / "Qwen3-VL-Reranker-8B"
+    assert (reranker["conda_env"], reranker["chat_template_kwargs"]) == ("qwen_vl", {})
+    assert str(gemma["model_path"]) == "/datastore/shared/models/gemma-4-31B-it"
+    assert (gemma["conda_env"], gemma["chat_template_kwargs"]) == ("gemma4", {"enable_thinking": False})
+
+
+@pytest.mark.parametrize("model", ["Qwen3-VL-Reranker-8B", "Gemma-4-31B"])
+def test_new_base_vlm_rows_score_all_six_metrics_with_their_own_prompt(model):
+    mapping = json.loads(bi.DEFAULT_MAPPING.read_text())
+    row = next(r for r in mapping["models"] if r["model"] == model)
+    assert (row["family"], row["pretrained"]) == ("BaseVLM", "-")
+    assert row["scores"] == {c: c for c in ("Aesthetic", "Realism", "Fidelity", "BC", "FC", "SC")}
+    assert sb.parse_args(["--model", model]).model == model
+
+
+def test_launcher_sets_env_of_new_models_and_logs_the_actual_gpu_type():
+    launcher = (bi.COMPARISON_ROOT / "script_slurm" / "run_score_base_vlm.slurm").read_text()
+    assert "Qwen3-VL-Reranker-8B) CONDA_ENV=qwen_vl" in launcher and "Gemma-4-31B) CONDA_ENV=gemma4" in launcher
+    assert "gpu:2g.35gb:1\" \\" not in launcher and '"${GRES:-unknown}"' in launcher

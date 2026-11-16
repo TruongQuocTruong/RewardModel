@@ -30,11 +30,12 @@ def test_every_model_row_has_exactly_the_six_columns(mapping):
         assert list(row["scores"]) == COLUMNS, row["model"]
 
 
-def test_table_has_fifteen_rows_in_agreed_order(mapping):
+def test_table_has_seventeen_rows_in_agreed_order(mapping):
     # 2026-11-13 (user): our rows are Student-Stage1 (also stands for Teacher-Stage1, an identical copy),
     # Student-Stage2 and Teacher-Stage2; no "Our Model" row and no Inspector Baseline (overall-only model).
+    # 2026-11-16 (user): two more base VLM rows, Qwen3-VL-Reranker-8B (pipeline backbone) and Gemma-4-31B.
     rows = [(r["model"], r["pretrained"]) for r in mapping["models"]]
-    assert len(rows) == 15
+    assert len(rows) == 17
     assert rows[0] == ("Qwen2.5-VL-7B", "-")
     assert rows[-3:] == [("Student-Stage1", "Qwen3-VL-Reranker-8B"), ("Student-Stage2", "Qwen3-VL-Reranker-8B"),
                          ("Teacher-Stage2", "Qwen3-VL-Reranker-8B")]

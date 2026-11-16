@@ -1,12 +1,13 @@
 #!/usr/bin/env python
-"""Score AURA-Test pairs with a base VLM judge (Qwen2.5-VL-7B, Qwen3-VL-8B or Qwen3.5-9B, no fine-tuning).
+"""Score AURA-Test pairs with a base VLM judge (Qwen2.5-VL-7B, Qwen3-VL-8B, Qwen3.5-9B, Qwen3-VL-Reranker-8B or
+Gemma-4-31B, no fine-tuning).
 
 Prompts: EvaluationConfig/base_vlm_metric_prompts.json (system prompt + one user prompt per metric).
 Every metric gets the source image, then the edited image, then the prompt with the instruction.
 Each edited image of a pair is scored on its own: one forward pass, no text generation; the score is the
 expected value of the digits 1..9 under the next-token probabilities, renormalised over the nine digits.
 Images are kept at their original size (processor defaults, no resizing, no max_pixels).
-Qwen3.5-9B runs with thinking disabled (enable_thinking=False), so the first generated token is the digit.
+Qwen3.5-9B and Gemma-4-31B run with thinking disabled (enable_thinking=False), so the first generated token is the digit.
 
 One job scores the whole bench (all 1561 pairs) for one model; the bench is never split.
 Output (in --output-dir, default results/<model>): scores.jsonl, run_config.json.
@@ -33,7 +34,15 @@ VARIANTS = {
     "Qwen3-VL-8B": {"model_path": bi.MODELS_DIR / "Qwen3-VL-8B", "conda_env": "qwen_vl", "chat_template_kwargs": {}},
     "Qwen3.5-9B": {"model_path": bi.MODELS_DIR / "Qwen3.5-9B", "conda_env": "gemma4",
                    "chat_template_kwargs": {"enable_thinking": False}},
+    # Backbone of our pipeline, zero-shot (no LoRA, no heads); its lm_head is the full vocabulary.
+    "Qwen3-VL-Reranker-8B": {"model_path": bi.COMPARISON_ROOT.parent / "Models" / "Qwen3-VL-Reranker-8B",
+                             "conda_env": "qwen_vl", "chat_template_kwargs": {}},
+    # Gemma4 needs transformers 5.x (env gemma4); 31B in bf16 (about 59 GB of weights) runs on the full partition.
+    "Gemma-4-31B": {"model_path": Path("/datastore/shared/models/gemma-4-31B-it"), "conda_env": "gemma4",
+                    "chat_template_kwargs": {"enable_thinking": False}},
 }
+# End of the rendered prompt when thinking is disabled: Qwen closes an empty think block, Gemma an empty thought channel.
+THINKING_CLOSED_SUFFIXES = ("</think>", "<channel|>")
 BENCH_FIELDS_TO_KEEP = ("metric", "image_id", "edit_type", "prompt", "src_image", "edited_images", "models",
                         "num_raters", "votes", "observed_agreement", "human_label", "preferred_model")
 
@@ -174,8 +183,8 @@ class NextTokenJudge:
 
 
 def check_thinking_disabled(rendered: str, chat_template_kwargs: dict) -> None:
-    """With enable_thinking=False the prompt must end with an empty think block, so the next token is the digit."""
-    if chat_template_kwargs.get("enable_thinking") is False and not rendered.rstrip().endswith("</think>"):
+    """With enable_thinking=False the prompt must end with a closed, empty thinking block, so the next token is the digit."""
+    if chat_template_kwargs.get("enable_thinking") is False and not rendered.rstrip().endswith(THINKING_CLOSED_SUFFIXES):
         raise RuntimeError("enable_thinking=False did not close the think block; the digit would not come first")
 
 
