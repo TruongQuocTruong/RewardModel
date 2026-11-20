@@ -1,0 +1,11 @@
+**/outputs/
+**/logs/
+**/results/
+**/state/
+**/cache/
+**/__pycache__/
+**/_verification/
+**/_inference_verification/
+*.pyc
+_upload_verification/
+_publish_github.py

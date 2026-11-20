@@ -1,0 +1,23 @@
+{
+  "editscore_repo": "../EditScore",
+  "omnigen_transformer_bin": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/OmniGen2/transformer",
+  "text_encoder": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/Qwen2.5-VL-3B-Instruct",
+  "vae_model": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/FLUX.1-dev",
+  "conda_sh": "/datastore/truongtq/miniconda3/etc/profile.d/conda.sh",
+  "train_env": "/datastore/truongtq/miniconda3/envs/omnigen2-rl",
+  "metadata": "/datastore/anhndt/Truongtq/OtherEditingBenchmark/GEdit-Bench-EN/metadata.jsonl",
+  "data_root": "/datastore/anhndt/Truongtq/OtherEditingBenchmark/GEdit-Bench-EN",
+  "output_base": "results/OmniGen2-Base/GEdit-Bench-EN",
+  "output_checkpoint": "results/OmniGen2-Fireward/GEdit-Bench-EN",
+  "checkpoint": null,
+  "lora_config": null,
+  "seed": 20,
+  "steps": 50,
+  "text_guidance": 5.0,
+  "image_guidance": 1.5,
+  "time_shift_base_res": 168,
+  "max_long_edge": 1024,
+  "cpu_offload": true,
+  "start_index": 0,
+  "limit": 0
+}

@@ -124,3 +124,9 @@ __pycache__/
 /ComparisonRewardGuidedBenchs/scripts/backups/
 /ComparisonRewardGuidedBenchs/results/*
 !/ComparisonRewardGuidedBenchs/results/selections/
+
+# OnlineTrainingRL: copy of /datastore/anhndt/Truongtq/TrainingEditingModel/OnlineTrainingRL
+# (EditScore upstream snapshot, running/ training, inference/ GEdit). No outputs, logs or weights.
+!/OnlineTrainingRL/
+/OnlineTrainingRL/output/
+/OnlineTrainingRL/**/*.jsonl

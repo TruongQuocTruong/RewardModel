@@ -1,0 +1,24 @@
+{
+  "metadata": "unique_metadata.jsonl",
+  "data_root": "/datastore/shared/datasets/EditReward-Data/extracted_data",
+  "reward_project": "/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding",
+  "reward_pretrained": "/datastore/truongtq/TrainingRewardModel/Models/Qwen3-VL-Reranker-8B",
+  "reward_checkpoint": "/datastore/truongtq/TrainingRewardModel/TrainingRewardModel/Qwen3-VL-Embedding/output_training/Stage2_R0RelKL10kDecay98CosineOnceBatch4Eval5",
+  "omnigen_transformer_bin": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/OmniGen2/transformer",
+  "text_encoder": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/Qwen2.5-VL-3B-Instruct",
+  "vae_model": "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/FLUX.1-dev",
+  "hf_cache_roots": [
+    "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/hf_cache/hub",
+    "/datastore/anhndt/Truongtq/TrainingEditingModel/Models/FLUX2/hub"
+  ],
+  "relevance_threshold": 0.5,
+  "empty_metric_policy": "error",
+  "reward_min_pixels": null,
+  "reward_max_pixels": 262144,
+  "editscore_repo": "../EditScore",
+  "conda_sh": "/datastore/truongtq/miniconda3/etc/profile.d/conda.sh",
+  "train_env": "/datastore/truongtq/miniconda3/envs/omnigen2-rl",
+  "reward_env": "/datastore/truongtq/miniconda3/envs/qwen_vl",
+  "reward_ready_timeout": 3600,
+  "write_probe_mib": 512
+}
